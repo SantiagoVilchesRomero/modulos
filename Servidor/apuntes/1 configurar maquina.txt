@@ -1,0 +1,41 @@
+Crear dominio gratuito:
+    - https://www.noip.com/
+
+Obtener certificado gratuito
+    - https://certbot.eff.org/
+
+    - Instalación:
+    - sudo snap install --classic certbot
+    - sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    - sudo certbot --apache
+
+Vamos a actualizar el sistema del servidor:
+    - sudo apt update
+
+    - sudo apt install php libapache2-mod-php
+    - sudo apt install php-cli
+    - sudo apt install php-mysql
+    - sudo apt install php-mbstring
+    - sudo apt install php-xml
+    - sudo apt install php-curl
+    - sudo apt install php-sqlite3
+    - sudo apt install zip
+    
+Vamos a instalar MySql:
+    - sudo apt install mysql-server
+    - sudo mysql
+    - mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'root';
+    - mysql> flush privileges;
+    - mysql> quit;
+
+Vamos a instalar phpmyadmin:
+    - sudo wget "ultima version de phpmyadmin"
+    - sudo unzip "zip del phpmyadmin"
+    - sudo rm "zip del phpmyadmin"
+    - sudo mv "nombre del phpmyadmin"/ "nombre que le quieras poner"
+
+Reiniciar apache2:
+    - sudo service apache2 restart
+
+Instalar composer:
+    - sudo apt install composer

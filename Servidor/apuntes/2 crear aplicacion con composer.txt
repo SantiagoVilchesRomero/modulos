@@ -1,0 +1,6 @@
+Crear proyecto con las dependencias de laravel:
+    - sudo composer create-project laravel/laravel "nombre de la aplicación"
+
+Dar permisos al proyecto:
+*chown = change owner
+    - sudo chown -R www-data:www-data "nombre de la aplicación"/
