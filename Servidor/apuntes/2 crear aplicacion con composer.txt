@@ -1,15 +1,19 @@
 Crear proyecto con las dependencias de laravel:
-    - sudo composer create-project laravel/laravel "nombre de la aplicación"
+   - sudo composer create-project laravel/laravel "nombre de la aplicación"
 
 Dar permisos al proyecto:
  *chown = change owner
-    - sudo chown -R www-data:www-data "nombre de la aplicación"/
+   - sudo chown -R www-data:www-data "nombre de la aplicación"/
 
 Cómo hemos dejado los permisos en el servidor de aws: /var/www/html
-    a) meter al usuario ubuntu en el grupo www-data:
-       sudo usermod -a -G www-data ubuntu  
-       (ver usuarios de un grupo: getent group groupname)
-    b) poner como propietario de los archivos a www-data y como grupo a ubuntu: 
-       sudo chown -R www-data:ubuntu /var/www/html/
-    c) poner los permisos en 775:
+   a) meter al usuario ubuntu en el grupo www-data:
+      sudo usermod -a -G www-data ubuntu  
+      (ver usuarios de un grupo: getent group groupname)
+   b) poner como propietario de los archivos a www-data y como grupo a ubuntu: 
+      sudo chown -R www-data:ubuntu /var/www/html/
+   c) poner los permisos en 775:
        sudo chmod 775 -R /var/www/html
+
+Instalar una aplicacion:
+   - cd /var/www/html/examples
+   - git clone https://github.com/dwesizv/traditionalApp.git
