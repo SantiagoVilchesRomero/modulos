@@ -17,3 +17,4 @@ Cómo hemos dejado los permisos en el servidor de aws: /var/www/html
 Instalar una aplicacion:
    - cd /var/www/html/examples
    - git clone https://github.com/dwesizv/traditionalApp.git
+   
