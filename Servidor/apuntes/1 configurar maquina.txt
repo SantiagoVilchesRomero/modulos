@@ -35,7 +35,7 @@ Vamos a instalar MySql:
     - mysql> quit;
 
 Vamos a instalar phpmyadmin:sudo apt update
-
+    - cd /var/www/html
     - sudo wget "ultima version de phpmyadmin"
     - sudo unzip "zip del phpmyadmin"
     - sudo rm "zip del phpmyadmin"
