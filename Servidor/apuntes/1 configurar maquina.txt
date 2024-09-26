@@ -13,7 +13,7 @@ Mantener la ip actualizada:
     wget --content-disposition https://www.noip.com/download/linux/latest
     tar xf noip-duc_3.3.0.tar.gz
     cd /home/$USER/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
-    noip-duc -g all.ddnskey.com --username gnaem2w --password 3NSawTvB36iz
+    noip-duc -g all.ddnskey.com --username gnaem2w --password 3NSawTvB36iz -> esto lo meto en ./cat/bashrc
 Vamos a actualizar el sistema del servidor:
     - sudo apt update
 
@@ -33,7 +33,8 @@ Vamos a instalar MySql:
     - mysql> flush privileges;
     - mysql> quit;
 
-Vamos a instalar phpmyadmin:
+Vamos a instalar phpmyadmin:sudo apt update
+
     - sudo wget "ultima version de phpmyadmin"
     - sudo unzip "zip del phpmyadmin"
     - sudo rm "zip del phpmyadmin"
