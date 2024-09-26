@@ -14,6 +14,7 @@ Mantener la ip actualizada:
     tar xf noip-duc_3.3.0.tar.gz
     cd /home/$USER/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
     noip-duc -g all.ddnskey.com --username gnaem2w --password 3NSawTvB36iz -> esto lo meto en ./cat/bashrc
+    
 Vamos a actualizar el sistema del servidor:
     - sudo apt update
 
