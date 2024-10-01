@@ -1,0 +1,30 @@
+.container {
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.item {
+    width: 150px;
+    height: 200px;
+}
+
+.item1 {
+    background-color: palegoldenrod;
+}
+
+.item2 {
+    background-color: lightgreen;
+}
+
+.item3 {
+    background-color: blue;
+}
+
+.item4 {
+    background-color: red;
+}
