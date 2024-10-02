@@ -1,0 +1,53 @@
+Serializacion:
+    - Objetos
+    - Propiedades
+    - Metodos
+    - Clases
+
+Objetos:
+    - Un objeto es una instancia de una clase.
+    - Los objetos pueden tener propiedades y métodos.
+    - Los objetos pueden ser compartidos entre múltiples instancias de la misma clase.
+
+Propiedades:
+    - Las propiedades son variables que se encuentran en el objeto.
+    - Las propiedades pueden ser de cualquier tipo.
+    - Las propiedades pueden ser públicas o privadas.
+    - Las propiedades públicas pueden ser accedidas desde cualquier parte del código.
+    - Las propiedades privadas solo pueden ser accedidas desde el objeto en el que se encuentran.
+
+Metodos:
+    - Los métodos son funciones que se encuentran en el objeto.
+    - Los métodos pueden ser públicos o privados.
+    - Los métodos públicos pueden ser accedidos desde cualquier parte del código.
+    - Los métodos privados solo pueden ser accedidos desde el objeto en el que se encuentran.
+
+Clases:
+    - Una clase es una plantilla para crear objetos.
+    - Una clase puede tener propiedades y métodos.
+    - Una clase puede ser heredada por otra clase.
+    - Una clase puede tener una o más clases heredadas.
+
+Ejemplo:
+
+class Persona {
+    public $nombre;
+    public $edad;
+    
+    public function __construct($nombre, $edad) {
+        $this->nombre = $nombre;
+        $this->edad = $edad;
+}
+
+Interfaces:
+    - Una interfaz es una plantilla para crear objetos.
+    - Una interfaz puede tener propiedades y métodos.
+    - Una interfaz puede ser heredada por otra interfaz.
+    - Una interfaz puede tener una o más interfaces heredadas.
+
+Ejemplo:
+    callBack:
+        - Es una interfaz que define los métodos que deben implementarse por los objetos que lo implementan.
+        - Los objetos que implementan callBack pueden ser utilizados como callback.
+        - Los callbacks son objetos que se encargan de ejecutar una función en el contexto de otro objeto.
+        - Los callbacks pueden ser utilizados para realizar operaciones asíncronas o sincrónicas.
