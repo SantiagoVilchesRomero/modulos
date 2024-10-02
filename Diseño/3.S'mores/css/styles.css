@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Rowdies:wght@300;400;700&display=swap');
+
+html {
+    height: 100%;
+
+}
+body {
+    margin: 0;
+    height: 100%;
+    background-color: #d1c2ae;
+    font-family: "Afacad Flux",Montserrat, sans-serif;
+    font-size: 1.1rem;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1,h2,h3 {
+    font-family: "Rowdies",sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(112,9,9);
+}
+a {
+    text-decoration: none;
+    color: rgb(255,0,93);
+    font-weight: 800;
+}
+a:hover {
+    color: rgb(157,3,32);
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.logo{
+    text-align: center;
+}
+.tag-line {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.list-nav{
+    display: flex;
+    margin: 3rem 0;
+    justify-content: space-evenly;
+}
+
+.list-nav li a {
+    padding: .5rem 1rem;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.387);
+}
+.list-nav li a:hover {
+    color: white;
+    background-color: rgb(255, 0, 93);
+}
+
+.intro {
+    column-count: 2;
+    text-align: justify;
+    gap: 2.5rem;
+}
+
+.builder {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.builder-component {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.24);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+.builder-component {
+    position: relative;
+}
+
+.builder-component::before {
+    content: '';
+    background-image: url(../images/icons.png);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.builder-component_marshmallow::before {
+    background-position: -40px 0;
+}
+
+.builder-component_candy::before {
+    background-position: -80px 0;
+}
+
+.builder-component_accessories::before {
+    background-position: -120px 0;
+}
