@@ -4,44 +4,54 @@ html {
     height: 100%;
 
 }
+
 body {
     margin: 0;
     height: 100%;
     background-color: #d1c2ae;
-    font-family: "Afacad Flux",Montserrat, sans-serif;
+    font-family: "Afacad Flux", Montserrat, sans-serif;
     font-size: 1.1rem;
 }
+
 .wrapper {
     width: 90%;
     margin: 0 auto;
 }
 
-h1,h2,h3 {
-    font-family: "Rowdies",sans-serif;
+h1,
+h2,
+h3 {
+    font-family: "Rowdies", sans-serif;
     text-transform: uppercase;
     text-align: center;
-    color: rgb(112,9,9);
+    color: rgb(112, 9, 9);
 }
+
 a {
     text-decoration: none;
-    color: rgb(255,0,93);
+    color: rgb(255, 0, 93);
     font-weight: 800;
 }
+
 a:hover {
-    color: rgb(157,3,32);
+    color: rgb(157, 3, 32);
 }
+
 ul {
     list-style-type: none;
     padding-left: 0;
 }
-.logo{
+
+.logo {
     text-align: center;
 }
+
 .tag-line {
     font-size: 1.2rem;
     font-weight: 600;
 }
-.list-nav{
+
+.list-nav {
     display: flex;
     margin: 3rem 0;
     justify-content: space-evenly;
@@ -52,6 +62,7 @@ ul {
     border: 1px solid white;
     background-color: rgba(255, 255, 255, 0.387);
 }
+
 .list-nav li a:hover {
     color: white;
     background-color: rgb(255, 0, 93);
@@ -102,4 +113,156 @@ ul {
 
 .builder-component_accessories::before {
     background-position: -120px 0;
+}
+
+.builder-action {
+    margin: 40px 0;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.builder-action-label {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-right: 0.8rem;
+}
+
+.builder-action-field {
+    font-size: 1.2rem;
+    flex: 1 1 50%;
+}
+
+.builder-action-button {
+    margin-top: 2rem;
+    flex: 1 1 100%;
+}
+
+button {
+    background-color: rgb(255, 0, 93);
+    color: white;
+    border: 1px solid rgba(200, 200, 200, 0.485);
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, .6);
+
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, .684);
+    color: rgb(207, 23, 23);
+    box-shadow: inset 0 0 1px 1px rgba(207, 23, 23, .4);
+    cursor: pointer;
+}
+
+.ingredients-list {
+    height: 78%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.ingredients-list li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.ingredients-list li>label {
+    margin-left: 3px;
+}
+
+.ingredients-list-item {
+    margin-top: .4rem;
+}
+
+.ingredients-list-item:last-child {
+    margin-top: auto;
+}
+
+input[type=radio]+label,
+input[type=checkbox]+label {
+    position: relative;
+}
+
+input[type=radio]+label::before,
+input[type=checkbox]+label::before {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgb(195, 23, 23);
+    top: 5px;
+    left: -20px;
+    background-color: rgba(255, 255, 255);
+
+}
+
+input[type=radio]+label::before {
+    border-radius: 50%;
+}
+
+input[type=radio]+label:hover:before,
+input[type=radio]:focus+label:hover:before {
+    box-shadow: inset 0 0 1px 1px rgba(267, 23, 23, 0.4);
+    cursor: pointer;
+}
+
+input[type=checkbox]+label:hover:before,
+input[type=checkbox]:focus+label:hover:before {
+    box-shadow: inset 0 0 1px 1px rgba(267, 23, 23, 0.4);
+    cursor: pointer;
+}
+
+input[type=radio]:checked+label::before,
+input[type=checkbox]:checked+label::before {
+    background-color: rgba(267, 23, 23, 0.4);
+    box-shadow: inset 0 0 1px 1px rgba(267, 23, 23, 0.4);
+}
+
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+
+.gallery-item-name {
+    color: rgba(255, 255, 255, 0.8);
+
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.8);
+}
+
+.gallery-item {
+    background-color: #6f432f;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    flex: 1 0 200px;
+}
+
+.pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.pagination-item {
+    margin-right: 5px;
+}
+
+.pagination-link{
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
 }
