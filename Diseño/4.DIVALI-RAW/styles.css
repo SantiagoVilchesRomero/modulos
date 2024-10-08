@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@font-face {
+    font-family: "refile";
+    src: url(../Tipografias/refile/Refile.otf),
+        url(../Tipografias/refile/Refile.woff),
+        url(../Tipografias/refile/Refile.woff2);
+}
+
+@font-face {
+    font-family: "nouvel";
+    src: url(../Tipografias/nouvel-r/NouvelRBook.ttf),;
+}
+
+body{
+    font-family: "nouvel";
+}
+
+h1 {
+    font-family: "refile";
+    color: rgba(255, 255, 255, 0.8);
+    
+}
+
+h3 {
+    font-family: "Playfair Display", serif;
+}
+
+html, body {
+    height: 100%;
+    background: radial-gradient(circle, rgb(134, 2, 61) 0%, rgb(255, 0, 150) 100%);
+}
+
+header {
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
