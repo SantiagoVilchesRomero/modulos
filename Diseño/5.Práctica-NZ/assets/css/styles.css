@@ -4,22 +4,22 @@
 
 @font-face {
     font-family: "nouvel-regular";
-    src: url(../fonts/NouvelRRegular.ttf),;
+    src: url(../fonts/NouvelRRegular.ttf), ;
 }
 
 @font-face {
     font-family: "nouvel-light";
-    src: url(../fonts/NouvelRLight.ttf),;
+    src: url(../fonts/NouvelRLight.ttf), ;
 }
 
 @font-face {
     font-family: "nouvel-semibold";
-    src: url(../fonts/NouvelRSemibold.ttf),;
+    src: url(../fonts/NouvelRSemibold.ttf), ;
 }
 
 @font-face {
     font-family: "nouvel-bold";
-    src: url(../fonts/NouvelRBold.ttf),;
+    src: url(../fonts/NouvelRBold.ttf), ;
 }
 
 * {
@@ -28,11 +28,197 @@
 
 /* resolver el problema de los heights heredados */
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
 
     margin: 0;
 
     font-family: "nouvel-regular";
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.navcollapse {
+    display: none;
+}
+
+.flexcontainer {
+    display: flex;
+    flex-flow: row nowrap;
+
+    /* center all items */
+    justify-content: center;
+    align-items: center;
+
+    /* same size as father */
+    width: 100%;
+    height: 100%;
+}
+
+.item1, .item3 {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.item2 {
+    flex: 20;
+    height: 100%;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.item2 > nav, .slider, .item2footer {
+    width: 100%;
+}
+
+.slider {
+    flex: 10;
+}
+
+.item2footer {
+    flex: 1;
+}
+
+
+/*---NAV----------------------------------------------------------------------------------*/
+
+.logo {
+    flex: 1;
+    height: 100%;
+}
+
+.nav {
+    flex: 6;
+}
+
+nav {
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+#menu_on {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu_on > li  > a {
+    font-family: Righteous;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    transition: all ease-in-out 200ms;
+}
+
+#menu_on > li  > a:hover {
+    color: #6f6ed3;
+}
+
+#menu_on > li{
+    margin-left: 3vw;
+}
+
+.imglogo { 
+    width: 100%;
+    height: 100%;
+
+    background-image: url(../imagenes/logoNZ.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: invert(1);
+
+    /* background-color: black;  El color que quieres aplicar al SVG
+    mask-image: url(../imagenes/logoNZ.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center; */
+}
+
+
+/*---SLIDER----------------------------------------------------------------------------------*/
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../imagenes/hero_home3.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.legend {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Righteous;
+    color: white;
+
+    text-shadow: 1px 1px 1px black;
+}
+
+.title {
+    font-size: 1.4rem;
+}
+
+.great {
+    font-size: 4rem;
+}
+
+.medium {
+    font-size: 2rem;
+}
+
+/*---BOTH SIDES----------------------------------------------------------------------------------*/
+
+.earleft {
+    background-color: #a4a3a3;
+    width: 40px;
+    height: 220px;
+    
+    position: absolute;
+    right: 0;
+    top: calc(50% - 220px / 2);
+} 
+
+.earright {
+    background-color: #a4a3a3;
+    width: 40px;
+    height: 220px;
+
+    position: absolute;
+    left: 0;
+    top: calc(50% - 220px / 2);
+}
+
+.move {
+    height: 40px;
+    width: 220px;
+
+    transform: rotate(-90deg) translateX(-26%) translateY(-200%);
+}
+
+.move a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
