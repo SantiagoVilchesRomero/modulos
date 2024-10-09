@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/* Reset CSS si es un import */
+
+@font-face {
+    font-family: "nouvel-regular";
+    src: url(../fonts/NouvelRRegular.ttf),;
+}
+
+@font-face {
+    font-family: "nouvel-light";
+    src: url(../fonts/NouvelRLight.ttf),;
+}
+
+@font-face {
+    font-family: "nouvel-semibold";
+    src: url(../fonts/NouvelRSemibold.ttf),;
+}
+
+@font-face {
+    font-family: "nouvel-bold";
+    src: url(../fonts/NouvelRBold.ttf),;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* resolver el problema de los heights heredados */
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    font-family: "nouvel-regular";
+}
