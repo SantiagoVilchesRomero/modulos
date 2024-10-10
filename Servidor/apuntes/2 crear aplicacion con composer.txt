@@ -17,4 +17,11 @@ Cómo hemos dejado los permisos en el servidor de aws: /var/www/html
 Instalar una aplicacion:
    - cd /var/www/html/examples
    - git clone https://github.com/dwesizv/traditionalApp.git
+
+Herramienta de laravel para hacer funciones predeterminadas:
+   - cd /var/www/html/laraveles/laravelApp
+   - php artisan
+   - Las mas importantes son:
+      · php artisan route:list / r:l
+      · php artisan make:controller
    
