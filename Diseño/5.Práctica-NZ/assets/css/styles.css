@@ -143,7 +143,6 @@ nav {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    filter: invert(1);
 
     /* background-color: black;  El color que quieres aplicar al SVG
     mask-image: url(../imagenes/logoNZ.svg);
