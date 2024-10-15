@@ -41,6 +41,8 @@ body {
 .container {
     width: 100%;
     height: 100vh;
+
+    overflow: hidden;
 }
 
 .navcollapse {
@@ -74,7 +76,6 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 
 .item2 > nav, .slider, .item2footer {
@@ -220,4 +221,519 @@ nav {
     color: white;
     text-transform: uppercase;
     font-size: 1.2rem;
+}
+
+/*---ABOUT---------------------------------------------------------------------------------*/
+
+
+
+/*---TEAM---------------------------------------------------------------------------------*/
+
+
+
+/*---WORKS---------------------------------------------------------------------------------*/
+.works {
+    height: 100vh;
+    width: 100%;
+}
+
+.container-works {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.works-header {
+    width: 100%;
+    flex: 2;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.works-header {
+    width: 100%;
+    flex: 2;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.works-body {  
+    width: 100%;
+    flex: 5;
+    flex-flow: row nowrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workizda {
+    flex: 1;
+    height: 100%;
+
+    background-image: url(../imagenes/work1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.workdcha {
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.workarriba {
+    flex: 1;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.workabajo {
+    flex: 3;
+    width: 100%;
+
+    background-image: url(../imagenes/work2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.works1 {
+    height: 100vh;
+    width: 100%;
+}
+
+.works1-container {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.works1-fila2 {
+    flex: 1;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.witem3 {
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    background-color: black;
+
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.witem3 > p {
+    margin: 0;
+}
+
+.subtitle {
+    text-transform: none;
+    font-size: 1.2rem;
+    font-family: nouvel-light;
+}
+
+.witem4 {
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.witem4 > p {
+    padding: 0 3rem;
+}
+
+.works1-fila1 {
+    flex: 4;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.witem1{
+    flex: 1;
+    height: 100%;
+    
+    background-image: url(../imagenes/work3.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.witem2 {
+    flex: 1;
+    height: 100%;
+
+    background-image: url(../imagenes/work4.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}   
+
+.works2 {
+    height: 100vh;
+    width: 100%;
+}
+
+.works2-container {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.works2-fila2 {
+    flex: 1;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.witem7 {
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    background-color: black;
+
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.witem7 > p {
+    margin: 0;
+}
+
+.subtitle {
+    text-transform: none;
+    font-size: 1.2rem;
+    font-family: nouvel-light;
+}
+
+.witem8 {
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.witem8 > p {
+    padding: 0 3rem;
+}
+
+.works2-fila1 {
+    flex: 4;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.witem5{
+    flex: 1;
+    height: 100%;
+    
+    background-image: url(../imagenes/work5.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.witem6 {
+    flex: 1;
+    height: 100%;
+
+    background-image: url(../imagenes/work6.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+} 
+
+/*---SERVICES---------------------------------------------------------------------------------*/
+
+.services {
+    height: 100vh;
+    width: 100%;
+}
+
+.services-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.services-header {
+    width: 100%;
+    flex: 2;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.services-body {
+    width: 60%;
+    flex: 5;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ser {
+    flex: 1 0 50%;
+    padding: 2rem 5rem;
+    position: relative;
+}
+
+.ser p:first-child {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.ser p:last-child {
+    line-height: 1.5rem;
+}
+
+.ser1, .ser2 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+
+.ser1 > p, .ser3 > p {
+    text-align: right;
+}
+
+.ser1::before {
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    width: 85%;
+    bottom: 0;
+    right: 2.2rem;
+}
+
+.ser2::before {
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    height: 60%;
+    left: 0;
+    bottom: 2.2rem;
+}
+
+.ser4::before {
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    width: 85%;
+    top: 0;
+    left: 2.2rem;
+}
+
+.ser3::before {
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    height: 60%;
+    right: 0;
+    top: 2.2rem;
+}
+
+
+/*---NEWS---------------------------------------------------------------------------------*/
+
+.news {
+    height: 100vh;
+    width: 100%;
+}
+
+.news-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.news-header {
+    width: 100%;
+    flex: 2;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.news-body {
+    width: 80%;
+    flex: 5;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: center;
+}
+
+.news-foto {
+    flex: 2;
+    height: 60%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-texto {
+    flex: 8;
+    height: 80%;
+    padding: 2rem;
+}
+
+.news-texto > .title {
+    font-size: 3rem;
+    font-family: Righteous;
+    margin: auto;
+}
+
+.newspic {
+    flex: 10;
+    width: 100%;
+
+    background-image: url(../imagenes/blue\ eye.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.newsnav {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sldopt {
+    height: 4px;
+    flex: 1 0 60px;
+
+    background-color: lightgray;
+    cursor: pointer;
+
+    margin-right: 5px;
+}
+
+.active {
+    background-color: black !important; 
+}
+
+/*---QUOTE---------------------------------------------------------------------------------*/
+
+.quote {
+    height: 100vh;
+    width: 100%;
+
+    padding: 5rem;
+}
+
+.quote-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../imagenes/slider1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.myquote {
+    text-align: center;
+}
+
+.quote-great {
+    font-size: 1.4rem;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.quote-title {
+    font-size: 1.8rem;
+    font-family: Righteous;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 }
