@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: "nouvelRegular";
+    src: url(../fonts/NouvelRRegular.ttf);
+}
+
+@font-face {
+    font-family: "nouvelBold";
+    src: url(../fonts/NouvelRBold.ttf);
+}
+
+@font-face {
+    font-family: "nouvelLight";
+    src: url(../fonts/NouvelRLight.ttf);
+}
+
+@font-face {
+    font-family: "signature";
+    src: url(../fonts/);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+p {
+    font-family: Montserrat, sans-serif;
+}
+
