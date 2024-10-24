@@ -40,14 +40,25 @@ header {
 }
 
 .hero-content a:hover {
-    animation: upAndDown 0.7s ease-in-out infinite alternate; /* Repite la animación infinitamente */
+    animation: scroll-down 2s infinite;
+    /* Repite la animación infinitamente */
 }
 
-@keyframes upAndDown {
-    0% {
-        transform: translateY(-15px);  /* Mueve hacia arriba */
-    }
+@keyframes scroll-down {
+
+    0%,
     100% {
-        transform: translateY(15px);   /* Luego hacia abajo */
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    35% {
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(-3rem);
+        opacity: 0;
     }
 }
