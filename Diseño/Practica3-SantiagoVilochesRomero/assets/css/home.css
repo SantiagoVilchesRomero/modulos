@@ -1,0 +1,53 @@
+header {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/hero.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-content div {
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content a {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    font-size: var(--subtitle-section-size);
+    font-weight: 400;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-content a:hover {
+    animation: upAndDown 0.7s ease-in-out infinite alternate; /* Repite la animación infinitamente */
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(-15px);  /* Mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(15px);   /* Luego hacia abajo */
+    }
+}
