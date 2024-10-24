@@ -1,6 +1,6 @@
-const epress = require('express');
+const express = require('express');
 const cors = require('cors');
-const app = epress();
+const app = express();
 const PORT = 3000;
 const MESSAGES = [
     {
@@ -19,6 +19,7 @@ const MESSAGES = [
         name : "Raul",
     }
 ]
+
 app.use(cors());
 
 app.get('/',(req,res)=>{
