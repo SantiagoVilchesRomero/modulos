@@ -1,0 +1,29 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(245, 245, 220, 0.612);
+}
+#prototipe {
+    color: dodgerblue;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+#prototipe div {
+    color: rgb(75, 203, 173);
+    font-size: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: rgb(86, 196, 224);
+}
