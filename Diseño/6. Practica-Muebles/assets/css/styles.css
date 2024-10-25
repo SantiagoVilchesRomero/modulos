@@ -15,6 +15,21 @@
     src: url(../fonts/NouvelRBold.ttf);
 }
 
+@font-face {
+    font-family: "autography";
+    src: url(../fonts/Autography.otf);
+}
+
+@font-face {
+    font-family: "autography2";
+    src: url(../fonts/UniversalExploration_PERSONAL_USE_ONLY.otf);
+}
+
+:root {
+    --red: #C10200;
+    --grey: rgba(181, 181, 181, 1); 
+}
+
 html,
 body {
     height: 100%;
@@ -30,6 +45,14 @@ p {
     font-size: 1.1rem;
     line-height: 1.8rem;
     text-align: justify;
+}
+
+.red {
+    color: var(--red);
+}
+
+.grey {
+    color: var(--grey);
 }
 
 main {
@@ -180,6 +203,195 @@ header {
     position: absolute;
     top: calc(clamp(2rem, 0.667rem + 4.444vw, 6rem) / 1.4);
     /*no se parte entre 2 por el padding interno de la propia fuente*/
+}
+
+/*---NATURE---------------------------------------------------------------------*/
+
+.section-name {
+    font-size: clamp(2rem, 1.333rem + 2.222vw, 4rem);
+    font-family: NouvelBold;
+    text-transform: uppercase;
+    text-align: right;
+    padding: 2rem 0;
+}
+
+.nature-by article {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nature-izda {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nature-dcha {
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.literal {
+    flex: 1;
+
+    background-image: url(../img/nature-name.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 2/5;
+}
+
+.nature-pic {
+    flex: 1;
+
+    background-image: url(../img/Nature.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 2/5;
+}
+
+.nature-by h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.lower {
+    text-transform: lowercase;
+}
+
+.sign-miyaki {
+    font-family: autography;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.narrow {
+    display: none !important;
+}
+
+/*---NATURE 2---------------------------------------------------------------------*/
+
+.forest {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.forest-pic {
+    flex: 1;
+    aspect-ratio: 16/8;
+    background-image: url(../img/Nature2.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.forest-text {
+    flex: 1;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.forest-text p:last-child {
+    margin-bottom: 0;
+}
+
+.materials h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin: 4rem 0;
+}
+
+.nature-materials {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.material {
+    flex: 1 0 280px;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat1 .material-pic {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/puresenti\ 898.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 6/9;
+}
+
+.mat2 .material-pic {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/puregrey222.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 6/9;
+}
+
+.mat3 .material-pic {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/lighoak988.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 6/9;
+}
+
+.mat4 .material-pic {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/ribbon\ oak\ 111.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 6/9;
+}
+
+.mat5 .material-pic {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/ostipooak664.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 6/9;
+}
+
+.material-foot p {
+    font-size: .9rem;
+    text-align: center;
+}
+
+.material-foot h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
 }
 
 @media screen and (max-width: 1400px) {
