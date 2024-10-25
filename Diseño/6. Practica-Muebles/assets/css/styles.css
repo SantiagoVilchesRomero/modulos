@@ -1,31 +1,287 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
-    font-family: "nouvelRegular";
+    font-family: "NouvelRegular";
     src: url(../fonts/NouvelRRegular.ttf);
 }
 
 @font-face {
-    font-family: "nouvelBold";
-    src: url(../fonts/NouvelRBold.ttf);
-}
-
-@font-face {
-    font-family: "nouvelLight";
+    font-family: "NouvelLight";
     src: url(../fonts/NouvelRLight.ttf);
 }
 
 @font-face {
-    font-family: "signature";
-    src: url(../fonts/);
+    font-family: "NouvelBold";
+    src: url(../fonts/NouvelRBold.ttf);
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
 
-p {
-    font-family: Montserrat, sans-serif;
+* {
+    box-sizing: border-box;
 }
 
+p {
+    font-family: Montserrat, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    text-align: justify;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    padding: 0 5% 5% 5%;
+    /* top right bottom left*/
+}
+
+.hero-container {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 4rem;
+}
+
+header {
+    width: 100%;
+    height: 5vw;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.motto-body {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mini-logo {
+    height: 40px;
+    flex: 0 0 100px;
+    /*que no crezca - que no disminuya - tamaño 100px*/
+
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.burguer {
+    height: 30px;
+    flex: 0 0 30px;
+
+    background-image: url(../img/burguer.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.main-pic {
+    height: 80vh;
+    flex: 1 0 30%;
+
+    background-image: url(../img/hero.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.main-motto {
+    height: 80vh;
+    flex: 1 0 70%;
+
+    padding: 0 4% 0 4%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.ghost {
+    flex: 1 0 20%;
+}
+
+.motto-center {
+    flex: 1 0 60%;
+    width: 100%;
+}
+
+.motto-footer {
+    flex: 1 0 20%;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+
+.maxi-logo {
+    height: 140px;
+    width: auto;
+
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-position: 30% center;
+    background-repeat: no-repeat;
+}
+
+.motto-text {
+    text-align: right;
+    font-size: clamp(2rem, 0.667rem + 4.444vw, 6rem);
+    font-family: NouvelBold;
+    position: relative;
+}
+
+.motto-text span {
+    color: #C10200;
+}
+
+.motto-subtitle {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    letter-spacing: .08rem;
+    font-family: Montserrat;
+}
+
+.motto-subtitle span {
+    font-weight: 600;
+}
+
+.motto-legend {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: NouvelRegular;
+    color: rgba(181, 181, 181, 1);
+}
+
+.line {
+    height: 2px;
+    width: calc(100% - (3 * clamp(2rem, 0.667rem + 4.444vw, 6rem)));
+    background: black;
+    position: absolute;
+    top: calc(clamp(2rem, 0.667rem + 4.444vw, 6rem) / 1.4);
+    /*no se parte entre 2 por el padding interno de la propia fuente*/
+}
+
+@media screen and (max-width: 1400px) {
+    body {
+        background-color: lightcoral;
+    }
+
+    .main-pic {
+        flex: 1 0 40%;
+    }
+
+    .main-motto {
+        flex: 1 0 60%;
+    }
+
+    .motto-legend span:nth-child(13),
+    .motto-legend span:nth-child(12) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        background-color: lightgreen;
+    }
+
+    .main-pic {
+        flex: 1 0 40%;
+    }
+
+    .main-motto {
+        flex: 1 0 60%;
+    }
+
+    .motto-legend span:nth-child(10),
+    .motto-legend span:nth-child(11) {
+        display: none;
+    }
+
+    head {
+        height: 7vw;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    body {
+        background-color: lightseagreen;
+    }
+
+    .main-pic {
+        flex: 1 0 40%;
+    }
+
+    .main-motto {
+        flex: 1 0 60%;
+    }
+
+    .motto-body {
+        flex-direction: column;
+    }
+
+    .motto-legend {
+        margin-top: 4rem;
+    }
+
+    .main-pic {
+        width: 100%;
+        flex: 1;
+        aspect-ratio: 4/3;
+        background-image: url(../img/lavabo2.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+    }
+
+    .main-motto {
+        width: 100%;
+        flex: 1;
+    }
+
+    .motto-legend span:nth-child(10),
+    .motto-legend span:nth-child(11) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: lightgoldenrodyellow;
+    }
+
+    .main-pic {
+        flex: 1 0 40%;
+    }
+
+    .main-motto {
+        flex: 1 0 60%;
+    }
+
+    .motto-legend span:nth-child(10),
+    .motto-legend span:nth-child(11) {
+        display: none;
+    }
+}
