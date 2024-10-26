@@ -9,14 +9,40 @@ header {
 }
 
 .hero-content {
+    flex: 10;
+    width: 100%;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
-.hero-content div {
-    width: 150px;
-    height: 150px;
+.hero-content .motto {
+    flex: 3;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.motto h1 {
+    font-size: var(--subtitle-hero-size);
+    text-transform: uppercase;
+    font-family: 'Sansation Bold';
+    width: 20%;
+    margin-left: 10rem;
+    color: var(--secondary-color);
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+}
+
+.hero-content .scrool {
+    width: 100%;
+    flex: 1;
+}
+
+.hero-content .scroll > div {
+    width: 100px;
+    height: 100px;
     border: 2px solid var(--secondary-color);
     border-radius: 50%;
     margin-bottom: 3rem;
@@ -25,9 +51,9 @@ header {
     align-items: center;
 }
 
-.hero-content a {
-    width: 150px;
-    height: 150px;
+.hero-content .scroll a {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -35,7 +61,7 @@ header {
     font-family: Montserrat, sans-serif;
     text-transform: uppercase;
     color: var(--secondary-color);
-    font-size: var(--subtitle-section-size);
+    font-size: var(--text-size);
     font-weight: 400;
     transition: transform 0.3s ease-in-out;
 }
@@ -54,12 +80,12 @@ header {
     }
 
     35% {
-        transform: translateY(3rem);
+        transform: translateY(2rem);
         opacity: 0;
     }
 
     70% {
-        transform: translateY(-3rem);
+        transform: translateY(-2rem);
         opacity: 0;
     }
 }
