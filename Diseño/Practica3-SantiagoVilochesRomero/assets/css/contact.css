@@ -1,9 +1,10 @@
 header {
     aspect-ratio: 16/5;
     background-image: url(../img/buceo2.jpg);
-    background-position: center center;
+    background-position: center -250px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .hero-content {
@@ -12,7 +13,7 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-} 
+}
 
 .hero-content h1 {
     font-size: var(--subtitle-hero-size);
@@ -21,5 +22,242 @@ header {
     width: 20%;
     margin-left: 20rem;
     color: var(--secondary-color);
-    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------ GENERAL CONTACT STYLES ------------- */
+.generalContact {
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: start;
+    align-content: start;
+    margin-bottom: var(--mb-sections);
+    column-gap: 10%;
+}
+
+.contactInfo {
+    flex: 1;
+}
+
+.contactInfo .title {
+    margin-bottom: 50px;
+}
+
+.sectionTitle {
+    font-family: "Sansation Bold", Montserrat, sans-serif;
+    font-size: var(--title-section-size);
+    color: var(--primary-color);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.sectionSubtitle {
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-medium);
+    font-size: var(--subtitle-section-size);
+    color: var(--detail-color);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    line-height: 1.8rem;
+}
+
+.contactInfo .content {
+    max-width: 700px;
+}
+
+.contactInfo .content p {
+    font-size: var(--text-size);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    line-height: 1.9rem;
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+}
+
+.contactInfo .content ul {
+    font-size: var(--text-size);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    line-height: 1.9rem;
+    color: var(--primary-color);
+}
+
+.contactInfo .content ul li {
+    margin-bottom: 1.1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    gap: 2rem;
+}
+
+.contactInfo .content ul li i {
+    width: 20px;
+}
+
+.line {
+    width: 100%;
+    max-width: 550px;
+    height: 1px;
+    background-color: rgb(169, 169, 169);
+    margin-bottom: 2.5rem;
+}
+
+.contactForm {
+    flex: 1;
+}
+
+.contactForm .title {
+    margin-bottom: 50px;
+}
+
+.contactForm form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+    gap: 1.25rem;
+}
+
+.contactForm form * {
+    flex: 1;
+    width: 100%;
+    max-width: 550px;
+    min-height: 60px;
+    border: none;
+    outline: none;
+    background: none;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 2px;
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    font-size: var(--size-text);
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    resize: none;
+}
+
+.contactForm form input:focus,
+.contactForm form textarea:focus {
+    border-color: var(--detail-color);
+}
+
+.contactForm form textarea {
+    min-height: 100px;
+}
+
+.contactForm form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: var(--selected-text);
+    cursor: pointer;
+    max-width: 350px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contactForm form button:hover {
+    transform: translateY(-1px);
+    background-color: var(--detail-color);
+}
+
+.banner {
+    background-attachment: fixed;
+    background-image: url(../img/banner_contact.jpg);
+	min-height: 700px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-bottom: var(--mb-sections);
+}
+
+/* ------------------ MAP STYLES ------------- */
+.map {
+    height: 600px;
+    width: 100%;
+    margin-bottom: var(--mb-sections);
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------ WORK WITH US STYLES ------------- */
+.workWithUs {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: var(--mb-sections);
+}
+
+.workWithUs .title {
+    text-align: center;
+}
+
+.workWithUs .title .sectionTitle {
+    margin-bottom: 100px;
+}
+
+.workWithUs .content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+}
+
+.workWithUs .content form {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    width: 100%;
+    max-width: 1280px;
+    gap: 1.25rem;
+}
+
+.workWithUs .content form textarea {
+    grid-column: span 4 / auto;
+    min-height: 225px;
+}
+
+.workWithUs .content form * {
+    width: 100%;
+    min-height: 60px;
+    border: none;
+    outline: none;
+    background: none;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 2px;
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    font-size: var(--size-text);
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    resize: none;
+}
+
+.workWithUs .content form input:focus,
+.workWithUs .content form textarea:focus {
+    border-color: var(--detail-color);
+}
+
+.workWithUs .content form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: var(--selected-text);
+    cursor: pointer;
+    max-width: 350px;
+    transition: all 0.3s ease-in-out;
+    margin-inline: auto;
+    grid-column: span 4 / auto;
+}
+
+.workWithUs .content form button:hover {
+    transform: translateY(-1px);
+    background-color: var(--detail-color);
 }
