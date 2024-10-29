@@ -394,6 +394,124 @@ header {
     font-size: 2rem;
 }
 
+/*--- STONE ---------------------------------------------------------------------*/
+
+.stone-by {
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.stone-by article {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    height: 100%;
+}
+
+.stone-izda {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.inalco {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/inalco.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 16/7;
+}
+
+.stone-txt {
+    flex: 1;
+}
+
+.stone-txt h1 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 16rem;
+}
+
+.stone-grey {
+    flex: 1;
+    width: 100%;
+    background-image: url(../img/grey-stone.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 16/7;
+}
+
+.stone-dcha {
+    flex: 1;
+}
+
+.stone-dcha h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: NouvelBold;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign-2 {
+    font-family: autography2;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.quote { 
+    margin-top: auto;
+    width: 25rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: right;
+
+    margin-left: auto;
+}
+
+/*--- UMBRA ---------------------------------------------------------------------*/
+
+
+
+/*--- GEO ---------------------------------------------------------------------*/
+
+.geo {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.geo-izda {
+    flex: 2;
+    aspect-ratio: 7/8;
+    background-image: url(../img/geo.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.geo-dcha  {
+    flex: 3;
+}
+
+
 @media screen and (max-width: 1400px) {
     body {
         background-color: lightcoral;
@@ -441,6 +559,10 @@ header {
         background-color: lightseagreen;
     }
 
+    .motto-body {
+        margin-top: 1rem;
+    }
+
     .main-pic {
         flex: 1 0 40%;
     }
@@ -476,6 +598,46 @@ header {
     .motto-legend span:nth-child(10),
     .motto-legend span:nth-child(11) {
         display: none;
+    }
+
+    .nature-by article {
+        flex-direction: column-reverse;
+    }
+
+    .nature-dcha {
+        width: 100%;
+    }
+
+    .literal {
+        flex: 1;
+        aspect-ratio: 2/7;
+    }
+
+    .nature-pic {
+        flex: 1;
+        aspect-ratio: 2/7;
+    }
+
+    .narrow {
+        display: flex !important;
+    }
+
+    .wide {
+        display: none !important;
+    }
+    
+    .nature-izda {
+        margin-top: 2rem !important;
+    }
+
+    .forest {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    .forest-pic {
+        width: 100%;
+        aspect-ratio: 16/8;
     }
 }
 
