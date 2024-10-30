@@ -82,6 +82,8 @@ header {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
+    margin-top: 10px;
 }
 
 .motto-body {
@@ -263,7 +265,12 @@ header {
 
 .nature-by h1 {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1.333rem + 0.556vw, 2rem);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .lower {
@@ -272,7 +279,7 @@ header {
 
 .sign-miyaki {
     font-family: autography;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1.333rem + 0.556vw, 2rem);
     font-weight: 200;
 }
 
@@ -433,13 +440,13 @@ header {
     flex: 1;
 }
 
-.stone-txt h1 {
+.collection {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
     font-family: Montserrat;
     font-weight: 700;
-    font-size: 16rem;
+    font-size: clamp(5rem, 1.333rem + 12.222vw, 16rem);
 }
 
 .stone-grey {
@@ -454,11 +461,16 @@ header {
 
 .stone-dcha {
     flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .stone-dcha h1 {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1.333rem + 0.556vw, 2rem);
     font-family: NouvelBold;
 
     display: flex;
@@ -469,7 +481,7 @@ header {
 
 .sign-2 {
     font-family: autography2;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1.333rem + 0.556vw, 2rem);
     font-weight: 200;
 }
 
@@ -494,8 +506,9 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-top: 4rem;
+    gap: 2rem;
 }
 
 .geo-izda {
@@ -505,12 +518,151 @@ header {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 9;
 }
+
+.geo-txt {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 99;
+    color: white;
+}
+
+.geo-finish {
+    position: absolute;
+    bottom: 1.2rem;
+    right: .8rem;
+    z-index: 99;
+    color: white;
+
+    margin: 0;
+    font-family: Montserrat;
+    font-size: clamp(0.9rem, 0.833rem + 0.222vw, 1.1rem);
+    font-weight: 200;
+}
+
 
 .geo-dcha  {
     flex: 3;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.geo-dcha-abajo {
+    width: 100%;
+
+    background-image: url(../img/geo2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    aspect-ratio: 8/3;
+}
+
+/*--- SHOWROOM 1  ---------------------------------------------------------------------*/
+
+.section-name-2 {
+    font-family: NouvelBold;
+    font-size: clamp(2rem, 1.333rem + 2.222vw, 4rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 4rem 0;
+}
+
+.showroom-1 {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.showroom-1-izda {
+    flex: 1;
+    background-image: url(../img/showroom-inalco.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 3/4;
+    position: relative;
+}
+
+.inalco-living-1, .inalco-living-2, .inalco-kitchen {
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+    letter-spacing: .1rem;
+}
+
+.inalco-living-1 {
+    left: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+    top: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+}
+
+.inalco-living-2 {
+    bottom: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+    left: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+}
+
+.inalco-kitchen {
+    right: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+    top: clamp(1rem, 0.667rem + 1.111vw, 2rem);
+}
+
+.showroom-1-dcha {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.showroom-1-dcha-up {
+    width: 100%;
+    flex: 6;
+    background-image: url(../img/showroom2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.showroom-1-dcha-down {
+    width: 100%;
+    flex: 4;
+    background-image: url(../img/living-showrrom.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/*--- SHOWROOM 1  ---------------------------------------------------------------------*/
+
+.showroom-2 {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-image: url(../img/kitchen-showroom.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    margin-top: 2rem;
+}
+
+/* -------------- MEDIA QUERIES ----------- */
 
 @media screen and (max-width: 1400px) {
     body {
@@ -528,6 +680,14 @@ header {
     .motto-legend span:nth-child(13),
     .motto-legend span:nth-child(12) {
         display: none;
+    }
+
+    .stone-by article {
+        flex-direction: column;
+    }
+
+    .quote {
+        margin: 4rem 0 2rem auto;
     }
 }
 
@@ -639,9 +799,26 @@ header {
         width: 100%;
         aspect-ratio: 16/8;
     }
+
+    .geo {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
+
+    .showroom-1 {
+        flex-direction: column-reverse;
+    }
+
+    .showroom-1-dcha-up {
+        aspect-ratio: 16/9;
+    }
+
+    .showroom-1-dcha-down {
+        aspect-ratio: 16/9;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 510px) {
     body {
         background-color: lightgoldenrodyellow;
     }
@@ -657,5 +834,13 @@ header {
     .motto-legend span:nth-child(10),
     .motto-legend span:nth-child(11) {
         display: none;
+    }
+
+    .nature-by h1 {
+        justify-content: center;
+    }
+
+    .stone-dcha h1 {
+        justify-content: center;
     }
 }
