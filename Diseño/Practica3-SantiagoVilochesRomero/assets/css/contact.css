@@ -1,7 +1,8 @@
 header {
-    aspect-ratio: 16/5;
+    width: 100%;
+    height: 80vh;
     background-image: url(../img/buceo2.jpg);
-    background-position: center -250px;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -169,12 +170,12 @@ header {
 .banner {
     background-attachment: fixed;
     background-image: url(../img/banner_contact.jpg);
-	min-height: 700px;
-	width: 100%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	margin-bottom: var(--mb-sections);
+    min-height: 700px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: var(--mb-sections);
 }
 
 /* ------------------ MAP STYLES ------------- */
@@ -260,4 +261,56 @@ header {
 .workWithUs .content form button:hover {
     transform: translateY(-1px);
     background-color: var(--detail-color);
+}
+
+/* ---------------- MEDIA QUERIES ------------ */
+@media screen and (max-width: 1450px) {
+    .hero-content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        margin: 0;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .generalContact {
+        flex-flow: column;
+    }
+
+    .contactInfo {
+        margin-bottom: 100px;
+    }
+
+    .contactForm {
+        width: 100%;
+    }
+
+    /* work with us */
+    .workWithUs .content form {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    .workWithUs .content input {
+        grid-column: span 1;
+    }
+
+    .workWithUs .content textarea,
+    .workWithUs .content button {
+        grid-column: span 2 !important;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .workWithUs .content form {
+        grid-template-columns: 1fr;
+    }
+
+    .workWithUs .content form * {
+        grid-column: span 1 !important;
+    }
 }

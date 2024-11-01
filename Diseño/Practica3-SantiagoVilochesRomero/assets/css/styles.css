@@ -191,6 +191,24 @@ a {
     text-decoration: none;
 }
 
+.sectionTitle {
+    font-family: "Sansation Bold", Montserrat, sans-serif;
+    font-size: var(--title-section-size);
+    color: var(--primary-color);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.sectionSubtitle {
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-medium);
+    font-size: var(--subtitle-section-size);
+    color: var(--detail-color);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    line-height: 1.8rem;
+}
+
 /* General styles */
 header {
     display: flex;
@@ -271,6 +289,7 @@ header {
     height: 3em;
     /* Define the transition for transforming the SVG */
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 99999;
 }
 
 .invert {
@@ -315,6 +334,7 @@ header {
     background-color: var(--secondary-color);
     gap: 8rem;
     border-radius: 3px;
+    z-index: 9999;
 }
 
 .view {
@@ -481,6 +501,7 @@ footer {
 
 /* -------------- MEDIA QUERIES ----------- */
 @media screen and (max-width: 1450px) {
+
     .footerColumns {
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
@@ -504,12 +525,30 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+    .list-nav {
+        width: 100%;
+    }
+
     .footerColumns {
         grid-template-columns: 1fr;
     }
 
     .rights {
         display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .list-nav {
+        width: 87vw;
+        background-color: white;
+    }
+
+    .menu {
+        backdrop-filter: blur(30px);
+        box-shadow: Opx Opx 30px rgba(227, 228, 237, 0.37);
+        border: 2px solid rgba(255, 255, 255, 0.18);
+        background-color: rgba(181, 181, 181, .4);
     }
 }

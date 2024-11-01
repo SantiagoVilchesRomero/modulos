@@ -1,12 +1,12 @@
 header {
-    /* height: 100vh;
-    width: 100%; */
-    aspect-ratio: 16/8;
+    height: 100vh;
+    width: 100%;
     background-image: url(../img/hero.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin-bottom: var(--mb-sections);
 }
 
 .hero-content {
@@ -89,4 +89,274 @@ header {
         transform: translateY(-2rem);
         opacity: 0;
     }
+}
+
+/* -------------- WHY DP STYLES --------------*/
+.whyDP {
+	width: 100%;
+	margin-bottom: var(--mb-sections);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.whyDPTitle {
+	text-align: center;
+	width: 90%;
+	margin-inline: auto;
+	grid-column: span 3;
+	margin-bottom: 3.125rem;
+}
+
+.whyDPCaracteristicas {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: end;
+	align-content: end;
+	padding-block: 2rem;
+}
+
+.whyDPCaracteristicas .caracteristica {
+	max-width: 16.25rem;
+	text-align: center;
+}
+
+.whyDPCaracteristicas .caracteristica .icono {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 45px;
+	margin-bottom: 1rem;
+}
+
+.whyDPCaracteristicas .caracteristica:first-child .icono {
+	background-image: url(../img/motorcycle-solid.svg);
+}
+.whyDPCaracteristicas .caracteristica:last-child .icono {
+	background-image: url(../img/bolt-solid.svg);
+}
+
+.whyDPCaracteristicas .caracteristica h4 {
+	font-size: var(--selected-text);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-medium);
+	margin-bottom: 1rem;
+	color: var(--primary-color);
+}
+
+.whyDPCaracteristicas .caracteristica p {
+	font-size: var(--second-text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	letter-spacing: 0.05rem;
+	line-height: 1.3rem;
+	color: var(--primary-color);
+}
+
+.whyDPImages {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.whyDPImages .imagePrincipal {
+	flex: 1;
+	height: 540px;
+	max-width: 400px;
+	background-image: url(../img/buceo1.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transform: rotate(-2deg);
+	position: relative;
+	transition: all 0.5s ease-in-out;
+}
+
+.whyDPImages .imagePrincipal .imageSecundaria {
+	width: 230px;
+	height: 340px;
+	background-image: url(../img/motocross5.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -7rem;
+	right: -3rem;
+	transform: rotate(4deg);
+	transition: all 0.5s ease-in-out;
+}
+
+.whyDPImages .imagePrincipal:hover {
+	transform: rotate(-3deg);
+}
+
+.whyDPImages .imagePrincipal:hover .imageSecundaria {
+	transform: rotate(7deg);
+}
+
+.p2 {
+	display: none;
+	background-image: url(../img/home/whyUs1.jpg) !important;
+}
+
+.whyDPContent {
+	padding-block: 2rem;
+}
+
+.whyDPContent h3 {
+	font-size: var(--selected-text);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-medium);
+	margin-bottom: 1rem;
+	max-width: 300px;
+	line-height: 2rem;
+	color: var(--primary-color);
+}
+
+.whyDPContent p {
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 1.9rem;
+	max-width: 325px;
+	color: var(--primary-color);
+}
+
+.whyDPContent p.firstChild {
+	margin-bottom: 2rem;
+}
+
+/* ---------------- MEDIA QUERIES ------------ */
+@media screen and (max-width: 1700px) {
+	.whyDP {
+		grid-template-columns: 1fr 1.5fr 1fr;
+	}
+}
+
+@media screen and (max-width: 1450px) {
+    .hero-content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content .motto h1 {
+        margin: 0;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+	.whyDP {
+		grid-template-columns: 1.5fr 1fr;
+	}
+
+	.whyDPCaracteristicas {
+		grid-column: span 3;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		margin-bottom: 50px;
+	}
+
+	.whyDPContent {
+		width: 80%;
+	}
+
+	.whyDPContent * {
+		max-width: none !important;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.whyDP {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.whyDPContent {
+		padding-left: 3rem;
+		width: 90%;
+	}
+
+	.whyDPImages .imagePrincipal {
+		height: 450px;
+		max-width: 320px;
+	}
+
+	.whyDPImages .imagePrincipal .imageSecundaria {
+		height: 225px;
+		width: 150px;
+		bottom: -4rem;
+		right: -2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.whyDP {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: var(--mb-sections);
+	}
+
+	.whyDPCaracteristicas {
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.whyDPImages {
+		grid-column: span 3;
+		gap: 1rem;
+		justify-content: space-between;
+		margin-bottom: 50px;
+	}
+
+	.whyDPContent {
+		grid-column: span 3;
+	}
+
+	.whyDPImages .imagePrincipal .imageSecundaria {
+		display: none;
+	}
+
+	.whyDPImages .imagePrincipal:hover {
+		transform: none;
+		cursor: crosshair;
+		filter: grayscale(0.7);
+	}
+
+	.whyDP .imagePrincipal {
+		transform: none;
+	}
+
+	.whyDPContent {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.p2 {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.whyDPCaracteristicas {
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	.whyDPImages {
+		flex-flow: column;
+		width: 100%;
+	}
+
+	.whyDPImages .imagePrincipal:first-child {
+		background-position: center 80%;
+	}
+
+	.whyDPImages .imagePrincipal {
+		flex: 1;
+		min-height: 300px;
+		min-width: 100%;
+	}
 }
