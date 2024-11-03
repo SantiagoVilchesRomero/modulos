@@ -60,7 +60,7 @@ header {
     font-family: 'Sansation Bold';
 }
 
-.athletes-cave-diving{
+.cave-diving{
     display: none;
 }
 
@@ -74,7 +74,494 @@ header {
 
 .show {
     display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: var(--mb-sections);
 }
+
+/* --------- cave-diving ------------ */
+.cave-diving-Content {
+	flex: 1;
+}
+
+.cave-diving-Content .sectionTitle {
+	margin-bottom: 50px;
+}
+
+.cave-diving-Images {
+	flex: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: end;
+	align-content: end;
+	gap: 2rem;
+}
+
+.cave-diving-Images .image {
+	width: 70%;
+	min-height: 300px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all 0.5s ease-in-out;
+	cursor: crosshair;
+}
+
+.cave-diving-Images .image:hover {
+	width: 80%;
+}
+
+.cave-diving-Images .image:first-child {
+	background-image: url(../img/buceo5.jpg);
+}
+
+.cave-diving-Images .image:nth-child(2) {
+	align-self: flex-start;
+	background-image: url(../img/buceo6.jpg);
+}
+
+.cave-diving-Content .content {
+	padding-right: 10rem;
+}
+
+.cave-diving-Content .content p {
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 1.9rem;
+	color: var(--primary-color);
+}
+
+.cave-diving-Content .content p:not(.cave-diving-Content .content p:last-child) {
+	margin-bottom: 2rem;
+}
+
+.cave-diving-Content .content ul {
+	list-style: none;
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 2.4rem;
+	color: var(--primary-color);
+	margin-bottom: 2rem;
+}
+
+.cave-diving-Content .content ul li {
+	transform: translateX(30px);
+	position: relative;
+}
+
+.cave-diving-Content .content ul li::before {
+	content: "";
+	width: 4px;
+	border-radius: 1px;
+	height: 40%;
+	background-color: var(--detail-color);
+	position: absolute;
+	top: 50%;
+	left: -15px;
+	transform: translateY(-50%);
+}
+
+/* ------------- TOP ATHLETES CAVE DIVING ------------ */
+.cave-diving-athletes {
+	width: 100%;
+	text-align: center;
+	margin-bottom: var(--mb-sections);
+    margin-top: var(--mb-sections);
+}
+
+.cave-diving-athletes h2 {
+	margin-bottom: 100px;
+}
+
+.athletes-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	grid-auto-rows: minmax(300px, 1fr);
+	gap: 1.5rem;
+}
+
+.row-span-2 {
+	grid-row: span 2 / auto;
+}
+
+.activity {
+	border-radius: 2px;
+	cursor: crosshair;
+	overflow: hidden;
+	position: relative;
+}
+
+.activity a i {
+	color: var(--detail-color);
+	margin-right: 7px;
+	transition: all 0.3s ease-in-out;
+}
+
+.activity a {
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	bottom: -50px;
+	transform: translateX(-50%);
+
+	font-family: "Sansation";
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	font-size: var(--selected-text);
+	letter-spacing: 0.2rem;
+	transition-property: bottom, color;
+	transition-duration: 0.5s, 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+.activity .img {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: all 0.5s ease-in-out;
+}
+
+.activity:hover .img {
+	transform: scale(1.07);
+	filter: brightness(0.5);
+}
+
+.activity:hover a {
+	bottom: 40px;
+}
+
+.activity a:hover i {
+	margin-right: 15px;
+}
+
+.cave-diving-athletes .activity:first-child .img {
+	background-image: url(../img/at-buceo1.jpg);
+}
+.cave-diving-athletes .activity:nth-child(2) .img {
+	background-image: url(../img/at-buceo2.jpg);
+}
+.cave-diving-athletes .activity:nth-child(3) .img {
+	background-image: url(../img/at-buceo3.jpg);
+    background-position: 0 0;
+}
+.cave-diving-athletes .activity:nth-child(4) .img {
+	background-image: url(../img/at-buceo4.jpg);
+    background-position: 0 0;
+}
+.cave-diving-athletes .activity:last-child .img {
+	background-image: url(../img/at-buceo5.jpg);
+}
+
+/* ------------------ ENGLAND STYLES -------------- */
+.englandContent {
+	flex: 1;
+}
+
+.englandContent .sectionTitle {
+	margin-bottom: 50px;
+}
+
+.englandContent .title {
+	text-align: right;
+}
+
+.englandImages {
+	flex: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: end;
+	align-content: end;
+	gap: 2rem;
+}
+
+.englandImages .image {
+	width: 70%;
+	min-height: 300px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all 0.5s ease-in-out;
+	cursor: crosshair;
+}
+
+.englandImages .image:hover {
+	width: 80%;
+}
+
+.englandImages .image:first-child {
+	background-image: url(../img/motocross3.jpg);
+}
+
+.englandImages .image:nth-child(2) {
+	align-self: flex-start;
+	background-image: url(../img/motocross5.jpg);
+}
+
+.englandContent .content {
+	padding-left: 10rem;
+	text-align: right;
+}
+
+.englandContent .content p {
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 1.9rem;
+	color: var(--primary-color);
+}
+
+.englandContent .content p:not(.englandContent .content p:last-child) {
+	margin-bottom: 2rem;
+}
+
+.englandContent .content ul {
+	list-style: none;
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 2.4rem;
+	color: var(--primary-color);
+	margin-bottom: 2rem;
+}
+
+.englandContent .content ul li {
+	transform: translateX(-30px);
+	position: relative;
+}
+
+.englandContent .content ul li::before {
+	content: "";
+	width: 4px;
+	border-radius: 1px;
+	height: 40%;
+	background-color: var(--detail-color);
+	position: absolute;
+	top: 50%;
+	right: -15px;
+	transform: translateY(-50%);
+}
+
+/* ----------------------- ENGLAND ACTIVITIES ---------------- */
+.englandActivities {
+	width: 100%;
+	text-align: center;
+	margin-bottom: var(--mb-sections);
+    margin-top: var(--mb-sections);
+}
+
+.activities-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	grid-auto-rows: minmax(300px, 1fr);
+	gap: 1.5rem;
+}
+
+.activity {
+	border-radius: 2px;
+	cursor: crosshair;
+	overflow: hidden;
+	position: relative;
+}
+
+.activity a i {
+	color: var(--detail-color);
+	margin-right: 7px;
+	transition: all 0.3s ease-in-out;
+}
+
+.activity a {
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	bottom: -50px;
+	transform: translateX(-50%);
+
+	font-family: "Sansation";
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	font-size: var(--selected-text);
+	letter-spacing: 0.2rem;
+	transition-property: bottom, color;
+	transition-duration: 0.5s, 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+.activity .img {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: all 0.5s ease-in-out;
+}
+
+.activity:hover .img {
+	transform: scale(1.07);
+	filter: brightness(0.5);
+}
+
+.activity:hover a {
+	bottom: 40px;
+}
+
+.activity a:hover i {
+	margin-right: 15px;
+}
+
+.englandActivities h2 {
+	margin-bottom: 100px;
+}
+
+.englandActivities .activity:first-child .img {
+	background-image: url(../img/at-moto1.jpg);
+    background-position: 0 0;
+}
+.englandActivities .activity:nth-child(2) .img {
+	background-image: url(../img/at-moto2.jpg);
+    background-position: 0 0;
+}
+.englandActivities .activity:nth-child(3) .img {
+	background-image: url(../img/at-moto3.jpg);
+    background-position: 0 0;
+}
+.englandActivities .activity:nth-child(4) .img {
+	background-image: url(../img/at-moto4.jpg);
+    background-position: 0 0;
+}
+.englandActivities .activity:last-child .img {
+	background-image: url(../img/at-moto5.jpg);
+    background-position: 0 0;
+}
+
+/* --------- FRANCE STYLES ------------ */
+.franceContent {
+	flex: 1;
+}
+
+.franceContent .sectionTitle {
+	margin-bottom: 50px;
+}
+
+.franceImages {
+	flex: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: end;
+	align-content: end;
+	gap: 2rem;
+}
+
+.franceImages .image {
+	width: 70%;
+	min-height: 300px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all 0.5s ease-in-out;
+	cursor: crosshair;
+}
+
+.franceImages .image:hover {
+	width: 80%;
+}
+
+.franceImages .image:first-child {
+	background-image: url(../img/aladelta3.jpg);
+}
+
+.franceImages .image:nth-child(2) {
+	align-self: flex-start;
+	background-image: url(../img/aladelta4.jpg);
+}
+
+.franceContent .content {
+	padding-right: 10rem;
+}
+
+.franceContent .content p {
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 1.9rem;
+	color: var(--primary-color);
+}
+
+.franceContent .content p:not(.spainContent .content p:last-child) {
+	margin-bottom: 2rem;
+}
+
+.franceContent .content ul {
+	list-style: none;
+	font-size: var(--text-size);
+	font-family: Montserrat, sans-serif;
+	font-weight: var(--mont-extralight);
+	line-height: 2.4rem;
+	color: var(--primary-color);
+	margin-bottom: 2rem;
+}
+
+.franceContent .content ul li {
+	transform: translateX(30px);
+	position: relative;
+}
+
+.franceContent .content ul li::before {
+	content: "";
+	width: 4px;
+	border-radius: 1px;
+	height: 40%;
+	background-color: var(--detail-color);
+	position: absolute;
+	top: 50%;
+	left: -15px;
+	transform: translateY(-50%);
+}
+
+/* ------------- TOP ACTIVITIES FRANCE ------------ */
+.franceActivities {
+	width: 100%;
+	text-align: center;
+	margin-bottom: var(--mb-sections);
+    margin-top: var(--mb-sections);
+}
+
+.franceActivities h2 {
+	margin-bottom: 100px;
+}
+
+.franceActivities .activity:first-child .img {
+	background-image: url(../img/at-ala1.jpg);
+}
+.franceActivities .activity:nth-child(2) .img {
+	background-image: url(../img/at-ala2.jpg);
+    background-position: 0 0;
+}
+.franceActivities .activity:nth-child(3) .img {
+	background-image: url(../img/at-ala3.jpg);
+    background-position: 0 0;
+}
+.franceActivities .activity:nth-child(4) .img {
+	background-image: url(../img/at-ala4.jpg);
+    background-position: 0 0;
+}
+.franceActivities .activity:last-child .img {
+	background-image: url(../img/at-ala5.jpg);
+    background-position: 0 0;
+}
+
 
 /* ---------------- MEDIA QUERIES ------------ */
 @media screen and (max-width: 1450px) {
@@ -89,3 +576,85 @@ header {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 1500px) {
+	.cave-diving .cave-diving-Content .content,
+	.athletes-hang-gliding .franceContent .content {
+		padding-right: 5rem;
+	}
+
+	.athletes-motocross .englandContent .content {
+		padding-left: 5rem;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.cave-diving .cave-diving-Images,
+	.athletes-hang-gliding .franceImages,
+	.athletes-motocross .englandImages {
+		flex: 0.75;
+	}
+
+	.cave-diving .cave-diving-Images .image,
+	.athletes-hang-gliding .franceImages .image,
+	.athletes-motocross .englandImages .image {
+		width: 95%;
+	}
+
+	.cave-diving .cave-diving-Images .image:hover,
+	.athletes-hang-gliding .franceImages .image:hover,
+	.athletes-motocross .englandImages .image:hover {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.cave-diving,
+	.athletes-hang-gliding,
+	.athletes-motocross {
+		flex-flow: column;
+	}
+
+	.cave-diving .cave-diving-Content,
+	.athletes-hang-gliding .franceContent,
+	.athletes-motocross .englandContent {
+		margin-bottom: 100px;
+	}
+
+	.cave-diving .cave-diving-Images,
+	.athletes-hang-gliding .franceImages,
+	.athletes-motocross .englandImages {
+		width: 100%;
+
+	}
+
+	.cave-diving .cave-diving-Images .image,
+	.athletes-hang-gliding .franceImages .image,
+	.athletes-motocross .englandImages .image {
+		width: 100%;
+		min-height: 350px !important;
+	}
+
+	.athletes-container {
+		grid-template-columns: 1fr;
+		grid-auto-rows: minmax(400px, 1fr);
+	}
+
+	.cave-diving-Content .content ul li {
+		transform: none;
+		margin-left: 15px;
+		position: relative;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.cave-diving .cave-diving-Content .content,
+	.athletes-hang-gliding .franceContent .content {
+		padding-right: 0;
+	}
+
+	.athletes-motocross .englandContent .content {
+		padding-left: 0;
+	}
+}
+

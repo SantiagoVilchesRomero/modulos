@@ -6,6 +6,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin-bottom: var(--mb-sections);
 }
 
 .hero-content {
@@ -29,7 +30,7 @@ header {
 /* ------------------ GENERAL CONTACT STYLES ------------- */
 .generalContact {
     width: 90%;
-    margin: 5rem auto;
+    margin: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

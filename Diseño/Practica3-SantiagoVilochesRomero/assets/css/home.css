@@ -6,7 +6,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    margin-bottom: var(--mb-sections);
+
 }
 
 .hero-content {
@@ -33,7 +33,7 @@ header {
     width: 20%;
     margin-left: 10rem;
     color: var(--secondary-color);
-    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hero-content .scrool {
@@ -41,7 +41,7 @@ header {
     flex: 1;
 }
 
-.hero-content .scroll > div {
+.hero-content .scroll>div {
     width: 100px;
     height: 100px;
     border: 2px solid var(--secondary-color);
@@ -93,145 +93,252 @@ header {
 
 /* -------------- WHY DP STYLES --------------*/
 .whyDP {
-	width: 100%;
-	margin-bottom: var(--mb-sections);
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-bottom: var(--mb-sections);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 5rem;
 }
 
 .whyDPTitle {
-	text-align: center;
-	width: 90%;
-	margin-inline: auto;
-	grid-column: span 3;
-	margin-bottom: 3.125rem;
+    text-align: center;
+    width: 90%;
+    margin-inline: auto;
+    grid-column: span 3;
+    margin-bottom: 3.125rem;
 }
 
 .whyDPCaracteristicas {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-between;
-	align-items: end;
-	align-content: end;
-	padding-block: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: end;
+    align-content: end;
+    padding-block: 2rem;
 }
 
 .whyDPCaracteristicas .caracteristica {
-	max-width: 16.25rem;
-	text-align: center;
+    max-width: 16.25rem;
+    text-align: center;
 }
 
 .whyDPCaracteristicas .caracteristica .icono {
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-	height: 45px;
-	margin-bottom: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 45px;
+    margin-bottom: 1rem;
 }
 
 .whyDPCaracteristicas .caracteristica:first-child .icono {
-	background-image: url(../img/motorcycle-solid.svg);
+    background-image: url(../img/motorcycle-solid.svg);
 }
+
 .whyDPCaracteristicas .caracteristica:last-child .icono {
-	background-image: url(../img/bolt-solid.svg);
+    background-image: url(../img/bolt-solid.svg);
 }
 
 .whyDPCaracteristicas .caracteristica h4 {
-	font-size: var(--selected-text);
-	font-family: Montserrat, sans-serif;
-	font-weight: var(--mont-medium);
-	margin-bottom: 1rem;
-	color: var(--primary-color);
+    font-size: var(--selected-text);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-medium);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .whyDPCaracteristicas .caracteristica p {
-	font-size: var(--second-text-size);
-	font-family: Montserrat, sans-serif;
-	font-weight: var(--mont-extralight);
-	letter-spacing: 0.05rem;
-	line-height: 1.3rem;
-	color: var(--primary-color);
+    font-size: var(--second-text-size);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    letter-spacing: 0.05rem;
+    line-height: 1.3rem;
+    color: var(--primary-color);
 }
 
 .whyDPImages {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .whyDPImages .imagePrincipal {
-	flex: 1;
-	height: 540px;
-	max-width: 400px;
-	background-image: url(../img/buceo1.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	transform: rotate(-2deg);
-	position: relative;
-	transition: all 0.5s ease-in-out;
+    flex: 1;
+    height: 540px;
+    max-width: 400px;
+    background-image: url(../img/buceo1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(-2deg);
+    position: relative;
+    transition: all 0.5s ease-in-out;
 }
 
 .whyDPImages .imagePrincipal .imageSecundaria {
-	width: 230px;
-	height: 340px;
-	background-image: url(../img/motocross5.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom: -7rem;
-	right: -3rem;
-	transform: rotate(4deg);
-	transition: all 0.5s ease-in-out;
+    width: 230px;
+    height: 340px;
+    background-image: url(../img/motocross5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -7rem;
+    right: -3rem;
+    transform: rotate(4deg);
+    transition: all 0.5s ease-in-out;
 }
 
 .whyDPImages .imagePrincipal:hover {
-	transform: rotate(-3deg);
+    transform: rotate(-3deg);
 }
 
 .whyDPImages .imagePrincipal:hover .imageSecundaria {
-	transform: rotate(7deg);
+    transform: rotate(7deg);
 }
 
 .p2 {
-	display: none;
-	background-image: url(../img/home/whyUs1.jpg) !important;
+    display: none;
+    background-image: url(../img/home/whyUs1.jpg) !important;
 }
 
 .whyDPContent {
-	padding-block: 2rem;
+    padding-block: 2rem;
 }
 
 .whyDPContent h3 {
-	font-size: var(--selected-text);
-	font-family: Montserrat, sans-serif;
-	font-weight: var(--mont-medium);
-	margin-bottom: 1rem;
-	max-width: 300px;
-	line-height: 2rem;
-	color: var(--primary-color);
+    font-size: var(--selected-text);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-medium);
+    margin-bottom: 1rem;
+    max-width: 300px;
+    line-height: 2rem;
+    color: var(--primary-color);
 }
 
 .whyDPContent p {
-	font-size: var(--text-size);
-	font-family: Montserrat, sans-serif;
-	font-weight: var(--mont-extralight);
-	line-height: 1.9rem;
-	max-width: 325px;
-	color: var(--primary-color);
+    font-size: var(--text-size);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    line-height: 1.9rem;
+    max-width: 325px;
+    color: var(--primary-color);
 }
 
 .whyDPContent p.firstChild {
-	margin-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* -------------------- CAVE DIVING STYLES ----------------- */
+.cave-diving {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    margin-bottom: var(--mb-sections);
+}
+
+.cave-diving-Content {
+    flex: 9;
+    padding: 3rem;
+    padding: 6rem 6rem 6rem 0;
+    background-color: white;
+    transform: translateX(6rem);
+    border-radius: 3px;
+}
+
+.cave-diving-Content .sectionTitle {
+    margin-bottom: 3.125rem;
+}
+
+.cave-diving-Content p {
+    font-size: var(--text-size);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    line-height: 1.9rem;
+    color: var(--primary-color);
+}
+
+.cave-diving-Content p:not(.cave-diving-Content p:last-child) {
+    margin-bottom: 2rem;
+}
+
+.cave-divingImage {
+    flex: 10;
+    min-height: 1000px;
+    background: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/buceo4.jpg);
+}
+
+/* -------------------- Motocross STYLES ----------------- */
+.motocross {
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    margin-bottom: var(--mb-sections);
+}
+
+.motocross-Content {
+    flex: 9;
+    padding: 3rem;
+    padding: 6rem 0 6rem 6rem;
+    background-color: white;
+    transform: translateX(-6rem);
+    border-radius: 3px;
+}
+
+.motocross-Content .sectionTitle {
+    margin-bottom: 3.125rem;
+}
+
+.motocross-Content p {
+    font-size: var(--text-size);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    line-height: 1.9rem;
+    color: var(--primary-color);
+}
+
+.motocross-Content p:not(.motocross-Content p:last-child) {
+    margin-bottom: 2rem;
+}
+
+.motocrossImage {
+    flex: 10;
+    min-height: 1000px;
+    background: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/motocross4.jpg);
+}
+
+/* ---------------- Hang-gliding ------------ */
+.hang-glidingImage {
+    flex: 10;
+    min-height: 1000px;
+    background: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/aladelta2.jpg);
 }
 
 /* ---------------- MEDIA QUERIES ------------ */
 @media screen and (max-width: 1700px) {
-	.whyDP {
-		grid-template-columns: 1fr 1.5fr 1fr;
-	}
+    .whyDP {
+        grid-template-columns: 1fr 1.5fr 1fr;
+    }
 }
 
 @media screen and (max-width: 1450px) {
@@ -248,115 +355,165 @@ header {
 }
 
 @media screen and (max-width: 1280px) {
-	.whyDP {
-		grid-template-columns: 1.5fr 1fr;
-	}
 
-	.whyDPCaracteristicas {
-		grid-column: span 3;
-		flex-flow: row wrap;
-		justify-content: space-evenly;
-		margin-bottom: 50px;
-	}
+    .whyDP {
+        grid-template-columns: 1.5fr 1fr;
+    }
 
-	.whyDPContent {
-		width: 80%;
-	}
+    .whyDPCaracteristicas {
+        grid-column: span 3;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        margin-bottom: 50px;
+    }
 
-	.whyDPContent * {
-		max-width: none !important;
-	}
+    .whyDPContent {
+        width: 80%;
+    }
+
+    .whyDPContent * {
+        max-width: none !important;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-	.whyDP {
-		grid-template-columns: 1fr 1fr;
-	}
+    .whyDP {
+        grid-template-columns: 1fr 1fr;
+    }
 
-	.whyDPContent {
-		padding-left: 3rem;
-		width: 90%;
-	}
+    .whyDPContent {
+        padding-left: 3rem;
+        width: 90%;
+    }
 
-	.whyDPImages .imagePrincipal {
-		height: 450px;
-		max-width: 320px;
-	}
+    .whyDPImages .imagePrincipal {
+        height: 450px;
+        max-width: 320px;
+    }
 
-	.whyDPImages .imagePrincipal .imageSecundaria {
-		height: 225px;
-		width: 150px;
-		bottom: -4rem;
-		right: -2rem;
-	}
+    .whyDPImages .imagePrincipal .imageSecundaria {
+        height: 225px;
+        width: 150px;
+        bottom: -4rem;
+        right: -2rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .cave-diving {
+        flex-direction: column;
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    .motocross {
+        flex-direction: column;
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    .cave-divingImage {
+        min-height: 500px;
+        flex: 1;
+        width: 100%;
+        height: 200px !important;
+    }
+
+    .hang-glidingImage {
+        min-height: 500px;
+        flex: 1;
+        width: 100%;
+        height: 200px !important;
+    }
+
+    .motocrossImage {
+        min-height: 500px;
+        flex: 1;
+        width: 100%;
+        height: 200px !important;
+    }
+
+    .cave-diving-Content {
+        margin: 0 0 1rem 0;
+        padding: 0;
+        background: none;
+        transform: none;
+    }
+
+    .motocross-Content {
+        margin: 0 0 1rem 0;
+        padding: 0;
+        background: none;
+        transform: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
-	.whyDP {
-		width: 90%;
-		margin: 0 auto;
-		margin-bottom: var(--mb-sections);
-	}
+    .whyDP {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: var(--mb-sections);
+    }
 
-	.whyDPCaracteristicas {
-		justify-content: space-between;
-		align-items: center;
-	}
+    .whyDPCaracteristicas {
+        justify-content: space-between;
+        align-items: center;
+    }
 
-	.whyDPImages {
-		grid-column: span 3;
-		gap: 1rem;
-		justify-content: space-between;
-		margin-bottom: 50px;
-	}
+    .whyDPImages {
+        grid-column: span 3;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
 
-	.whyDPContent {
-		grid-column: span 3;
-	}
+    .whyDPContent {
+        grid-column: span 3;
+    }
 
-	.whyDPImages .imagePrincipal .imageSecundaria {
-		display: none;
-	}
+    .whyDPImages .imagePrincipal .imageSecundaria {
+        display: none;
+    }
 
-	.whyDPImages .imagePrincipal:hover {
-		transform: none;
-		cursor: crosshair;
-		filter: grayscale(0.7);
-	}
+    .whyDPImages .imagePrincipal:hover {
+        transform: none;
+        cursor: crosshair;
+        filter: grayscale(0.7);
+    }
 
-	.whyDP .imagePrincipal {
-		transform: none;
-	}
+    .whyDP .imagePrincipal {
+        transform: none;
+    }
 
-	.whyDPContent {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
+    .whyDPContent {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-	.p2 {
-		display: block;
-	}
+    .p2 {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 640px) {
-	.whyDPCaracteristicas {
-		justify-content: center;
-		gap: 2rem;
-	}
+    .whyDPCaracteristicas {
+        justify-content: center;
+        gap: 2rem;
+    }
 
-	.whyDPImages {
-		flex-flow: column;
-		width: 100%;
-	}
+    .whyDPImages {
+        flex-flow: column;
+        width: 100%;
+    }
 
-	.whyDPImages .imagePrincipal:first-child {
-		background-position: center 80%;
-	}
+    .whyDPImages .imagePrincipal:first-child {
+        background-position: center 80%;
+    }
 
-	.whyDPImages .imagePrincipal {
-		flex: 1;
-		min-height: 300px;
-		min-width: 100%;
-	}
+    .whyDPImages .imagePrincipal {
+        flex: 1;
+        min-height: 300px;
+        min-width: 100%;
+    }
 }

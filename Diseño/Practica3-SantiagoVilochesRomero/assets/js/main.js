@@ -13,23 +13,34 @@ $(document).ready(function () {  /* Cuando esté el documento HTML totalmente ca
         }
     })
 
-    $(".cave-daving").click ( function () { 
-        console.log("clicked!");
-        $(".athletes-cave-diving").toggleClass("show");  
+    $(".cave-daving-button").click ( function () { 
+        $(".cave-diving").toggleClass("show");  
         $(".athletes-motocross").removeClass("show");
         $(".athletes-hang-gliding").removeClass("show");
+
+        $('html, body').animate({
+            scrollTop: $(".cave-diving").offset().top
+        }, 50);
     });
 
-    $(".motocross").click ( function () { 
+    $(".motocross-button").click ( function () { 
         $(".athletes-motocross").toggleClass("show");  
-        $(".athletes-cave-diving").removeClass("show");
+        $(".cave-diving").removeClass("show");
         $(".athletes-hang-gliding").removeClass("show");
+
+        $('html, body').animate({
+            scrollTop: $(".athletes-motocross").offset().top
+        }, 50);
     });
 
-    $(".hang-gliding").click ( function () { 
-        console.log("clicked!");
+    $(".hang-gliding-button").click ( function () { 
         $(".athletes-hang-gliding").toggleClass("show");  
-        $(".athletes-cave-diving").removeClass("show");
+        $(".cave-diving-button").removeClass("show");
         $(".athletes-motocross").removeClass("show");
+
+        $('html, body').animate({
+            scrollTop: $(".athletes-hang-gliding").offset().top
+        }, 50);
     });
+
 });
