@@ -1,0 +1,1045 @@
+@font-face {
+    font-family: 'Nouvel Bold';
+    src: url(/fonts/NouvelRBold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel Book';
+    src: url(/fonts/NouvelRBook.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel ExtraBold';
+    src: url(/fonts/NouvelRExtrabold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel Light';
+    src: url(/fonts/NouvelRLight.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel Regular';
+    src: url(/fonts/NouvelRRegular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel SemiBold';
+    src: url(/fonts/NouvelRSemibold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Great Vibes';
+    src: url(/fonts/GreatVibes-Regular.ttf) format('truetype');
+}
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nouvel Regular', sans-serif;
+    color: white;
+    background-color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+body {
+    /* reset de los user agent styles para marggin y padding*/
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imagenes/team/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: 100vw;
+    height: 70vh;
+}
+
+
+
+/* ------------------------------------------CABECERA------------------------------------------ */
+
+
+
+header {
+    position: absolute;
+    display: flex;
+    width: 100%;
+
+    z-index: 100000;
+    justify-content: space-between;
+    transition: 0.6s;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+
+
+/* ------------------------------------ LOGO ------------------------------------ */
+
+
+.logo {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 10vw;
+
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+
+    margin-left: 3vw;
+    margin-top: 0.2vh;
+    margin-bottom: 1vh;
+    transition: 0.6s;
+}
+
+.logo img {
+    margin-top: 1vh;
+    width:18em;
+    cursor: pointer;
+    filter: invert();
+}
+
+
+/* ------------------------------------ MENÚ ------------------------------------ */
+
+
+.main-nav {
+    display: flex;
+    flex-flow: row nowrap;
+
+    font-weight: 300;
+    margin-top: 2.5vh;
+    margin-left: 5vw;
+}
+
+.list-nav {
+    position: relative;
+    display: flex;
+    margin-right: 2vw;
+}
+
+.list-nav li:not(:last-child) {
+    margin-right: 8vw;
+}
+
+.list-nav li {
+    position: relative;
+    text-transform: uppercase;
+    font-size: clamp(0.7rem, 0.557rem + 0.381vw, 0.9rem);
+    font-weight: 600;
+    list-style: none;
+    font-family: Montserrat, "sans serif";
+    margin-right: 4vw;
+}
+
+.list-nav li a::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.list-nav li a:hover {
+    color: white;
+}
+
+.list-nav li a:hover::after {
+    width: 100%;
+}
+
+.link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 0.5px;
+    padding: 0 6px;
+}
+
+.list-nav li a.active {
+    color: white;
+}
+
+.list-nav li a.active::after {
+    width: 100%;
+}
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+
+
+
+/* -------------BUTTON------------- */
+
+
+.btn-reservation {
+    flex: 0.3;
+    margin-top: 2vh;
+    margin-left: 1.7vw;
+    text-align: center;
+}
+
+.btn-reservation button {
+    padding: 1.3em;
+    border: 2px solid white;
+
+    background-color: transparent;
+
+    color: white;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-reservation button:hover {
+    background-color: black;
+}
+
+.our-chef {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100vw;
+    height: 40vh;
+}
+
+.our-chef p {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    color: white;
+    font-family: Great Vibes;
+    font-size: clamp(3rem, 1.571rem + 3.81vw, 5rem);   
+}
+
+
+
+/* ------------------------------------------SECTION 1------------------------------------------ */
+
+
+/* ------------------------------------ SECTION - 1 ------------------------------------ */
+
+
+.section-1 {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: fit-content;
+
+    margin-top: 10vh;
+}
+
+.origins {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+
+    width: 80vw;
+    height: fit-content;
+}
+
+.text-origins {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+
+    width: 45em;
+    height: fit-content;
+}
+
+.text-origins a {
+    width: 11em;
+}
+.text-origins p {
+    width: 45em;
+    line-height: 2.5em;
+    font-size: clamp(0.9rem, 0.864rem + 0.095vw, 0.95rem);
+}
+
+.text-origins img {
+    width: .7em;
+    height: .7em;
+}
+
+.text-origins h2 {
+    font-size: clamp(1.4rem, 0.971rem + 1.143vw, 2rem);
+    font-weight: 400;
+    padding-bottom: .1em;
+    border-bottom: 1px solid white;
+    font-family: Great Vibes;
+}
+
+.text-origins h3 {
+    font-size: clamp(1rem, 0.929rem + 0.19vw, 1.1rem);
+    color: var(--secondary-color);
+    font-weight: 400;
+    /* color: rgb(255, 193, 77); */
+}
+
+.imagen-origins {
+    width: 46em;
+    height: 50em;
+
+    background-image: url(./imagenes/team/majesty.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.section-2 {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: fit-content;
+
+    margin-top: 10vh;
+}
+
+.origins-2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+
+    width: 80vw;
+    height: fit-content;
+}
+
+.text-origins-2 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+
+    width: 45em;
+    height: fit-content;
+}
+
+
+.text-origins-2  p {
+    width: 45em;
+    line-height: 2.5em;
+    font-size: clamp(0.9rem, 0.864rem + 0.095vw, 0.95rem);
+}
+
+.text-origins-2  img {
+    width: .7em;
+    height: .7em;
+}
+
+.text-origins-2  h2 {
+    font-size: clamp(1.4rem, 0.971rem + 1.143vw, 2rem);
+    font-weight: 400;
+    padding-bottom: .1em;
+    border-bottom: 1px solid white;
+    font-family: Great Vibes;
+}
+
+.text-origins-2  h3 {
+    font-size: clamp(1rem, 0.929rem + 0.19vw, 1.1rem);
+    color: var(--secondary-color);
+    font-weight: 400;
+    /* color: rgb(255, 193, 77); */
+}
+
+.imagen-origins-2  {
+    width: 40em;
+    height: 50em;
+
+    background-image: url(./imagenes/team/singular.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.section-3 {
+    display: flex;
+    flex-direction: column;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imagenes/team/section3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: 70vh;
+
+    margin-top: 8vh;
+
+}
+
+.header-section-2 {
+
+    width: 20vw;
+    height: auto;
+
+    margin-top: 5vh;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.37em;
+    font-weight: bolder;
+
+}
+
+.header-section-2 h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4vh;
+}
+
+.parrafo-section2 {
+
+    width: 75vw;
+    height: auto;
+
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 0.833rem + 0.556vw, 1.5rem);
+    font-style: italic;
+    font-weight: 800;
+
+    line-height: 2em;
+
+    color: white;
+}
+
+/* ------------------------------------ SECTION - 5 ------------------------------------ */
+
+.section-5 {
+    display: flex;
+    flex-flow: column wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: fit-content;
+
+    margin-top: 7vh;
+}
+
+.title-our-teammates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80vw;
+    height: fit-content;
+}
+
+.title-our-teammates h2{
+    font-size: clamp(1.8rem, 1.3rem + 1.333vw, 2.5rem);
+    font-weight: 400;
+    font-family: Great Vibes;
+}
+
+.title-our-teammates img {
+    width: .7em;
+    height: .7em;
+}
+
+.team {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+
+    width: 80vw;
+    height: fit-content;
+
+    margin-top: 5vh;
+}
+
+.mate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 15vh; */
+
+    width: 25em;
+    height: 25em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.mate-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    
+    margin-bottom: 10vh;
+
+    cursor: crosshair;
+}
+
+.text-mate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background-color: #00000096;
+    width: 67%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.text-mate h5 {
+    font-weight: 600;
+    color: white;
+    margin: 5px 0;
+}
+
+.text-mate h4 {
+    font-weight: 300;
+    color: white;
+    margin: 5px 0;
+}
+
+
+.mate-container:hover .text-mate {
+    opacity: 1;
+}
+
+#mate-1 {
+    background-image: url(./imagenes/team/oriolCastro.jpg);
+}
+
+#mate-2 {
+    background-image: url(./imagenes/team/Eduard\ Xatruch.jpg);
+}
+
+#mate-3 {
+    background-image: url(./imagenes/team/Mateu\ Casañas.jpeg);
+}
+
+#mate-4 {
+    background-image: url(./imagenes/team/Mario\ Rodriguez.jpg);
+}
+
+#mate-5 {
+    background-image: url(./imagenes/team/Florencia\ Prado.jpg);
+}
+
+#mate-6 {
+    background-image: url(./imagenes/team/Eric\ Andrada.jpg);
+}
+
+
+
+.section-6 {
+    display: flex;
+    flex-direction: column;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imagenes/team/section6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: 70vh;
+
+    margin-top: 8vh;
+
+}
+
+/* -------------CABECERA------------- */
+
+.header-section-6 {
+
+    width: 20vw;
+    height: auto;
+
+    margin-top: 5vh;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.37em;
+    font-weight: bolder;
+
+}
+
+.header-section-6 h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4vh;
+}
+
+.parrafo-section6 {
+
+    width: 75vw;
+    height: auto;
+
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 0.833rem + 0.556vw, 1.5rem);
+    font-style: italic;
+    font-weight: 800;
+
+    line-height: 2em;
+
+    color: white;
+}
+
+/* ------------------------------------ SECTION - 5 ------------------------------------ */
+
+.section-7 {
+    display: flex;
+    flex-flow: column wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: fit-content;
+
+    margin-top: 7vh;
+}
+
+.title-our-waiters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80vw;
+    height: fit-content;
+}
+
+.title-our-waiters h2{
+    font-size: clamp(1.8rem, 1.3rem + 1.333vw, 2.5rem);
+    color: var(--secondary-color);
+    font-weight: 400;
+    font-family: Great Vibes;
+}
+
+.title-our-waiters img {
+    width: .7em;
+    height: .7em;
+}
+
+.waiter-team {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+
+    width: 80vw;
+    height: fit-content;
+
+    margin-top: 5vh;
+}
+
+.waiter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 15vh; */
+
+    width: 25em;
+    height: 25em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.waiter-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    
+    margin-bottom: 10vh;
+
+    cursor: crosshair;
+}
+
+.text-waiter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background-color: #00000096;
+    width: 67%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.text-waiter h5 {
+    font-weight: 600;
+    color: white;
+    margin: 5px 0;
+}
+
+.text-waiter h4 {
+    font-weight: 300;
+    color: white;
+    margin: 5px 0;
+}
+
+
+.waiter-container:hover .text-waiter {
+    opacity: 1;
+}
+
+#waiter-1 {
+    background-image: url(./imagenes/team/camarero1.jpg);
+}
+
+#waiter-2 {
+    background-image: url(./imagenes/team/camarero3.jpg);
+}
+
+#waiter-3 {
+    background-image: url(./imagenes/team/camarero2.jpg);
+}
+
+
+/* ------------------------------ FOOTER ------------------------------------ */
+
+footer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    height: fit-content;
+    color: white;
+    background-color: white;
+    color: black;
+}
+
+.contenedor-footer-top {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+
+    width: 100vw;
+    height: fit-content;
+    /* background-color: #F0B460; */
+
+    margin-top: 6vh;
+}
+
+.logo-footer {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 18%;
+    /* background-color: green; */
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.logo-footer img {
+    width: 70%;
+}
+
+.pages h3 {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+.pages p {
+    font-size: .8rem;
+    margin-bottom: 2.2vh;
+}
+
+.policies h3 {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+.policies p {
+    font-size: .8rem;
+    margin-bottom: 2.2vh;
+}
+
+.social-media {
+    margin-right: 10vw;
+}
+
+.social-media h3 {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+.social-media p {
+    font-size: .8rem;
+    margin-bottom: 2.2vh;
+}
+
+.imagen-social-media {
+    width: 1.4vw;
+    margin-right: .5vw;
+    background-color: aliceblue;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+}
+
+.links svg {
+    margin-right: 1em;
+}
+
+.contenedor-footer-bottom {
+    width: 72vw;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    border-top: 1px solid black;
+    margin-top: 2vh;
+}
+
+.contenedor-footer-bottom p {
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    font-size: .8rem;
+}
+
+/* ------------------------------------------MEDIA QUERIES------------------------------------------ */
+@media only screen and (max-width: 1175px) {
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+        margin-left: 4em;
+
+    }
+
+    .cerrar-menu {
+        margin-top: 4vh;
+    }
+
+    .main-nav {
+        opacity: 0;
+        visibility: hidden;
+
+    }
+
+    header {
+        overflow: unset;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0em;
+        right: 0em;
+        margin: 0%;
+        bottom: 0;
+        gap: 1rem;
+        position: fixed;
+        background-color: rgb(0, 0, 0);
+        /* padding: 2rem; */
+        width: 13em;
+        height: 100vh;
+        align-items: end;
+        justify-content: flex-start;
+        box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .main-nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .list-nav {
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-end; */
+        margin: 0;
+        /* margin-left: 10em; */
+        /* background-color: #25ca8b; */
+    }
+
+    .list-nav li {
+        
+        margin-top: 7vh;
+        font-size: 1rem;
+    }
+}
+    @media only screen and (max-width: 1819px) {
+    .section-1, .origins {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-origins {
+        margin-bottom: 6vh;
+    }
+
+    .imagen-origins-2 {
+        width: 46em;
+        margin-bottom: 6vh;
+    }
+    .our-chef p {
+        top: 38%;
+    }
+}
+
+@media only screen and (max-width: 1101px) {
+.header-section-6, .header-section-2 {
+    width: 100vw;
+}
+
+}
+@media only screen and (max-width: 740px) {
+    .text-origins, .text-origins-2 {
+        width: 90vw;
+    }
+
+    .text-origins p, .text-origins-2 p {
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .item:hover,
+    .item-2:hover {
+        flex: 4.5;
+    }    
+        /* ---------------------- FOOTER ------------------------- */
+    
+        .contenedor-footer-top {
+            flex-wrap: wrap;
+        }
+    
+        .logo-footer {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-bottom: 5vh;
+        }
+    
+        .pages {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 3vh;
+        }
+    
+        .policies {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 3vh;
+        }
+    
+        .social-media {
+            width: 100%;
+            text-align: center;
+            margin-right: 0em;
+            margin-bottom: 3vh;
+        }
+    
+        .pages h3 {
+            font-size: 1.3rem;
+        }
+    
+        .policies h3 {
+            font-size: 1.3rem;
+        }
+    
+        .social-media h3 {
+            font-size: 1.3rem;
+        }
+    
+        .pages p {
+            font-size: 1rem;
+        }
+    
+        .policies p {
+            font-size: 1rem;
+        }
+    
+        .social-media p {
+            font-size: 1rem;
+        }
+    
+        .social-media img {
+            width: 20px;
+        }
+    
+        .contenedor-footer-bottom {
+            width: 80vw;
+        }
+    }

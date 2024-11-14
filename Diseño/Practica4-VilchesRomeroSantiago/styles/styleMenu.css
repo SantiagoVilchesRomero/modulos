@@ -1,0 +1,1320 @@
+@font-face {
+    font-family: 'Nouvel Bold';
+    src: url(/fonts/NouvelRBold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel Book';
+    src: url(/fonts/NouvelRBook.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel ExtraBold';
+    src: url(/fonts/NouvelRExtrabold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel Light';
+    src: url(/fonts/NouvelRLight.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel Regular';
+    src: url(/fonts/NouvelRRegular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Nouvel SemiBold';
+    src: url(/fonts/NouvelRSemibold.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Great Vibes';
+    src: url(/fonts/GreatVibes-Regular.ttf) format('truetype');
+}
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+body {
+    /* reset de los user agent styles para marggin y padding*/
+    margin: 0;
+    padding: 0;
+
+    font-family: Nouvel Regular;
+    background-color: black;
+    color: white;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imagenes/menu/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 70vh;
+}
+
+
+
+/* ------------------------------------------CABECERA------------------------------------------ */
+
+
+header {
+    position: absolute;
+    display: flex;
+    width: 100%;
+
+    z-index: 100000;
+    justify-content: space-between;
+    transition: 0.6s;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+
+
+/* ------------------------------------ LOGO ------------------------------------ */
+
+
+.logo {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 10vw;
+
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+
+    margin-left: 3vw;
+    margin-top: 0.2vh;
+    margin-bottom: 1vh;
+    transition: 0.6s;
+}
+
+.logo img {
+    margin-top: 1vh;
+    width:18em;
+    cursor: pointer;
+    filter: invert();
+}
+
+
+/* ------------------------------------ MENÚ ------------------------------------ */
+
+
+.main-nav {
+    display: flex;
+    flex-flow: row nowrap;
+
+    font-weight: 300;
+    margin-top: 2.5vh;
+    margin-left: 5vw;
+}
+
+.list-nav {
+    position: relative;
+    display: flex;
+    margin-right: 2vw;
+}
+
+.list-nav li:not(:last-child) {
+    margin-right: 8vw;
+}
+
+.list-nav li {
+    position: relative;
+    text-transform: uppercase;
+    font-size: clamp(0.7rem, 0.557rem + 0.381vw, 0.9rem);
+    font-weight: 600;
+    list-style: none;
+    font-family: Montserrat, "sans serif";
+    margin-right: 4vw;
+}
+
+.list-nav li a::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.list-nav li a:hover {
+    color: white;
+}
+
+.list-nav li a:hover::after {
+    width: 100%;
+}
+
+.link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 0.5px;
+    padding: 0 6px;
+}
+
+.list-nav li a.active {
+    color: white;
+}
+
+.list-nav li a.active::after {
+    width: 100%;
+}
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+
+
+
+/* -------------BUTTON------------- */
+
+
+.btn-reservation {
+    flex: 0.3;
+    margin-top: 2vh;
+    margin-left: 1.7vw;
+    text-align: center;
+}
+
+.btn-reservation button {
+    padding: 1.3em;
+    border: 2px solid white;
+
+    background-color: transparent;
+
+    color: white;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+}
+
+.btn-reservation button:hover {
+    background-color: black;
+}
+
+
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+
+    height: 40vh;
+}
+
+.welcome p {
+    position: absolute;
+    top: 28%;
+    display: flex;
+    color: white;
+    font-weight: 500;
+    font-family: Great Vibes;
+    font-size: clamp(3rem, 1.571rem + 3.81vw, 5rem);   
+}
+/******************************* SECTIONS **********************/
+
+.sections .titleSection {
+    margin-top: 10px;
+    font-family: Great Vibes, sans-serif;
+    font-weight: 500;
+    font-size: clamp(2.5rem, 1.875rem + 2.0833vw, 4.375rem);
+}
+
+.sections .title {
+    font-weight: 600;
+    font-size: clamp(1.4375rem, 1.0833rem + 1.1806vw, 2.5rem);
+}
+
+.sections p {
+    text-align: center;
+}
+
+#section1,
+#section2,
+#section3 {
+    margin-right: 150px;
+}
+
+#section1 {
+    margin: 0 100px;
+}
+
+#section2 {
+    margin: 0 100px;
+    padding: 20px 0;
+}
+
+#section3 {
+    margin-right: 150px;
+    margin: 0;
+    padding: 0;
+}
+/******************************* SECTION 1 **********************/
+
+#section1 {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#section1 * {
+    z-index: 3;
+}
+
+#section1 .titleSection {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    text-align: center;
+    width: 100%;
+}
+
+#section1 .infoSection {
+    width: 100%;
+    position: relative;
+}
+
+#section1 .imgSection {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 700px;
+    aspect-ratio: 9/10;
+    position: absolute;
+    z-index: -1;
+}
+
+#section1 .dish1 .imgSection {
+    background-image: url(imagenes/menu/plato1.jpg);
+}
+
+#section1 .dish1 .imgSection,
+#section1 .dish3 .imgSection {
+    right: 0;
+    margin-right: 13%;
+}
+
+#section1 .textSection {
+    background-color: #888888;
+    padding: 50px 100px;
+    width: 40%;
+    min-width: 400px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#section1 .dish3,
+#section1 .dish1,
+#section1 .dish2 {
+    position: relative;
+    height: 700px;
+}
+
+#section1 .dish1,
+#section1 .dish2 {
+    margin-bottom: 200px;
+}
+
+#section1 .dish3 .textSection,
+#section1 .dish1 .textSection,
+#section1 .dish2 .imgSection {
+    margin-left: 13%;
+}
+
+#section1 .dish2 .imgSection {
+    background-image: url(imagenes/menu/plato2.jpeg);
+}
+
+#section1 .dish2 .textSection {
+    right: 0;
+    margin-right: 13%;
+}
+
+#section1 .dish3 .imgSection {
+    background-image: url(imagenes/menu/plato3.jpg);
+}
+
+/******************************* SECTION 2 **********************/
+
+
+#section2 {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#section2 * {
+    z-index: 3;
+}
+
+#section2 .titleSection {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    text-align: center;
+    width: 100%;
+}
+
+#section2 .infoSection {
+    width: 100%;
+    position: relative;
+}
+
+.dish4,
+.dish6 {
+    width: 75%;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.dish5 {
+    margin-left: 25%;
+    width: 75%;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+#section2 .imgSection {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-width: 400px;
+    aspect-ratio: 16/9;
+    z-index: -1;
+    margin: auto;
+}
+
+#section2 .dish4 .imgSection {
+    background-image: url(imagenes/menu/plato4.jpg);
+}
+
+#section2 .textSection {
+    background-color: #888888;
+    width: 50%;
+    padding: 20px 50px;
+    position: absolute;
+    align-items: center;
+    font-weight: 600;
+}
+
+#section2 .dish4 .textSection,
+#section2 .dish5 .textSection,
+#section2 .dish6 .textSection {
+    bottom: 0;
+}
+
+#section2 .dish5 .imgSection {
+    background-image: url(imagenes/menu/plato5.jpg);
+}
+
+#section2 .dish4 .textSection,
+#section2 .dish6 .textSection {
+    right: 0;
+}
+
+#section2 .dish6 .imgSection {
+    background-image: url(imagenes/menu/plato6.jpg);
+}
+
+
+/* ------------------------------------------SECTION 1------------------------------------------ */
+
+.section-1 {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+    height: fit-content;
+
+    margin-top: 10vh;
+    /* background-color: #809380; */
+}
+
+.title-main-dishes {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100vw;
+
+    margin-bottom: 6vh;
+}
+.main-dishes {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    width: 80vw;
+    height: fit-content;
+}
+
+.main-dish-1 {
+    display: flex;
+
+    background-image: url(./imagenes/menu/main-dish-1.jpg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width:45em;
+    height: 35em;
+}
+
+.texto-main-dish-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    width: 15em;
+    height: 5em;
+    background-color: rgb(218, 218, 218);
+    /* opacity: 0.4; */
+}
+.main-dish-2 {
+    display: flex;
+    
+    background-image: url(./imagenes/menu/main-dish-2.jpg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width:45em;
+    height: 35em;
+}
+
+.main-dish-3 {
+    display: flex;
+    
+    background-image: url(./imagenes/menu/main-dish-3.jpg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width:45em;
+    height: 35em;
+}
+
+.main-dish-4 {
+    display: flex;
+    
+    background-image: url(./imagenes/menu/main-dish-4.jpg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width:45em;
+    height: 35em;
+}
+/*------------------------------------------Contenido--------------------------------------------------*/
+
+
+.section2 {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 7vh;
+}
+
+.section2 h1 {
+    width: 100%;
+    font-size: 2em;
+    margin-bottom: 7vh;
+}
+
+.platos1 {
+
+    width: 40em;
+    height: fit-content;
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.platos1 h1 {
+    font-family: 'Montserrat regular';
+    font-size: 1em;
+    width: 100%;
+}
+
+.platos1 p {
+    width: 25em;
+
+    text-align: left;
+    font-size: clamp(0.9rem, 0.867rem + 0.111vw, 1rem);
+    font-family: 'Montserrat regular';
+
+}
+
+
+.platos2 {
+    display: flex;
+    width: 40em;
+    height: fit-content;
+    margin-top: 1em;
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.platos2 h1 {
+    font-family: 'Montserrat regular';
+    font-size: 1em;
+    width: 100%;
+
+}
+
+.platos2 p {
+
+    width: 25em;
+    text-align: left;
+    font-family: 'Montserrat regular';
+
+}
+
+.img {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -2rem;
+}
+
+#img1 {
+    background-image: url(./imagenes/menu/secondary-dish-1.png);
+    width: 10em;
+    height: 10em;
+
+
+}
+
+#img2 {
+    background-image: url(./imagenes/menu/secondary-dish-2.png);
+    top: 10em;
+    width: 10em;
+    height: 10em;
+
+
+}
+
+#img3 {
+    background-image: url(./imagenes/menu/secondary-dish-3.png);
+    top: 20em;
+    width: 10em;
+    height: 10em;
+
+}
+
+#img4 {
+    background-image: url(./imagenes/menu/secondary-dish-4.png);
+
+    width: 10em;
+    height: 10em;
+
+
+}
+
+#img5 {
+    background-image: url(./imagenes/menu/secondary-dish-5.png);
+    top: 10em;
+    width: 10em;
+    height: 10em;
+
+}
+
+#img6 {
+    background-image: url(./imagenes/menu/secondary-dish-6.png);
+    top: 20em;
+    width: 10em;
+    height: 10em;
+
+}
+
+.section3 {
+    width: 99%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.section3 h1 {
+    width: 100%;
+    font-size: 2.3em;
+    margin-top: 7vh; 
+    font-family: Great Vibes;
+}
+
+.menu {
+    padding: 0 50px 50px 50px;
+    margin-top: 5em;
+    width: 30rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 5em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    background-color: white;
+    position: relative;
+}
+
+.menu::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #888888;
+    top: 2.2rem;
+    width: 90%;
+}
+
+.menu::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #888888;
+    bottom: 2rem;
+    width: 90%;
+}
+
+.menu h2 {
+    font-family: Nouvel Extrabold;
+    background-color: white;
+    z-index: 9;
+}
+
+.menu h3 {
+    font-family: 'Nouvel bold';
+}
+
+.menu p {
+    font-family: 'Nouvel regular';
+    font-size: clamp(0.8rem, 0.733rem + 0.222vw, 1rem);
+
+}
+
+
+/* ------------------------------ FOOTER ------------------------------------ */
+
+footer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: fit-content;
+    color: white;
+    background-color: white;
+    color: black;
+    /* margin-top: -1em; */
+    border-top: 1px solid white;
+}
+
+.contenedor-footer-top {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+
+    height: fit-content;
+    /* background-color: #F0B460; */
+
+    margin-top: 6vh;
+}
+
+.logo-footer {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 18%;
+    /* background-color: green; */
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.logo-footer img {
+    width: 70%;
+}
+
+.pages h3 {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+.pages p {
+    font-size: .8rem;
+    margin-bottom: 2.2vh;
+}
+
+.policies h3 {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+.policies p {
+    font-size: .8rem;
+    margin-bottom: 2.2vh;
+}
+
+.social-media {
+    margin-right: 10vw;
+}
+
+.social-media h3 {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+.social-media p {
+    font-size: .8rem;
+    margin-bottom: 2.2vh;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+}
+
+.links svg {
+    margin-right: 1em;
+}
+
+.contenedor-footer-bottom {
+    width: 72vw;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    border-top: 1px solid black;
+    margin-top: 2vh;
+}
+
+.contenedor-footer-bottom p {
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    font-size: .8rem;
+}
+
+/* ------------------------------------------MEDIA QUERIES------------------------------------------ */
+@media (max-width: 1550px) {
+
+    #section1 .dish1 .imgSection,
+    #section1 .dish3 .imgSection {
+        margin-right: 7%;
+    }
+
+    #section1 .dish3 .textSection,
+    #section1 .dish1 .textSection,
+    #section1 .dish2 .imgSection {
+        margin-left: 7%;
+    }
+
+    #section1 .dish2 .textSection {
+        margin-right: 7%;
+    }
+}
+
+@media (max-width: 1445px) {
+
+    .heroContainer .ctaTitle {
+        margin: 100px 0 0 50%;
+    }
+
+}
+
+@media (max-width: 1320px) {
+
+    #section1 .dish1 .imgSection,
+    #section1 .dish3 .imgSection {
+        margin-right: 2%;
+    }
+
+    #section1 .dish3 .textSection,
+    #section1 .dish1 .textSection,
+    #section1 .dish2 .imgSection {
+        margin-left: 2%;
+    }
+
+    #section1 .dish2 .textSection {
+        margin-right: 2%;
+    }
+
+}
+
+@media (max-width: 1060px) {
+    #section1 .imgSection {
+        height: 500px;
+    }
+
+    #section1 .textSection {
+        padding: 30px 50px;
+        min-width: 400px;
+        top: 35%;
+    }
+
+    #section1 .dish1,
+    #section1 .dish2 {
+        margin-bottom: 0;
+    }
+
+    #section1 .titleSection {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    #section2 .titleSection {
+        margin-top: -100px;
+        margin-bottom: 100px;
+    }
+
+    #section3 .titleSection {
+        margin-top: -60px;
+        margin-bottom: 100px;
+    }
+
+    #section3 .titleMenu {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 850px) {
+    #section1 .imgSection {
+        height: 400px;
+    }
+
+    #section1 .textSection {
+        padding: 25px 25px;
+        min-width: 400px;
+        max-height: 350px;
+        top: 36%;
+    }
+
+    #section1 .dish3,
+    #section1 .dish1,
+    #section1 .dish2 {
+        height: 550px;
+    }
+
+    #section3 .titleMenu {
+        max-height: 250px;
+    }
+
+    .dish4,
+    .dish5,
+    .dish6 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 770px) {
+    #section1 .titleSection {
+        margin: 50px 0;
+    }
+
+    #section1 .imgSection {
+        height: 370px;
+    }
+
+    #section1 .textSection {
+        padding: 15px 20px;
+        min-width: 340px;
+        max-height: 300px;
+        top: 36%;
+    }
+
+    #section1 .dish3,
+    #section1 .dish1,
+    #section1 .dish2 {
+        height: 500px;
+    }
+
+    #section1 .dish1 .imgSection,
+    #section1 .dish3 .imgSection {
+        margin-right: -3%;
+    }
+
+    #section1 .dish3 .textSection,
+    #section1 .dish1 .textSection,
+    #section1 .dish2 .imgSection {
+        margin-left: -3%;
+    }
+
+    #section1 .dish2 .textSection {
+        margin-right: -3%;
+    }
+
+
+    #section3 .titleMenu {
+        max-height: 220px;
+    }
+
+    #section2 .titleSection {
+        margin-top: -50px;
+        margin-bottom: 100px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #section1 .imgSection {
+        height: 300px;
+    }
+
+    #section1 .titleSection {
+        margin-top: 70px;
+        margin-bottom: 90px;
+    }
+
+    #section1 .textSection {
+        padding: 20px 20px;
+        min-width: 300px;
+        min-height: 340px;
+        top: 33%;
+    }
+
+    #section1 .dish3 .textSection {
+        padding: 40px 20px;
+    }
+
+    #section1 .dish1 .imgSection,
+    #section1 .dish3 .imgSection {
+        margin-right: -16%;
+    }
+
+    #section1 .dish3 .textSection,
+    #section1 .dish1 .textSection,
+    #section1 .dish2 .imgSection {
+        margin-left: -16%;
+    }
+
+    #section1 .dish2 .textSection {
+        margin-right: -16%;
+    }
+
+    #section1 .dish3,
+    #section1 .dish1,
+    #section1 .dish2 {
+        height: 450px;
+    }
+
+    #section2 {
+        margin: 0 50px;
+        padding: 20px 0;
+    }
+
+    #section2 .textSection {
+        padding: 20px 20px;
+    }
+
+    #section3 .price {
+        margin-bottom: 100px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #section1 .imgSection {
+        height: 300px;
+    }
+
+    #section1 .titleSection {
+        margin: 40px 0;
+    }
+
+    #section1 .textSection {
+        padding: 0 20px;
+        min-width: 300px;
+        min-height: 240px;
+        top: 63%;
+    }
+
+    #section1 {
+        margin: 0 50px;
+    }
+
+    #section1 .dish3 .textSection {
+        padding: 30px 20px;
+    }
+
+    #section1 .dish1 .imgSection,
+    #section1 .dish3 .imgSection {
+        margin-right: 0%;
+    }
+
+    #section1 .dish3 .textSection,
+    #section1 .dish1 .textSection,
+    #section1 .dish2 .imgSection {
+        margin-left: 0%;
+    }
+
+    #section1 .dish2 .textSection {
+        margin-right: 0%;
+    }
+
+    #section1 .dish3,
+    #section1 .dish1,
+    #section1 .dish2 {
+        height: 650px;
+    }
+
+    #section2 .imgSection {
+        min-width: 100%;
+    }
+
+    #section2 {
+        margin: 0 50px;
+        padding: 20px 0;
+    }
+
+    #section2 .titleSection {
+        margin-bottom: 40px;
+    }
+
+    #section2 .textSection {
+        padding: 5px 0px;
+    }
+
+    .dish4,
+    .dish5,
+    .dish6 {
+        margin-bottom: 100px;
+    }
+
+    #section3 .titleSection {
+        margin-top: -50px;
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 425px) {
+    .heroContainer .ctaTitle {
+        margin: 100px 0 0 30%;
+    }
+
+    #section3 .titleSection {
+        margin-top: -30px;
+    }
+
+    #section3 .price {
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 380px) {
+    #section1 .textSection {
+        padding: 0 20px;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: fit-content;
+        top: 63%;
+    }
+
+    #section1 .imgSection {
+        width: 100%;
+    }
+
+    #section1 .titleSection {
+        margin: 20px 0 0;
+    }
+
+    #section2 .titleSection {
+        margin-top: -30px;
+    }
+
+    #section2 .textSection {
+        width: 100%;
+        margin-bottom: -50px;
+    }
+}
+
+@media only screen and (max-width: 1175px) {
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+        margin-left: 4em;
+
+    }
+
+    .cerrar-menu {
+        margin-top: 4vh;
+    }
+
+    .main-nav {
+        opacity: 0;
+        visibility: hidden;
+
+    }
+
+    header {
+        overflow: unset;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0em;
+        right: 0em;
+        margin: 0%;
+        bottom: 0;
+        gap: 1rem;
+        position: fixed;
+        background-color: rgb(0, 0, 0);
+        /* padding: 2rem; */
+        width: 13em;
+        height: 100vh;
+        align-items: end;
+        justify-content: flex-start;
+        box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .main-nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .list-nav {
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-end; */
+        margin: 0;
+        /* margin-left: 10em; */
+        /* background-color: #25ca8b; */
+    }
+
+    .list-nav li {
+        
+        margin-top: 7vh;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+        /* ---------------------- FOOTER ------------------------- */
+
+        .welcome p {
+            top: 40%;
+        }
+
+        .texto-main-dish-1 {
+            margin-top: 5em;
+            /* margin-right: 10em; */
+        }
+        .contenedor-footer-top {
+            flex-wrap: wrap;
+        }
+    
+        .logo-footer {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-bottom: 5vh;
+        }
+    
+        .pages {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 3vh;
+        }
+    
+        .policies {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 3vh;
+        }
+    
+        .social-media {
+            width: 100%;
+            text-align: center;
+            margin-right: 0em;
+            margin-bottom: 3vh;
+        }
+    
+        .pages h3 {
+            font-size: 1.3rem;
+        }
+    
+        .policies h3 {
+            font-size: 1.3rem;
+        }
+    
+        .social-media h3 {
+            font-size: 1.3rem;
+        }
+    
+        .pages p {
+            font-size: 1rem;
+        }
+    
+        .policies p {
+            font-size: 1rem;
+        }
+    
+        .social-media p {
+            font-size: 1rem;
+        }
+    
+        .social-media img {
+            width: 20px;
+        }
+    
+        .contenedor-footer-bottom {
+            width: 80vw;
+        }
+    }
+
