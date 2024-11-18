@@ -2,26 +2,32 @@
     font-family: 'Nouvel Bold';
     src: url(/fonts/NouvelRBold.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Nouvel Book';
     src: url(/fonts/NouvelRBook.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Nouvel ExtraBold';
     src: url(/fonts/NouvelRExtrabold.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Nouvel Light';
     src: url(/fonts/NouvelRLight.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Nouvel Regular';
     src: url(/fonts/NouvelRRegular.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Nouvel SemiBold';
     src: url(/fonts/NouvelRSemibold.ttf) format('truetype');
 }
+
 @font-face {
     font-family: 'Great Vibes';
     src: url(/fonts/GreatVibes-Regular.ttf) format('truetype');
@@ -103,8 +109,9 @@ header {
 }
 
 .logo img {
-    margin-top: 1vh;
-    width:18em;
+    margin-top: 2vh;
+    width: 150%;
+    min-width: 100px;
     cursor: pointer;
     filter: invert();
 }
@@ -233,8 +240,9 @@ header {
     color: white;
     font-weight: 500;
     font-family: Great Vibes;
-    font-size: clamp(3rem, 1.571rem + 3.81vw, 5rem);   
+    font-size: clamp(3rem, 1.571rem + 3.81vw, 5rem);
 }
+
 /******************************* SECTIONS **********************/
 
 .sections .titleSection {
@@ -273,6 +281,8 @@ header {
     margin: 0;
     padding: 0;
 }
+
+
 /******************************* SECTION 1 **********************/
 
 #section1 {
@@ -317,7 +327,7 @@ header {
 }
 
 #section1 .textSection {
-    background-color: #888888;
+    background-color: rgba(181, 181, 181, .9);
     padding: 50px 100px;
     width: 40%;
     min-width: 400px;
@@ -411,7 +421,7 @@ header {
 }
 
 #section2 .textSection {
-    background-color: #888888;
+    background-color: rgba(181, 181, 181, .9);
     width: 50%;
     padding: 20px 50px;
     position: absolute;
@@ -468,6 +478,7 @@ header {
 
     margin-bottom: 6vh;
 }
+
 .main-dishes {
     display: flex;
     flex-wrap: wrap;
@@ -488,7 +499,7 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
 
-    width:45em;
+    width: 45em;
     height: 35em;
 }
 
@@ -502,41 +513,43 @@ header {
     background-color: rgb(218, 218, 218);
     /* opacity: 0.4; */
 }
+
 .main-dish-2 {
     display: flex;
-    
+
     background-image: url(./imagenes/menu/main-dish-2.jpg);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
 
-    width:45em;
+    width: 45em;
     height: 35em;
 }
 
 .main-dish-3 {
     display: flex;
-    
+
     background-image: url(./imagenes/menu/main-dish-3.jpg);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
 
-    width:45em;
+    width: 45em;
     height: 35em;
 }
 
 .main-dish-4 {
     display: flex;
-    
+
     background-image: url(./imagenes/menu/main-dish-4.jpg);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
 
-    width:45em;
+    width: 45em;
     height: 35em;
 }
+
 /*------------------------------------------Contenido--------------------------------------------------*/
 
 
@@ -680,7 +693,7 @@ header {
 .section3 h1 {
     width: 100%;
     font-size: 2.3em;
-    margin-top: 7vh; 
+    margin-top: 7vh;
     font-family: Great Vibes;
 }
 
@@ -714,7 +727,7 @@ header {
     content: "";
     position: absolute;
     border: 1px solid #888888;
-    bottom: 2rem;
+    bottom: 4.7rem;
     width: 90%;
 }
 
@@ -731,7 +744,32 @@ header {
 .menu p {
     font-family: 'Nouvel regular';
     font-size: clamp(0.8rem, 0.733rem + 0.222vw, 1rem);
+}
 
+.btn {
+    display: inline-block;
+    padding: 10px 50px;
+    font-family: Oxygen, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+    background-color: rgb(21, 21, 21);
+    border-radius: 1px;
+
+    margin-top: 10px;
+    z-index: 9999;
+
+    transition: all 0.3s ease 0s;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: rgb(194, 153, 97);
+    box-shadow: inset 0 0 0 1px rgb(21, 21, 21);
+    color: rgb(21, 21, 21);
+    transform: translateY(-2px);
 }
 
 
@@ -857,12 +895,20 @@ footer {
     #section1 .dish2 .textSection {
         margin-right: 7%;
     }
+
+    .reserveForm {
+        width: 60%;
+    }
 }
 
 @media (max-width: 1445px) {
 
     .heroContainer .ctaTitle {
         margin: 100px 0 0 50%;
+    }
+
+    .infoItems {
+        width: 100%;
     }
 
 }
@@ -882,6 +928,46 @@ footer {
 
     #section1 .dish2 .textSection {
         margin-right: 2%;
+    }
+
+    .contactInfo {
+        margin-bottom: 150px;
+    }
+
+    .reserve {
+        margin-bottom: 150px;
+    }
+
+
+    .eventsImage {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        background-image: url(../img/contact/bodaRes.jpg);
+        background-size: cover;
+        margin-left: 0;
+        order: 1;
+    }
+
+    .eventsContent {
+        width: 85%;
+        margin-right: 0;
+        order: 0;
+        margin-bottom: 150px;
+    }
+
+    .eventsContent h2,
+    .eventsContent h3 {
+        text-align: left;
+    }
+
+    .eventsContent p {
+        text-align: justify;
+        width: 100%;
+    }
+
+    .eventsContent a {
+        margin-left: 0;
+        margin-right: auto;
     }
 
 }
@@ -996,6 +1082,29 @@ footer {
     #section2 .titleSection {
         margin-top: -50px;
         margin-bottom: 100px;
+    }
+
+    .reserveForm {
+        width: 80%;
+    }
+
+    .reserveForm .row {
+        flex-flow: column;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .reserveForm .row:nth-child(2) .control:first-child {
+        order: 1;
+    }
+
+    .row {
+        gap: 0;
+    }
+
+    .row .control {
+        margin-bottom: 80px;
     }
 }
 
@@ -1236,85 +1345,146 @@ footer {
     }
 
     .list-nav li {
-        
+
         margin-top: 7vh;
         font-size: 1rem;
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 510px) {
 
-        /* ---------------------- FOOTER ------------------------- */
-
-        .welcome p {
-            top: 40%;
-        }
-
-        .texto-main-dish-1 {
-            margin-top: 5em;
-            /* margin-right: 10em; */
-        }
-        .contenedor-footer-top {
-            flex-wrap: wrap;
-        }
-    
-        .logo-footer {
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            margin-bottom: 5vh;
-        }
-    
-        .pages {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 3vh;
-        }
-    
-        .policies {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 3vh;
-        }
-    
-        .social-media {
-            width: 100%;
-            text-align: center;
-            margin-right: 0em;
-            margin-bottom: 3vh;
-        }
-    
-        .pages h3 {
-            font-size: 1.3rem;
-        }
-    
-        .policies h3 {
-            font-size: 1.3rem;
-        }
-    
-        .social-media h3 {
-            font-size: 1.3rem;
-        }
-    
-        .pages p {
-            font-size: 1rem;
-        }
-    
-        .policies p {
-            font-size: 1rem;
-        }
-    
-        .social-media p {
-            font-size: 1rem;
-        }
-    
-        .social-media img {
-            width: 20px;
-        }
-    
-        .contenedor-footer-bottom {
-            width: 80vw;
-        }
+    /* ---------------------- FOOTER ------------------------- */
+    .contenedor-footer-top {
+        flex-wrap: wrap;
     }
 
+    .logo-footer {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 5vh;
+    }
+
+    .pages {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+
+    .policies {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+
+    .social-media {
+        width: 100%;
+        text-align: center;
+        margin-right: 0em;
+        margin-bottom: 3vh;
+    }
+
+    .welcome p {
+        top: 40%;
+    }
+
+    .texto-main-dish-1 {
+        margin-top: 5em;
+        /* margin-right: 10em; */
+    }
+
+    .contenedor-footer-top {
+        flex-wrap: wrap;
+    }
+
+    .logo-footer {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 5vh;
+    }
+
+    .pages {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+
+    .policies {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+
+    .social-media {
+        width: 100%;
+        text-align: center;
+        margin-right: 0em;
+        margin-bottom: 3vh;
+    }
+
+    .pages h3 {
+        font-size: 1.3rem;
+    }
+
+    .policies h3 {
+        font-size: 1.3rem;
+    }
+
+    .social-media h3 {
+        font-size: 1.3rem;
+    }
+
+    .pages p {
+        font-size: 1rem;
+    }
+
+    .policies p {
+        font-size: 1rem;
+    }
+
+    .social-media p {
+        font-size: 1rem;
+    }
+
+    .social-media img {
+        width: 20px;
+    }
+
+    .contenedor-footer-bottom {
+        width: 80vw;
+    }
+}
+
+.sticky {
+    backdrop-filter: blur(30px);
+    box-shadow: Opx Opx 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    /* box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1); */
+    background-color: rgba(181, 181, 181, .4);
+    padding-block: 0;
+    width: 100%;
+    margin: 0;
+    height: 5.063rem;
+    padding-inline: 2.5%;
+    opacity: 0%;
+    position: fixed;
+    left: 0;
+    top: -5.063rem;
+    z-index: 99999;
+    animation: 0.5s ease forwards slideDown;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0%;
+        top: -8vh;
+    }
+
+    to {
+        opacity: 100%;
+        top: 0;
+    }
+}
