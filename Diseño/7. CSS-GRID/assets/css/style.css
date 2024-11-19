@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #da8465;
+    --secondary-color: #e8ffb7;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(../imgs/hero.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+header {
+    width: 100%;
+    height: 8vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 2rem;
+
+    & .logo {
+        height: 70%;
+        flex: 1;
+        background-image: url(../imgs/logo.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    & nav {
+        flex: 7;
+
+        & .menu-on {
+
+
+            & .nav-bar {
+                list-style-type: none;
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 2rem;
+
+                & li {
+                    margin-left: 2rem;
+
+                    & a {
+                        text-decoration: none;
+                        color: white;
+                        text-transform: uppercase;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    margin-top: -8vh;
+    padding-left: 4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & .tag-line {
+        color: white;
+        font-size: 3rem;
+        width: 50%;
+    }
+}
+
+button {
+    padding: .7rem 3rem;
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    background-color: white;
+}
+
+.join {
+    background-color: var(--main-color);
+}
+
+.explore {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+/*---SUBHERO----------------------------------------------------------------------------------*/
+
+.subhero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 40%;
+    grid-template-rows: 1fr;
+}
+
+.subhero > * {
+    border: 1px solid red;
+}
+
+.our-blog {
+    background-color: var(--secondary-color);
+}
