@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --orange-gradient: #0dff19;
+    --yellow-gradient: #00f597;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.section {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/2318555.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*-------------------------------------------------------- Progress bar*/
+
+#progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.521);
+    z-index: 99;
+
+    backdrop-filter: blur(8px);
+
+    animation: progressBar linear forwards;
+    animation-timeline: scroll();
+}
+
+@keyframes progressBar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/*------------------------------------------------------Header*/
+
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    z-index: 99;
+
+
+    backdrop-filter: blur(8px);
+
+    animation: stickyNav linear forwards;
+    animation-timeline: view();
+    animation-range-start: 100vh;
+    animation-range-end: 200vh;
+}
+
+@keyframes stickyNav {
+    100% {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        width: 95%;
+        left: 2.5%;
+        top: 1rem;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    flex: 4;
+    background-image: url(images/logo-removebg-preview.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 40px;
+    filter: drop-shadow(1px, 1px, 2px rgba(0, 0, 0, 0.5));
+}
+
+.main-nav {
+    flex: 6;
+}
+
+.menu-on-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.menu-on-nav li a {
+    color: rgb(0, 197, 247);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+
+    animation: white-to-black linear forwards;
+    animation-timeline: view();
+    animation-range-start: 100vh;
+    animation-range-end: 200vh;
+}
+
+@keyframes white-to-black {}
+
+
+/*------------------------------------------------------Main Container*/
+
+main {
+    height: 200vh;
+    width: 100%;
+    margin-top: -8vh;
+    background: linear-gradient(300deg, var(--orange-gradient), var(--yellow-gradient));
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15vh;
+
+}
+
+.bottle {
+    padding: 4rem;
+    flex: 2;
+    height: 40%;
+    border: 1px solid blue;
+    background-image: url(images/bottle-removebg-preview.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fade-in-right .7s ease-in forwards;
+
+}
+
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.legend {
+    flex: 5;
+    height: 40%;
+    font-family: 'Croissant One', sans-serif;
+    font-size: clamp(3rem, 0.667rem + 7.778vw, 10rem);
+    color: white;
+    border: 1px solid yellow;
+
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* .linea1 {
+    animation: fade-in-left .7s ease-in forwards;
+    opacity: 0;
+    transform: translateX(-300px); 
+}
+
+.linea2 {
+    animation: fade-in-left .7s ease-in forwards;
+    opacity: 0;
+    animation-delay: .3s;
+    transform: translateX(-300px);
+}
+
+.linea3 {
+    animation: fade-in-left .7s ease-in forwards;
+    opacity: 0;
+    animation-delay: .4s;
+    transform: translateX(-19rem);
+} */
+
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-19rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(clamp(2rem, -0.667rem + 8.889vw, 10rem));
+    }
+}
+
+.legend svg {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 2px;
+
+    stroke-dasharray: 800;
+    /* hace el svg a puntilladas */
+    stroke-dashoffset: 800;
+
+    animation: anime-border 5s ease-in-out forwards;
+}
+
+@keyframes anime-border {
+    0% {
+        stroke-dashoffset: 800;
+    }
+
+    50% {
+        fill: transparent
+    }
+
+    100% {
+        fill: white;
+        stroke-dashoffset: 0;
+    }
+}
+
+/*-----------------------------------------Section1*/
+
+.section1 {
+    width: 100%;
+    background-color: white;
+}
+
+.cards {
+    width: 100%;
+    height: auto;
+    padding: 4rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 4rem;
+}
+
+.card {
+    border: 1px solid red;
+    flex: 1 0 350px;
+    max-width: 400px;
+    aspect-ratio: 3/5;
+    border-radius: 25px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card1 {
+    background: rgb(0, 81, 97);
+    background: linear-gradient(117deg, rgba(0, 81, 97, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.card-body {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.categories {
+    width: 100%;
+    flex: 1;
+    padding: 1rem 2rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    gap: 2rem;
+}
+
+.cats {
+    flex: 2 0 200px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cats i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.miniatura {
+    flex: 5;
+    width: 40%;
+    aspect-ratio: 4/5;
+    object-fit: contain;
+}
+
+.mini-logo {
+    flex: 1 0 60px;
+    aspect-ratio: 4/2;
+    background-image: url(images/logo-removebg-preview.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.card-footer {
+    background-color: white;
+    height: 40%;
+    border-radius: 25px;
+    box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: space-between;
+    padding: 2rem;
+}
+
+.card-footer * {
+    flex: 1;
+}
+
+.product-title {
+    text-transform: uppercase;
+}
+
+.weight {
+    font-weight: 300;
+}
+
+.pvp-units {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+.product-price {
+    flex: 1;
+}
+
+.choose-units {
+    flex: 1;
+    text-align: right;
+}
+
+.minus-units, .plus-units {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--yellow-gradient);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.minus-units:hover, .plus-units:hover {
+    color: white;
+    background-color: var(--orange-gradient);
+}
+
+.order-now {
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(300deg, var(--orange-gradient), var(--yellow-gradient));
+    color: white;
+    text-transform: uppercase;
+}
+
+.order-now:hover {
+    background-position: right center;
+}
+
+.order-now i {
+    margin-right: 1rem;
+}
+
+.card2 {
+    background: rgb(108, 19, 37);
+    background: linear-gradient(335deg, rgba(108, 19, 37, 1) 0%, rgba(237, 79, 112, 1) 100%);
+}
+
+.card3 {
+    background: rgb(51, 97, 9);
+    background: linear-gradient(113deg, rgba(51, 97, 9, 1) 0%, rgba(162, 241, 90, 1) 100%);
+}
+
+/*-----------------------------------------Section2*/
+
+.section2 {
+    width: 100%;
+    background-color: white;
+    height: 100vh;
+
+    background-image: url(images/2318555.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
