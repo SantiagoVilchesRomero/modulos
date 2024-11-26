@@ -269,40 +269,40 @@ figure:hover figcaption p {
     }
 }
 
-/* ------- MAORI CULTURE ---------- */
-.maoriCulture {
+/* ------- CULTURE ---------- */
+.culture {
     width: 100%;
 
     margin-bottom: 14.375rem;
 }
 
-.maoriCultureTitle {
+.cultureTitle {
     width: 100%;
     text-align: right;
     padding-right: clamp(1rem, -1.271rem + 7.569vw, 7.813rem);
     margin-bottom: 15.375rem;
 }
 
-.maoriCultureTitle h2 {
+.cultureTitle h2 {
     font-family: "Josefin Sans", sans-serif;
     font-size: var(--size-subt-hero);
     font-weight: var(--jose-light);
 }
 
-.maoriCultureTitle .sectionLine {
+.cultureTitle .sectionLine {
     margin-left: auto;
 }
 
-.maoriCultureContainer {
+.cultureContainer {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background-image: url(../img/home/maoriCulture.jpg);
+    background-image: url(../imgs/culture.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.maoriCultureText {
+.cultureText {
     width: 50%;
     background-color: var(--secondary-color);
     padding: 90px 125px;
@@ -310,7 +310,7 @@ figure:hover figcaption p {
     transform: translateY(-6rem);
 }
 
-.maoriCultureText h3 {
+.cultureText h3 {
     font-size: var(--size-third-heading);
     font-family: "Josefin Sans", sans-serif;
     font-weight: var(--jose-regular);
@@ -318,7 +318,7 @@ figure:hover figcaption p {
     margin-bottom: clamp(1.5rem, 0.667rem + 2.778vw, 4rem);
 }
 
-.maoriCultureText p {
+.cultureText p {
     font-family: Montserrat, sans-serif;
     font-size: var(--size-text);
     font-weight: var(--mont-extralight);
@@ -367,15 +367,15 @@ figure:hover figcaption p {
 }
 
 .wildlifeImage1 {
-    background-image: url(../img/home/kiwi2.jpg);
+    background-image: url(../imgs/articFox.jpg);
 }
 
 .wildlifeImage2 {
-    background-image: url(../img/home/tuatara.jpg);
+    background-image: url(../imgs/puffin.jpg);
 }
 
 .wildlifeImage3 {
-    background-image: url(../img/home/kakapo.jpg);
+    background-image: url(../imgs/horse.jpg);
 }
 
 /* -------- FLORA ----------- */
@@ -428,22 +428,22 @@ figure:hover figcaption p {
 }
 
 .floraImage1 {
-    background-image: url(../img/home/kauri.jpg);
+    background-image: url(../imgs/moss.jpg);
 }
 
 .floraImage2 {
-    background-image: url(../img/home/flax.jpg);
+    background-image: url(../imgs/birch.jpg);
 }
 
 .floraImage3 {
-    background-image: url(../img/home/pohutukawa.jpg);
+    background-image: url(../imgs/tomillo.jpg);
 }
 
 /* -------- FOOD ---------- */
 .food {
     width: 100%;
     aspect-ratio: 16 / 10;
-    background-image: url(../img/home/ostrasBluf.jpg);
+    background-image: url(../imgs/foodImage.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -498,7 +498,7 @@ figure:hover figcaption p {
         width: 70%;
     }
 
-    .maoriCultureText {
+    .cultureText {
         padding-inline: 50px;
         padding-left: 7%;
     }
@@ -555,7 +555,7 @@ figure:hover figcaption p {
 }
 
 @media screen and (max-width: 1200px) {
-    .aboutNZ {
+    .about {
         flex-flow: column wrap;
         width: 80%;
         margin-inline: auto;
@@ -605,18 +605,18 @@ figure:hover figcaption p {
         margin-bottom: 200px;
     }
 
-    .maoriCultureContainer {
+    .cultureContainer {
         background: none;
     }
 
-    .maoriCultureTitle {
+    .cultureTitle {
         margin-bottom: 100px;
         width: 80%;
         margin-inline: auto;
         padding-right: 0;
     }
 
-    .maoriCultureText {
+    .cultureText {
         transform: none;
         padding: 0;
         margin: 0;
@@ -625,20 +625,20 @@ figure:hover figcaption p {
         margin-bottom: 100px;
     }
 
-    .maoriCultureText h3 {
+    .cultureText h3 {
         line-height: var(--line-height);
     }
 
-    .maoriCultureImage {
+    .cultureImage {
         width: 100%;
         aspect-ratio: 16 / 8;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url(../img/home/maoriCulture.jpg);
+        background-image: url(../imgs/culture.jpg);
     }
 
-    .maoriCulture {
+    .culture {
         margin-bottom: 200px;
     }
 
@@ -736,7 +736,7 @@ figure:hover figcaption p {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url(../img/home/ostrasBluf.jpg);
+        background-image: url(../imgs/foodImage.jpg);
     }
 }
 
@@ -766,7 +766,13 @@ figure:hover figcaption p {
 }
 
 @media screen and (max-width: 768px) {
-    .aboutNZ {
+    .headerContent {
+        position: absolute;
+        top: 33%;
+        right: 6%;
+        text-align: center;
+    }
+    .about {
         width: 100%;
         margin-bottom: 150px;
     }
@@ -794,11 +800,11 @@ figure:hover figcaption p {
         text-align: center;
     }
 
-    .maoriCultureText {
+    .cultureText {
         width: 87%;
     }
 
-    .maoriCultureImage {
+    .cultureImage {
         aspect-ratio: 4 / 3;
     }
 
@@ -825,7 +831,6 @@ figure:hover figcaption p {
     }
 
     header {
-        background-image: url(../img/home/hero_home3.jpg);
         background-attachment: scroll;
     }
 
@@ -834,7 +839,8 @@ figure:hover figcaption p {
     }
 
     .headerContent .subtitle {
-        margin-bottom: 1.9rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
 
     .aboutText p {
@@ -869,11 +875,11 @@ figure:hover figcaption p {
         text-align: justify;
     }
 
-    .maoriCultureText p {
+    .cultureText p {
         text-align: justify;
     }
 
-    .maoriCultureImage {
+    .cultureImage {
         aspect-ratio: 3 / 3.5;
     }
 
@@ -896,7 +902,7 @@ figure:hover figcaption p {
     header {
         height: 600px;
         background-attachment: scroll;
-        background-image: url(../img/home/hero_home3.jpg);
+        background-image: url(../imgs/hero.avif);
     }
 
     .mirror-parallax {
