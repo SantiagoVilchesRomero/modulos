@@ -199,7 +199,7 @@ body {
 
 /* ------- GENERAL STYLES --------- */
 h1 {
-    font-size: var(--size-title-hero);
+    font-size: calc(var(--size-title-hero));
     font-family: "Josefin Sans", sans-serif;
     font-weight: var(--jose-light);
     color: var(--secondary-color);
@@ -247,7 +247,7 @@ header {
     font-family: "Josefin Sans", sans-serif;
     font-weight: var(--jose-light);
     font-size: var(--size-btn);
-    padding: clamp(0.6rem, 0.573rem + 0.089vw, 0.68rem) 3.1rem;
+    padding: clamp(0.6rem, 0.573rem + 0.089vw, 0.68rem) 1.7rem;
     padding-top: calc(clamp(0.6rem, 0.573rem + 0.089vw, 0.68rem) + 5px);
     border: 1px solid var(--secondary-color);
     border-radius: 1px;
@@ -266,7 +266,7 @@ header {
     font-family: "Josefin Sans", sans-serif;
     font-weight: var(--jose-light);
     font-size: var(--size-btn);
-    padding: clamp(0.6rem, 0.573rem + 0.089vw, 0.68rem) 3.1rem;
+    padding: clamp(0.6rem, 0.573rem + 0.089vw, 0.68rem) 1.7rem;
     padding-top: calc(clamp(0.6rem, 0.573rem + 0.089vw, 0.68rem) + 5px);
     border: 1px solid var(--primary-color);
     border-radius: 1px;
@@ -301,7 +301,7 @@ header {
 }
 
 .sticky {
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     box-shadow: Opx Opx 30px rgba(181, 181, 181, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.18);
     background-color: rgba(181, 181, 181, 0.6);
@@ -330,19 +330,19 @@ header {
 }
 
 .logo {
-    width: 170px;
+    width: 190px;
 } 
 
 .logo svg {
-    fill: transparent;
-    stroke: white;
+    fill: white;
+    stroke: black;
     stroke-width: 2px;
 
     stroke-dasharray: 800;
     /* hace el svg a puntilladas */
-    stroke-dashoffset: 800;
+    /* stroke-dashoffset: 800;
 
-    animation: anime-border 3s ease-in-out forwards;
+    animation: anime-border 3s ease-in-out forwards; */
 }
 
 @keyframes anime-border {
@@ -351,7 +351,7 @@ header {
     }
 
     50% {
-        fill: white
+        fill: white;
     }
 
     100% {
@@ -676,6 +676,7 @@ footer::before {
     .menu-toggle .bar {
         width: 100%;
         height: 4px;
+        border: 1px solid black;
         background-color: var(--secondary-color);
         display: block;
         border-radius: 2px;
@@ -696,7 +697,7 @@ footer::before {
         bottom: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary-color);
+        background-color: rgba(0, 0, 0, 0.85);
         padding: 3rem;
         box-shadow: 0 0 0 100vmax rgba(21, 21, 21, 0.5);
 
@@ -718,11 +719,11 @@ footer::before {
     }
 
     .rotate-45 {
-        transform: rotate(-45deg) translate(0, 14px);
+        transform: rotate(-45deg) translate(0, 13px);
     }
 
     .rotate45 {
-        transform: rotate(45deg) translate(0, -15px);
+        transform: rotate(45deg) translate(0, -14px);
     }
 
     @keyframes menuIn {
