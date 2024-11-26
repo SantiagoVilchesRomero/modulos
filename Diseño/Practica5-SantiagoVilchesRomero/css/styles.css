@@ -176,6 +176,7 @@ body {
 
 .fa-arrow-up {
     position: fixed;
+    visibility: hidden;
     right: 25px;
     bottom: 25px;
     font-size: clamp(2rem, 1.5rem + 1.667vw, 3.125rem);
@@ -190,6 +191,7 @@ body {
 
 .change {
     color: black;
+    visibility: visible;
 }
 
 .white {
@@ -301,7 +303,7 @@ header {
 }
 
 .sticky {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     box-shadow: Opx Opx 30px rgba(181, 181, 181, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.18);
     background-color: rgba(181, 181, 181, 0.6);
@@ -336,7 +338,7 @@ header {
 
 .logo svg {
     fill: white;
-    filter: drop-shadow(4px 4px 2.5px black);
+    filter: drop-shadow(4px 4px 4px black);
     /* stroke: white;
     stroke-width: 2px;
 
@@ -378,7 +380,7 @@ header {
     font-weight: var(--jose-regular);
     padding-bottom: 2px;
     position: relative;
-    filter: drop-shadow(4px 4px 2.5px black);
+    filter: drop-shadow(4px 4px 4px black);
 }
 
 .activeMenu a {
@@ -674,7 +676,7 @@ footer::before {
         align-content: center;
         cursor: pointer;
         z-index: 999999;
-        filter: drop-shadow(4px 4px 2.5px black);
+        filter: drop-shadow(4px 4px 4px black);
     }
 
     .menu-toggle .bar {
