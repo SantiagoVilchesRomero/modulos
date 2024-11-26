@@ -330,15 +330,17 @@ header {
 }
 
 .logo {
-    width: 190px;
+    width: 250px;
+    padding-top: 3rem;
 } 
 
 .logo svg {
     fill: white;
-    stroke: black;
+    filter: drop-shadow(4px 4px 2.5px black);
+    /* stroke: black;
     stroke-width: 2px;
 
-    stroke-dasharray: 800;
+    stroke-dasharray: 800; */
     /* hace el svg a puntilladas */
     /* stroke-dashoffset: 800;
 
@@ -370,12 +372,13 @@ header {
 
 .nav-item a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: white;
     font-family: "Josefin Sans", sans-serif;
     font-size: var(--size-text);
     font-weight: var(--jose-regular);
     padding-bottom: 2px;
     position: relative;
+    filter: drop-shadow(4px 4px 2.5px black);
 }
 
 .activeMenu a {
@@ -676,7 +679,6 @@ footer::before {
     .menu-toggle .bar {
         width: 100%;
         height: 4px;
-        border: 1px solid black;
         background-color: var(--secondary-color);
         display: block;
         border-radius: 2px;
