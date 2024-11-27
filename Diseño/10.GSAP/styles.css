@@ -1,0 +1,398 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Stars Fighters";
+    src: url(fonts/Stars\ Fighters.ttf);
+}
+
+:root {
+    --main-color: rgb(255, 0, 100);
+}
+
+body {
+    background-image: url(img/stars-bg.png);
+    background-color: black;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    
+    > div {
+        font-family: Stars Fighters;
+    }
+
+    img {
+        width: 60px;
+        margin-right: 1rem;
+    }
+}
+
+.menu-items {
+    display: flex;
+    gap: 2rem;
+
+    a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all .5s ease-in-out;
+        display: block;
+    }
+
+    a:hover {
+        transform: translate(10px);
+    }
+}
+
+a {
+    display: block;
+    transition: all .5s ease-in-out;
+}
+
+a:hover {
+    transform: translate(10px);
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-family: "Stars Fighters";
+
+    span {
+        color: var(--main-color);
+    }
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--main-color);
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+.star {
+    width: 40px;
+}
+
+.section-one {
+    height: calc(100vh - 150px);
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 4rem;
+    }
+
+    .left-side {
+        flex: 1;
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 2rem 0;
+        }
+    }
+
+    .right-side {
+        flex: 1;
+
+        img {
+            max-width: 400px;
+        }
+    }
+}
+
+.image {
+    animation: floating 4s ease-in-out infinite;
+}
+
+button {
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+    min-width: fit-content;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*---SECTION TWO---------------------------------*/
+
+.section-two {
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .left-side {
+            flex: 1;
+
+            img {
+                width: 100%;
+                aspect-ratio: 1;
+            }
+        }
+
+        .right-side{
+            flex: 1;
+            text-align: center;
+
+            .logo-small {
+                max-width: 120px;
+                margin-inline: auto;
+            }
+
+            p {
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+/*---SECTION THREE---------------------------------*/
+
+.section-three {
+    padding: 4rem;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .left-side {
+        flex: 1;
+    }
+
+    .right-side {
+        flex: 1;
+
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+    }
+}
+
+/*---SECTION FOUR---------------------------------*/
+
+.section-four {
+    padding: 4rem;
+
+    .container-card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            .planet-logo-a {
+                max-width: 120px;
+            }
+        }
+
+        .right-side {
+            flex: 2;
+        }
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 4rem;
+        padding: 2rem;
+
+        .modelo {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--main-color);
+            margin: 1rem 0;
+            text-align: center;
+
+        }
+
+        .card {
+            flex: 0 0 30%;
+            display: flex;
+            flex-flow: column nowrap;
+            border-radius: 5px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+
+            .img-card {
+                max-width: 240px;
+                max-height: 350px;
+            }
+
+            span {
+                min-height: 7rem
+            }
+
+            .image-delay-1 {
+                animation: floating 3s ease-in-out infinite 1s;
+            }
+
+            .image-delay-2 {
+                animation: floating 2s ease-in-out infinite 2s;
+            }
+        }
+
+        .card-1 {
+            background: linear-gradient(to right, rgb(56, 145, 85), rgb(6, 90, 48));
+        }
+
+        .card-2 {
+            background: linear-gradient(to right, rgb(64, 83, 165), rgb(21, 19, 92));
+        }
+
+        .card-3 {
+            background: linear-gradient( to right, rgb(238, 223, 88), rgb(214, 183, 6));
+        }
+
+        .card:hover {
+            background: linear-gradient(to top left, rgb(134, 233, 233), rgb(13, 110, 122));
+        }
+    }
+}
+
+/*---FOOTER---------------------------------*/
+
+.footer-section {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .left-side {
+            flex: 1;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+    
+        .right-side {
+            flex: 1;
+        }
+    }
+
+    .sides {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 240px;
+            }
+
+            .logo-footer-container > div {
+                text-align: center;
+                font-family: "Stars Fighters";
+            }
+
+            p {
+                text-align: center;
+                font-size: 1rem;
+                margin-top: 2rem;
+            }
+        }
+
+        .right-side {
+            flex: 2;
+            height: 100%;
+
+
+            .menu {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+
+                li {
+                    flex: 0 0 30%;
+                    margin: 1rem 0;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 4rem;
+        background-color: black;
+        margin-top: 4rem;
+
+        p {
+            font-size: .8rem;
+        }
+    }
+}
