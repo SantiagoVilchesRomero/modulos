@@ -280,7 +280,7 @@ figure:hover figcaption p {
     width: 100%;
     text-align: right;
     padding-right: clamp(1rem, -1.271rem + 7.569vw, 7.813rem);
-    margin-bottom: 15.375rem;
+    margin-bottom: 4rem;
 }
 
 .cultureTitle h2 {
@@ -307,7 +307,7 @@ figure:hover figcaption p {
     background-color: var(--secondary-color);
     padding: 90px 125px;
     padding-top: 0;
-    transform: translateY(-6rem);
+    /* transform: translateY(-6rem); */
 }
 
 .cultureText h3 {
@@ -453,13 +453,13 @@ figure:hover figcaption p {
     width: 57%;
     margin-inline: auto;
     background-color: var(--secondary-color);
-    padding: 3.75rem;
+    padding: 0 3.75rem 3.75rem 3.75rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    transform: translateY(-7rem);
+    /* transform: translateY(-4rem); */
 }
 
 .foodText h2 {
