@@ -8,7 +8,7 @@ $(document).ready(() => {
     });
 
     $(window).scroll(function () {
-        if ($(window).scrollTop() >= 900) {
+        if ($(window).scrollTop() >= 800) {
             $('.menu').addClass('sticky');
             $('.fa-arrow-up').addClass('change');
         } else {

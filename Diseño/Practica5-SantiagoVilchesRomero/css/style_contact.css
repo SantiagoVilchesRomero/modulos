@@ -1,0 +1,498 @@
+/* ---------- HEADER STYLES --------- */
+header {
+    height: 46.875rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+}
+
+.headerContent {
+    width: clamp(21.875rem, 15.605rem + 28.662vw, 50rem);
+    padding-block: 2.5rem;
+    background-color: var(--secondary-color);
+    padding-left: 6.5%;
+    border-top-right-radius: 1px;
+    padding-bottom: 4.7rem;
+    transform: translateY(2.2rem);
+    z-index: 2;
+}
+
+.headerContent h1,
+.headerContent h2 {
+    color: var(--primary-color);
+}
+
+.headerContent h2:first-child {
+    margin-bottom: 1.8rem;
+}
+
+/* -------------- GENERAL INFO ----------- */
+.generalInfo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background-image: url(../imgs/map.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-bottom: 9.375rem;
+}
+
+.generalInfoText {
+    width: 54%;
+    margin-left: auto;
+    background-color: var(--secondary-color);
+    text-align: right;
+    padding-right: 7.813rem;
+    padding-left: 6.5rem;
+    padding-block: 5rem;
+}
+
+.generalInfoText h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+    line-height: 3.7rem;
+}
+
+.generalInfoText .sectionLine {
+    margin-left: auto;
+}
+
+.generalInfoText p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    line-height: var(--line-height);
+    margin-bottom: 3.125rem;
+}
+
+/* ------------- OFFICES ----------- */
+.office {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: clamp(3.125rem, -6.25rem + 12.5vw, 8.75rem);
+
+    margin-bottom: 200px;
+}
+
+.officeImageContainer {
+    flex: 1;
+    margin-bottom: 50px;
+}
+
+.officeImage {
+    width: 63%;
+    aspect-ratio: 1 / 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    box-shadow: -50px 50px 0px rgba(181, 181, 181, 0.25);
+}
+
+.officeText {
+    flex: 1;
+}
+
+.officeText h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+}
+
+.officeText p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    line-height: var(--line-height);
+    width: 78%;
+}
+
+.office:nth-child(2) .officeImage {
+    margin-right: auto;
+    margin-left: 50px;
+    background-image: url(../imgs/office2.jpg);
+}
+
+.office:first-child .officeImage {
+    background-image: url(../imgs/office1.jpg);
+}
+
+.office:nth-child(2) .officeText {
+    margin-left: auto;
+    text-align: right;
+}
+
+.office:nth-child(2) .officeText p {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.office:nth-child(2) .officeText .sectionLine {
+    margin-left: auto;
+}
+
+/* ----------- CONTACT US SECTION ----------- */
+.contactus {
+    width: 87%;
+    margin-inline: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    gap: clamp(4.375rem, 0.515rem + 6.863vw, 8.75rem);
+    margin-bottom: 9.375rem;
+}
+
+.contactusInfo {
+    flex: 1;
+}
+
+.contactusForm {
+    flex: 1;
+}
+
+.contactusInfo h2,
+.contactusForm h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+}
+
+.contactusInfo p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    line-height: var(--line-height);
+    width: 90%;
+    margin-bottom: 2.5rem;
+}
+
+.contactusInfo ul li {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.mail,
+.phone {
+    margin-left: 40px;
+}
+
+.mail::before,
+.phone::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -40px;
+    top: -2px;
+}
+
+.mail::before {
+    content: "";
+    background-image: url(../imgs/mail.svg);
+}
+
+.phone:before {
+    content: "";
+    background-image: url(../imgs/phone.svg);
+}
+
+.contactusForm form {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 34.375rem;
+}
+
+input[type="text"] {
+    border: 1px solid rgba(0, 0, 0, .15);
+    outline: none;
+    background: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    font-size: var(--size-text);
+    padding: 20px;
+    border-radius: 1px;
+    margin-bottom: 25px;
+}
+
+input[type="text"]:focus {
+    border-color: rgba(0, 0, 0, .6);
+}
+
+textarea {
+    border: 1px solid rgba(0, 0, 0, .15);
+    outline: none;
+    background: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-extralight);
+    font-size: var(--size-text);
+    padding: 20px;
+    border-radius: 1px;
+    margin-bottom: 25px;
+}
+
+button {
+    border: none;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.separator {
+    height: 1px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, .1);
+    margin-bottom: 2.5rem;
+}
+
+.socials {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social {
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: invert(100%);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.social:hover {
+    transform: translateY(-2px);
+
+}
+
+.insta {
+    background-image: url(../imgs/insta.svg);
+}
+
+.twt {
+    background-image: url(../imgs/twitter.svg);
+}
+
+.fb {
+    background-image: url(../imgs/fb.svg);
+}
+
+
+/* -------- MEDIA QUERIES -------------- */
+@media screen and (max-width: 1750px) {
+    .generalInfoText {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .officeText p {
+        width: 85%;
+    }
+
+    .officeImage {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .generalInfoText {
+        width: 80%;
+    }
+
+    .generalInfo {
+        aspect-ratio: 16/10;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        margin-bottom: 200px;
+    }
+
+    .generalInfoText {
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        margin-inline: auto;
+        transform: none;
+        background: none;
+        margin-bottom: 100px;
+    }
+
+    .generalInfo {
+        background: none;
+    }
+
+    .map {
+        width: 100%;
+        aspect-ratio: 16 / 8;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/contact/map.svg);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .office {
+        flex-flow: column nowrap;
+        gap: 0;
+    }
+
+    .officeText p {
+        width: 100%;
+    }
+
+    .officeText {
+        width: 80%;
+        margin-inline: auto;
+        margin-bottom: 100px;
+    }
+
+    .officeImageContainer {
+        order: 1;
+        width: 60%;
+    }
+
+    .officeImage {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0;
+    }
+
+    .contactusInfo p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .map {
+        aspect-ratio: 4 / 3;
+        background-position: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .map {
+        aspect-ratio: 3 / 4;
+        background-position: 2%;
+    }
+
+    .generalInfoText {
+        width: 87%;
+    }
+
+    .officeText {
+        width: 87%;
+    }
+
+    .officeImageContainer {
+        width: 70%;
+    }
+
+    .contactusInfo,
+    .contactusForm {
+        flex: 1 0 100%;
+    }
+
+    .contactusInfo {
+        margin-bottom: 100px;
+    }
+
+    .contactusInfo p {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .headerContent {
+        margin-bottom: 10rem;
+        background: transparent;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .headerContent h1,
+    .headerContent h2 {
+        color: var(--secondary-color);
+    }
+
+    .headerContent h2 {
+        margin-bottom: 1rem;
+    }
+
+    .headerContent h1 {
+        margin-bottom: 1rem;
+    }
+
+    .parallax-mirror {
+        display: none;
+    }
+
+    header {
+        background-image: url(../img/contact/hero_contact.jpg);
+        background-attachment: scroll;
+        margin-bottom: 150px;
+    }
+
+    .generalInfoText p {
+        text-align: justify;
+    }
+
+    .generalInfo {
+        margin-bottom: 150px;
+    }
+
+    .officeText p {
+        text-align: justify;
+    }
+
+    .officeImage {
+        box-shadow: none;
+        aspect-ratio: 3/3.5;
+    }
+
+    .officeImageContainer {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .office {
+        margin-bottom: 150px;
+    }
+}
+
+
+/* Fix height strechedt hero */
+@media screen and (max-height: 600px) {
+    header {
+        height: 600px;
+        background-attachment: scroll;
+        background-image: url(../img/contact/hero_contact.jpg);
+    }
+
+    .mirror-parallax {
+        display: none;
+    }
+}
