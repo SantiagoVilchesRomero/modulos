@@ -16,6 +16,7 @@
 body {
     background-image: url(img/stars-bg.png);
     background-color: black;
+    background-attachment: fixed;
     color: white;
 }
 
