@@ -5,7 +5,6 @@ Una aplicación que permite subir y gestionar imágenes de manera fácil y efici
 ## Funciones
 - **Subir Imágenes**: Permite a los usuarios cargar imágenes desde sus dispositivos.
 - **Visualizar Imágenes**: Muestra una galería con las imágenes subidas.
-- **Eliminar Imágenes**: Opción para borrar imágenes no deseadas o innecesarias.
 
 ## Capturas de Pantalla
 
