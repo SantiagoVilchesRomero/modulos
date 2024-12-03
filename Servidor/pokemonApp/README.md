@@ -38,7 +38,7 @@ Para poner en marcha la aplicación, sigue estos pasos:
 
 1. **Clona el repositorio:**
     ```bash
-    git clone https://github.com/Santivr23/pokemonApp.git
+    git clone https://github.com/Santivr23/uploadFileApp.git
     cd pokemonApp
     ```
 
