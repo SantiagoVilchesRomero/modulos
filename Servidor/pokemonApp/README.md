@@ -18,7 +18,7 @@
 
 ### Lista de Pokémon
 Puedes ver una lista completa de todos los Pokémon registrados. 
-![Lista de Pokémon](imgs/lista.png)
+![Lista de Pokémon](imgs/listaPokemon.png)
 
 ### Crear Pokémon
 Proporciona un formulario para agregar un nuevo Pokémon. 
