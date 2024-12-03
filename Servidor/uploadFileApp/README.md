@@ -1,6 +1,6 @@
 # Laravel Image Upload App
 
-Una aplicación que permite subir y gestionar imágenes de manera fácil y eficiente utilizando Laravel. Este proyecto ofrece una interfaz intuitiva para cargar, visualizar y eliminar imágenes.
+Una aplicación que permite subir y gestionar imágenes de manera fácil y eficiente utilizando Laravel. Este proyecto ofrece una interfaz intuitiva para cargar y visualizar imágenes.
 
 ## Funciones
 - **Subir Imágenes**: Permite a los usuarios cargar imágenes desde sus dispositivos.
