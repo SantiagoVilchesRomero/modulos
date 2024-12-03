@@ -22,15 +22,15 @@ Puedes ver una lista completa de todos los Pokémon registrados.
 
 ### Crear Pokémon
 Proporciona un formulario para agregar un nuevo Pokémon. 
-
+![Create Pokémon](imgs/createPokemon.png)
 
 ### Editar Pokémon
 Edita la información de un Pokémon existente.
-
+![Editar Pokémon](imgs/editPokemon.png)
 
 ### Ver Pokémon
 Consulta todos los detalles de un Pokémon en una vista dedicada.
-
+![Ver Pokémon](imgs/showPokemon.png)
 
 ## Instalación
 
