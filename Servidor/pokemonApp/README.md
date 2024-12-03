@@ -4,6 +4,15 @@
 
 ## Funciones
 
+Lista de Pokémon: Visualiza un listado completo de los Pokémon almacenados en la base de datos.
+
+Crear Pokémon: Agrega nuevos Pokémon con sus respectivos atributos como nombre, tipo, y nivel.
+
+Editar Pokémon: Modifica los datos existentes de cualquier Pokémon.
+
+Ver Pokémon: Consulta detalles específicos de un Pokémon.
+
+Eliminar Pokémon: Borra un Pokémon del sistema.
 
 ## Capturas de Pantalla
 
