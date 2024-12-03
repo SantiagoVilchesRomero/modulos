@@ -27,7 +27,7 @@ Los usuarios pueden seleccionar imágenes desde su dispositivo y cargarlas al se
 
 ## Galería de Imágenes
 
-La galería muestra todas las imágenes subidas, permitiendo a los usuarios desplazarse fácilmente entre ellas. Cada imagen incluye opciones para verla en detalle o eliminarla.
+La galería muestra todas las imágenes subidas, permitiendo a los usuarios desplazarse fácilmente entre ellas. Cada imagen incluye opciones para verla en detalle.
 
 ## Tecnologías Utilizadas
 
