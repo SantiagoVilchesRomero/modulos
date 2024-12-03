@@ -29,14 +29,13 @@ Para poner en marcha la aplicación, sigue estos pasos:
 
 1. **Clona el repositorio:**
     ```bash
-    git clone https://github.com/Carlosrucar/traditionalLaravelAppPokemon.git
-    cd traditionalLaravelApp
+    git clone https://github.com/Santivr23/pokemonApp.git
+    cd pokemonApp
     ```
 
 2. **Instala las dependencias:**
     ```bash
     composer install
-    npm install
     ```
 
 3. **Copia el archivo `.env` de ejemplo:**
@@ -49,7 +48,7 @@ Para poner en marcha la aplicación, sigue estos pasos:
     php artisan key:generate
     ```
 
-5. **Configura las variables de entorno en el archivo `.env`.**
+5. **Modificar la configuración a la base de datos en el archivo `.env`.**
 
 6. **Ejecuta las migraciones de la base de datos:**
     ```bash
