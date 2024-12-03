@@ -76,7 +76,7 @@ class PokemonController extends Controller
             'nombre'  => 'required|max:50|min:4|unique:pokemon,nombre,' . $pokemon->id,
             'peso'    => 'required|numeric|gte:0|lte:999.999',
             'altura'  => 'required|numeric|gte:0|lte:10.999',
-            'tipo'    => 'required|array|size:2', // Validar que sea un array con exactamente 2 elementos
+            'tipo'    => 'required|array|max:2', // Validar que sea un array con exactamente 2 elementos
             'tipo.*'  => 'string|in:Normal,Fuego,Agua,Planta,Eléctrico,Hielo,Lucha,Veneno,Tierra,Volador,Psíquico,Bicho,Roca,Fantasma,Dragón,Siniestro,Acero,Hada', // Validar que cada valor sea válido
             'numero'  => 'required|numeric|gte:1|lte:999',
         ]);

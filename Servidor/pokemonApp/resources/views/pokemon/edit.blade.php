@@ -24,28 +24,33 @@
         </div>
         <div class="form-group">
             <label for="tipo">Tipos</label>
-            <div id="checkbox-container" class="d-flex flex-wrap">
-                @php
-                    $tipos = ['Normal', 'Fuego', 'Agua', 'Planta', 'Eléctrico', 'Hielo', 'Lucha', 'Veneno', 'Tierra', 'Volador', 'Psíquico', 'Bicho', 'Roca', 'Fantasma', 'Dragón', 'Siniestro', 'Acero', 'Hada'];
-                    $pokemonTipos = explode(',', $pokemon->tipo); // Convertir el string de tipos a un array
-                @endphp
-                @foreach($tipos as $tipo)
-                    <div class="col-6 col-md-4">
-                        <div class="form-check">
-                            <input 
-                                type="checkbox" 
-                                id="tipo-{{ $tipo }}" 
-                                name="tipo[]" 
-                                value="{{ $tipo }}" 
-                                class="form-check-input"
-                                {{ (is_array(old('tipo', $pokemonTipos)) && in_array($tipo, old('tipo', $pokemonTipos))) ? 'checked' : '' }}
-                            >
-                            <label class="form-check-label" for="tipo-{{ $tipo }}">{{ $tipo }}</label>
+            <div class="form-group">
+                <label for="tipo">Tipos</label>
+                <div id="checkbox-container" class="d-flex flex-wrap">
+                    @php
+                        // Definir los tipos posibles
+                        $tipos = ['Normal', 'Fuego', 'Agua', 'Planta', 'Eléctrico', 'Hielo', 'Lucha', 'Veneno', 'Tierra', 'Volador', 'Psíquico', 'Bicho', 'Roca', 'Fantasma', 'Dragón', 'Siniestro', 'Acero', 'Hada'];
+                        // Convertir el string de tipos a un array si no está vacío, manejar caso nulo o vacío
+                        $pokemonTipos = $pokemon->tipo ? explode(',', $pokemon->tipo) : [];
+                    @endphp
+                    @foreach($tipos as $tipo)
+                        <div class="col-6 col-md-4">
+                            <div class="form-check">
+                                <input 
+                                    type="checkbox" 
+                                    id="tipo-{{ $tipo }}" 
+                                    name="tipo[]" 
+                                    value="{{ $tipo }}" 
+                                    class="form-check-input"
+                                    {{ in_array($tipo, old('tipo', $pokemonTipos)) ? 'checked' : '' }}
+                                >
+                                <label class="form-check-label" for="tipo-{{ $tipo }}">{{ $tipo }}</label>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
+                <small class="form-text text-muted">Puedes seleccionar hasta dos tipos.</small>
             </div>
-            <small class="form-text text-muted">Puedes seleccionar hasta dos tipos.</small>
         </div>
         <button type="submit" class="btn btn-primary">Editar</button>
     </form>
