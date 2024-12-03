@@ -17,19 +17,19 @@
 ## Capturas de Pantalla
 
 ### Lista de Pokémon
-
+Puedes ver una lista completa de todos los Pokémon registrados. 
 
 
 ### Crear Pokémon
-
+Proporciona un formulario para agregar un nuevo Pokémon. 
 
 
 ### Editar Pokémon
-
+Edita la información de un Pokémon existente.
 
 
 ### Ver Pokémon
-
+Consulta todos los detalles de un Pokémon en una vista dedicada.
 
 
 ## Instalación
