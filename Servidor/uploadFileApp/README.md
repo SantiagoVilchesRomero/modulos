@@ -44,8 +44,8 @@ Para poner en marcha la aplicación, sigue estos pasos:
 
 1. **Clona el repositorio:**
     ```bash
-    git clone https://github.com/Santivr23/pokemonApp.git
-    cd pokemonApp
+    git clone https://github.com/Santivr23/uploaadFileApp.git
+    cd uploaadFileApp
     ```
 
 2. **Instala las dependencias:**
