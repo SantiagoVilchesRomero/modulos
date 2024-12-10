@@ -14,16 +14,16 @@ Este proyecto es una aplicación web desarrollada con PHP que permite gestionar 
 
 ### Listado de Pokémon
 
-![Listado de Pokémon](/img/Captura2.png)
+![Listado de Pokémon](img/Captura2.png)
 
 ### Crear Pokémon
 
-![Crear Pokémon](/img/Captura5.png)
+![Crear Pokémon](img/Captura5.png)
 
 ### Editar Pokémon
 
-![Editar Pokémon](/img/Captura4.png)
+![Editar Pokémon](img/Captura4.png)
 
 ### Ver Detalles de Pokémon
 
-![Detalles de Pokémon](/img/Captura3.png)
+![Detalles de Pokémon](img/Captura3.png)
