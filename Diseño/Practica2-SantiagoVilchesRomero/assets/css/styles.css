@@ -150,7 +150,7 @@ table {
 
     /* ---- sizes ---- */
     --size-nav: 1.125rem;
-    --size-title-hero: clamp(3rem, 1.975rem + 5.125vw, 8.125rem);
+    --size-title-hero: clamp(2.5rem, 2.292rem + 0.694vw, 3.125rem);
     --size-section-title: 1.25rem;
     --size-btn: clamp(1rem, 0.886rem + 0.303vw, 1.25rem);
     --size-text: clamp(1.125rem, 0.983rem + 0.379vw, 1.438rem);
@@ -339,7 +339,7 @@ header {
 h1 {
     font-family: Syne, sans-serif;
     font-weight: var(--syne-bold);
-    font-size: calc(var(--size-title-hero) - 5rem);
+    font-size: var(--size-title-hero);
 }
 
 .hero-content {
@@ -1069,12 +1069,8 @@ footer {
 }
 
 @media screen and (max-width: 1060px) {
-    .mirror-parallax {
-        display: none;
-    }
-
     header {
-        background-image: url(../img/hero_photographer.jpg) !important;
+        background-image: url(../imagenes/hero.png) !important;
         background-attachment: scroll;
     }
 
@@ -1376,6 +1372,10 @@ footer {
         background-position: 85% !important;
     }
 
+    .hero-content{
+        align-items: center;
+    }
+
     .award {
         flex: 1 0 100%;
     }
@@ -1496,7 +1496,7 @@ footer {
     header {
         height: 700px;
         background-attachment: scroll;
-        background-image: url(../img/hero_photographer.jpg);
+        background-image: url(../imagenes/hero.png);
     }
 
     .mirror-parallax {
