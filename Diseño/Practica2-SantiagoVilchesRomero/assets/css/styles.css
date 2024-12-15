@@ -1,0 +1,1505 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Syne:wght@400;500;600;700;800&display=swap");
+
+/* Reset CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Generals styles */
+:root {
+    background-color: rgb(10, 10, 10);
+
+    /* Customs properties */
+    /* ---- colors ---- */
+    --primary-color: #f4403f;
+    --secondary-color: white;
+    --color-lines: rgba(255, 255, 255, 0.2);
+    --color-text: rgba(255, 255, 255, 0.8);
+
+    /* ---- sizes ---- */
+    --size-nav: 1.125rem;
+    --size-title-hero: clamp(3rem, 1.975rem + 5.125vw, 8.125rem);
+    --size-section-title: 1.25rem;
+    --size-btn: clamp(1rem, 0.886rem + 0.303vw, 1.25rem);
+    --size-text: clamp(1.125rem, 0.983rem + 0.379vw, 1.438rem);
+    --size-year: clamp(1.7rem, 1.382rem + 0.848vw, 2.4rem);
+
+    /* ---- weights ---- */
+    --mont: 200;
+    --syne-bold: 700;
+    --syne-semibold: 600;
+    --syne-medium: 500;
+
+    /* ----- margins ---- */
+    --mb-sections: 200px;
+}
+
+html,
+body {
+    height: 100%;
+    /* Soft scroll */
+    scroll-behavior: smooth;
+}
+
+/* ---- General styles ---- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+a {
+    font-family: Syne, sans-serif;
+}
+
+/* ----- Customs classes ----- */
+.br {
+    display: block;
+}
+
+.dest {
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    padding: 15px 20px;
+    min-width: 300px;
+    text-align: center;
+    font-family: Syne, sans-serif;
+    font-size: var(--size-btn);
+    color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    /* button reset */
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.social {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.social:hover {
+    transform: translateY(-3px) rotate(8deg);
+}
+
+.social:first-child {
+    background-image: url(../imagenes/insta.svg);
+}
+
+.social:nth-child(2) {
+    background-image: url(../imagenes/youtube.svg);
+}
+
+.social:last-child {
+    background-image: url(../imagenes/twitter.svg);
+}
+
+/* ---------- HERO STYLES ------------- */
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../imagenes/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: var(--mb-sections);
+    display: flex;
+    flex-flow: column;
+}
+
+/* ---- MENU ---- */
+.menu {
+    width: 95%;
+    margin: 0 auto;
+    height: 6rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    z-index: 99999;
+}
+
+.logo img {
+    width: 150px;
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    opacity: 1;
+}
+
+.list-nav {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Syne, sans-serif;
+    font-size: var(--size-nav);
+    font-weight: var(--syne-semibold);
+    padding-bottom: 2px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.05rem;
+}
+
+.nav-item a:hover {
+    color: var(--secondary-color);
+}
+
+.activeMenu a {
+    color: var(--secondary-color);
+}
+
+/* HERO CONTENT */
+.hero-content {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+h1 {
+    font-family: Syne, sans-serif;
+    font-weight: var(--syne-bold);
+    font-size: calc(var(--size-title-hero) - 5rem);
+}
+
+.hero-content {
+    font-size: var(--size-text);
+}
+
+h1>span {
+    color: var(--primary-color);
+    display: block;
+}
+
+
+
+header .btn {
+    max-width: 300px;
+    min-width: 200px;
+}
+
+/* --------- HOME SECTION ---------- */
+.whoami {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+
+    margin-bottom: var(--mb-sections);
+}
+
+.whoamiText {
+    flex: 2;
+    border-right: 1px solid var(--color-lines);
+}
+
+.whoamiText h3 {
+    font-size: clamp(1.9rem, 1.485rem + 1.107vw, 2.813rem);
+    font-weight: var(--syne-semibold);
+    padding-right: 75px;
+    line-height: 3.5rem;
+}
+
+.whoamiTitle {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-left: 6.25rem;
+}
+
+.whoamiTitle h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+}
+
+/* ----- AWARDS SECTION --------- */
+.awards {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    margin-bottom: var(--mb-sections);
+}
+
+.awardTitle {
+    flex: 1 0 100%;
+    border-bottom: 1px solid var(--color-lines);
+
+    margin-bottom: 6.25rem;
+}
+
+.awardTitle h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+    margin-bottom: 1rem;
+}
+
+.award {
+    text-align: center;
+}
+
+.award .awardImage {
+    width: 7.813rem;
+    height: 6.25rem;
+    /* aspect-ratio: 1 / 1; */
+    margin: 0 auto;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    margin-bottom: 1.875rem;
+}
+
+.awardImage1 {
+    background-image: url(../imagenes/grammy.svg);
+}
+
+.awardImage2 {
+    background-image: url(../imagenes/americanAward.svg);
+}
+
+.awardImage3 {
+    background-image: url(../imagenes/grammy.svg);
+}
+
+.awardImage4 {
+    background-image: url(../imagenes/Billboard_Music_Awards.svg);
+}
+
+.award h4 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    font-weight: var(--syne-medium);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.25rem;
+}
+
+.award h3 {
+    font-family: Syne, sans-serif;
+    font-weight: var(--syne-medium);
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+}
+
+.award h3>span {
+    display: block;
+}
+
+/* ----- ABOUT ME STYLES --------- */
+.aboutme {
+    width: 95%;
+    padding-top: 10px;
+    margin-bottom: var(--mb-sections);
+}
+
+.aboutme h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.aboutmeContent {
+    display: flex;
+    flex-flow: rowre wrap;
+    justify-content: space-between;
+    gap: 1.875rem;
+}
+
+.aboutmeImage {
+    flex: 7;
+    height: 43.75rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../imagenes/biography3.jpg);
+}
+
+.aboutmeText {
+    flex: 6;
+    border-top: 1px solid var(--color-lines);
+    display: flex;
+    align-items: center;
+}
+
+.aboutmeText p {
+    text-align: right;
+    color: var(--color-text);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont);
+    font-size: var(--size-text);
+    width: 95%;
+    margin-left: auto;
+    line-height: 2.6rem;
+}
+
+/* ---------- HISTORY STYLES ---------- */
+.history {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: var(--mb-sections);
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.historyTitle {
+    width: 100%;
+    border-bottom: 1px solid var(--color-lines);
+    margin-bottom: 9.375rem;
+    
+}
+
+.historyTitle h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+    margin-bottom: 1rem;
+}
+
+.historyText {
+    flex: 1;
+    border-right: 1px solid var(--color-lines);
+    padding-top: 1.25rem;
+}
+
+.historyText h3 {
+    font-size: clamp(1.9rem, 1.485rem + 1.107vw, 2.813rem);
+    font-weight: var(--syne-semibold);
+    padding-right: 75px;
+    line-height: 3.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.historyContent {
+    flex: 1;
+    padding-block: 1.25rem;
+}
+
+.year {
+    padding-inline: 3rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 65px;
+    margin-left: 6.25rem;
+}
+
+.year:not(.year:last-child) {
+    margin-bottom: 5rem;
+    border-bottom: 1px solid var(--color-lines);
+}
+
+.yearText h3 {
+    font-size: var(--size-year);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-semibold);
+    margin-bottom: 1.563rem;
+    line-height: 2.5rem;
+}
+
+.yearText p {
+    font-size: var(--size-text);
+    color: var(--color-text);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont);
+    line-height: 2.6rem;
+}
+
+.year:not(.year:last-child) .yearText p {
+    margin-bottom: 3.125rem;
+}
+
+.year .symbol {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 100px;
+    aspect-ratio: 25 / 24;
+
+}
+
+.year:first-child .symbol {
+    background-image: url(../imagenes/ps_logo.svg);
+}
+
+.year:nth-child(2) .symbol {
+    background-image: url(../imagenes/arenal-sound.svg);
+}
+
+.year:nth-child(3) .symbol {
+    background-image: url(../imagenes/medusa-festival.svg);
+}
+
+.year:last-child .symbol {
+    background-image: url(../imagenes/ps_logo.svg);
+}
+
+/* -------------VIDEO STYLES -------------- */
+.video {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--mb-sections);
+}
+
+.video iframe{
+    width: 90%;
+    height: 85%;
+}
+
+/* ------------ LAST PRODUCTIONS STYLES -------------- */
+.last-production {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 6.25rem;
+
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.last-productionTitle {
+    width: 100%;
+    border-bottom: 1px solid var(--color-lines);
+    margin-bottom: 6.25rem;
+    text-align: right;
+}
+
+.last-productionTitle h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+    margin-bottom: 1rem;
+}
+
+/* ---------- FEATURED PROJECTS STYLES --------- */
+.projects {
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: var(--mb-sections);
+}
+
+.projectsTitle {
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--color-lines);
+    margin-bottom: 6.25rem;
+}
+
+.projectsTitle h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+    margin-bottom: 1rem;
+}
+
+.project {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+}
+
+.projectTitle {
+    flex: 1 1 50%;
+    text-align: center;
+}
+
+.projectTitle h3 {
+    font-family: Syne, sans-serif;
+    font-weight: var(--syne-semibold);
+    font-size: clamp(1.5rem, 1.33rem + 0.455vw, 1.875rem);
+    letter-spacing: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.projectTitle h4 {
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont);
+    font-size: var(--size-text);
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.3rem;
+}
+
+.projectContent {
+    flex: 1 1 50%;
+}
+
+.projectContent p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont);
+    color: var(--color-text);
+    line-height: 2.5rem;
+    width: 90%;
+}
+
+.projectContent1 p {
+    padding-left: 60px;
+}
+
+.projectContent2 p {
+    margin-left: auto;
+    padding-right: 60px;
+}
+
+.projectImage {
+    flex: 1 1 50%;
+    aspect-ratio: 5/4;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3.125rem;
+}
+
+.p1pi1 {
+    background-image: url(../imagenes/biography4.jpg);
+    margin-bottom: 6.25rem;
+}
+
+.p1pi2 {
+    background-image: url(../imagenes/biography1.jpg);
+    margin-bottom: 6.25rem;
+}
+
+.p2pi1 {
+    background-image: url(../imagenes/biography2.jpg);
+}
+
+.p2pi2 {
+    background-image: url(../imagenes/biography5.jpg);
+}
+
+/* ------- CONTACT STYLES ------- */
+.contact {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-bottom: var(--mb-sections);
+    border-bottom: 1px solid var(--color-lines);
+    padding-top: 10px;
+}
+
+.oculto {
+    display: none;
+}
+
+.contactTitle {
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-lines);
+    margin-bottom: 6.25rem;
+}
+
+.contactTitle h2 {
+    font-size: var(--size-section-title);
+    font-family: Syne, sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: var(--syne-medium);
+    margin-bottom: 1rem;
+}
+
+.line {
+    height: 600px;
+    width: 1px;
+    background-color: var(--color-lines);
+}
+
+.contactInfo {
+    flex: 1;
+    padding-block: 5rem;
+}
+
+.contactInfo p {
+    text-align: right;
+    color: var(--color-text);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont);
+    font-size: var(--size-text);
+    margin-left: auto;
+    line-height: 2.6rem;
+    max-width: 35rem;
+    margin-bottom: 6.25rem;
+}
+
+.contactInfo p,
+.contactInfo ul {
+    margin-right: 100px;
+}
+
+.contactInfo ul li {
+    text-align: right;
+    color: var(--color-text);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont);
+    font-size: var(--size-text);
+    margin-left: auto;
+    letter-spacing: 0.05rem;
+    line-height: 2.6rem;
+    margin-right: 60px;
+    position: relative;
+}
+
+.contactInfo ul li {
+    margin-bottom: 1.5rem;
+}
+
+.contactInfo ul li::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: -60px;
+    top: 5px;
+}
+
+.contactInfo ul li:first-child::before {
+    content: "";
+    background-image: url(../img/phone.svg);
+}
+
+.contactInfo ul li:nth-child(2)::before {
+    content: "";
+    background-image: url(../img/mail.svg);
+}
+
+.contactInfo>.socials {
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+
+.contactForm {
+    flex: 1;
+    padding-block: 5rem;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 6.25rem;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: var(--size-text);
+    border-bottom: 1px solid var(--color-lines);
+    margin-bottom: 5rem;
+    font-family: Montserrat, sans-serif;
+    color: var(--secondary-color);
+    padding-left: 1rem;
+    padding-bottom: 0.2rem;
+    max-width: 35rem;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+form>.btn {
+    max-width: 18.75rem;
+}
+
+/* ------------- FOOTER -------------- */
+footer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    padding-block: 100px;
+    justify-content: space-between;
+    font-family: Syne, sans-serif;
+    color: var(--secondary-color);
+}
+
+.footerColumn {
+    flex: 1;
+}
+
+.footerColumn:first-child img {
+    max-width: 120px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+}
+
+.footerColumn:first-child img:hover {
+    opacity: 1;
+}
+
+.footerColumn:first-child ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.footerColumn:nth-child(2) {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.footerColumn:nth-child(2) ul li {
+    margin-bottom: 1.5rem;
+}
+
+.footerColumn:nth-child(2) ul li a {
+    letter-spacing: 0.25rem;
+    font-weight: var(--syne-medium);
+    color: var(--color-text);
+    transition: all 0.3s ease-in-out;
+}
+
+.footerColumn:nth-child(2) ul li a:hover {
+    color: var(--primary-color);
+    letter-spacing: 0.3rem;
+}
+
+.footerColumn:last-child {
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.footerColumn:last-child ul li {
+    margin-bottom: 1.5rem;
+}
+
+.footerColumn:last-child ul li a {
+    letter-spacing: 0.25rem;
+    font-weight: var(--syne-medium);
+    color: var(--color-text);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.footerColumn:last-child ul li a:hover {
+    color: var(--primary-color);
+    letter-spacing: 0.3rem;
+}
+
+/* ------- subfooter --------- */
+.subfooter {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.subfooter p {
+    font-family: Montserrat, sans-serif;
+    color: var(--color-text);
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+}
+
+.subfooter p a {
+    font-family: Montserrat, sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.8rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.subfooter p a:hover {
+    color: var(--primary-color);
+}
+
+/* -------------- MEDIA QUERIES ------------ */
+@media screen and (max-width: 1600px) {
+    .aboutmeImage {
+        flex: 4;
+    }
+
+    .historyContent {
+        flex: 6;
+    }
+
+    .historyText {
+        flex: 4;
+    }
+}
+
+@media screen and (max-width: 1325px) {
+    .whoamiText {
+        flex: 4;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    header {
+        background-position: 80% !important;
+    }
+
+    .award {
+        flex: 1 0 50%;
+    }
+
+    .award:first-child,
+    .award:nth-child(2) {
+        margin-bottom: 6.25rem;
+    }
+
+    .year {
+        padding-inline: 0;
+        margin-left: 50px;
+    }
+
+    .historyText h3 {
+        padding-right: 40px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .projectImage {
+        aspect-ratio: 4 / 5;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .mirror-parallax {
+        display: none;
+    }
+
+    header {
+        background-image: url(../img/hero_photographer.jpg) !important;
+        background-attachment: scroll;
+    }
+
+    .aboutme {
+        width: 100%;
+    }
+
+    .aboutme h2 {
+        width: 90%;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--color-lines);
+        padding-bottom: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .aboutmeContent {
+        flex-flow: column;
+        width: 100%;
+    }
+
+    .aboutmeText {
+        border: none;
+        order: 1;
+        width: 90%;
+        margin-inline: auto;
+        margin-bottom: 3rem;
+    }
+
+    .aboutmeText p {
+        width: 100%;
+    }
+
+    .aboutmeImage {
+        order: 2;
+        width: 100%;
+        aspect-ratio: 5 / 3;
+    }
+
+    .galleryImage {
+        flex: 1 1 300px;
+    }
+
+    .footerColumn:first-child {
+        flex: 1 1 100%;
+        margin-bottom: 80px;
+    }
+
+    .footerColumn:nth-child(2),
+    .footerColumn:last-child {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .whoami {
+        flex-flow: column;
+    }
+
+    .whoamiTitle {
+        order: 1;
+        margin: 0;
+        padding: 0;
+        gap: 5rem;
+        margin-bottom: 3rem;
+    }
+
+    .whoamiTitle h2 {
+        width: 100%;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--color-lines);
+    }
+
+    .whoamiText {
+        order: 2;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .whoamiText h3 {
+        padding: 0;
+    }
+
+    .history {
+        flex-flow: column;
+    }
+
+    .historyTitle {
+        margin-bottom: 80px;
+    }
+
+    .historyContent,
+    .historyText {
+        padding: 0;
+    }
+
+    .historyContent {
+        width: 80%;
+        margin-left: 0;
+        margin-inline: auto;
+        border: none;
+    }
+
+    .year {
+        margin-inline: 0;
+    }
+
+    .historyText {
+        margin-bottom: 100px;
+        border: none;
+    }
+
+    .historyText h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .projectTitle {
+        flex: 1 0 100%;
+        margin-bottom: 3rem;
+        order: 1;
+    }
+
+    .projectContent {
+        flex: 1 0 100%;
+        order: 2;
+    }
+
+    .projectContent p {
+        margin: 0;
+        padding: 0;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .projectImage {
+        order: 3;
+    }
+
+    .contactInfo p,
+    .contactInfo ul,
+    .contactInfo .socials {
+        margin-right: 50px;
+    }
+
+    .contactForm form {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    header {
+        background-position: 65% !important;
+    }
+
+    .menu {
+        width: 90%;
+    }
+
+    .menu-toggle {
+        width: 35px;
+        height: 25px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .menu-toggle .bar {
+        width: 100%;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: block;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle:hover .bar {
+        background-color: var(--secondary-color);
+    }
+
+    .list-nav {
+        display: none;
+    }
+
+    .show {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--primary-color);
+        padding: 3rem;
+        box-shadow: 0 0 0 100vmax rgba(21, 21, 21, 0.5);
+
+        animation: menuIn 1s;
+    }
+
+    .list-nav-show {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-top: 3rem;
+    }
+
+    .hide {
+        opacity: 0;
+        display: none;
+    }
+
+    .rotate-45 {
+        transform: rotate(-45deg) translate(0, 14px);
+    }
+
+    .rotate45 {
+        transform: rotate(45deg) translate(0, -15px);
+    }
+
+    @keyframes menuIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .brands {
+        column-gap: 3rem;
+    }
+
+    .gallery>h3>.br {
+        display: inline;
+    }
+
+    .contact {
+        flex-flow: column;
+    }
+
+    .contact .line {
+        display: none;
+    }
+
+    .contactInfo p,
+    .contactInfo ul,
+    .contactInfo .socials {
+        margin: 0;
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+
+    .contactInfo ul li {
+        text-align: left;
+        margin-right: 0;
+        margin-left: 60px;
+    }
+
+    .contactInfo ul li::before {
+        content: "";
+        left: -60px;
+    }
+
+    .contactInfo>.socials {
+        justify-content: flex-start;
+    }
+
+    .contactForm form {
+        margin: 0;
+    }
+
+    .contactForm form>input,
+    .contactForm form>textarea {
+        width: 100%;
+        max-width: none;
+    }
+
+    .contactForm form .btn {
+        margin-inline: auto;
+    }
+
+    .contactForm {
+        padding-top: 0;
+    }
+
+    .contactTitle {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        text-align: center;
+        background-position: 85% !important;
+    }
+
+    .award {
+        flex: 1 0 100%;
+    }
+
+    .award:not(.award:last-child) {
+        margin-bottom: 6.25rem;
+    }
+
+    .aboutmeText p {
+        text-align: justify;
+    }
+
+    .aboutmeImage {
+        aspect-ratio: 3 / 4;
+    }
+
+    .historyContent {
+        width: 100%;
+    }
+
+    .year {
+        gap: 35px;
+    }
+
+    .brandsTitle {
+        margin-bottom: 150px;
+    }
+
+    .brands {
+        flex-flow: column;
+    }
+
+    .brand {
+        min-width: 50%;
+        margin-inline: auto;
+    }
+
+    .brand:not(.brand:last-child) {
+        margin-bottom: 60px;
+    }
+
+    .brand1 {
+        margin-bottom: 120px !important;
+    }
+
+    .brandImage {
+        min-height: auto;
+        aspect-ratio: 6 / 2.5;
+    }
+
+    .projectContent p {
+        text-align: justify;
+    }
+
+    .projectContent {
+        margin-bottom: 3rem;
+    }
+
+    .projectImage {
+        flex: 1 0 100%;
+        aspect-ratio: 4 / 3.5;
+        margin: 0;
+    }
+
+    .p1pi2 {
+        margin-bottom: 100px;
+    }
+
+    .galleryNav {
+        column-gap: 4rem;
+    }
+
+    .gallery>h3 {
+        line-height: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contactTitle h2 {
+        display: none;
+    }
+
+    .contactTitle h2.oculto {
+        display: inline-block;
+    }
+
+    .contactInfo p {
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .year {
+        flex-flow: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        flex-flow: column;
+    }
+
+    .footerColumn {
+        text-align: center;
+    }
+
+    .footerColumn ul li {
+        text-align: center;
+    }
+
+    .footerColumn:nth-child(2) {
+        margin-bottom: 80px;
+    }
+}
+
+/* Fix height strechedt hero */
+@media screen and (max-height: 600px) {
+    header {
+        height: 700px;
+        background-attachment: scroll;
+        background-image: url(../img/hero_photographer.jpg);
+    }
+
+    .mirror-parallax {
+        display: none;
+    }
+}
