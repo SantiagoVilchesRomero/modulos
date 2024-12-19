@@ -1,4 +1,4 @@
-# Laravel Image User App
+# Laravel User App
 
 Una aplicación que permite gestionar usuarios de manera fácil y eficiente utilizando Laravel. Este proyecto ofrece una interfaz intuitiva para que el super admin pueda gestionar todos los usuarios(admin y no admin) y los admin puedan gestinar a los usuarios normales(no admin).
 
