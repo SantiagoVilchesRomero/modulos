@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
@@ -15,12 +15,16 @@ class AdminMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {
-        $user = Auth::user();
-        $user = $request->user();
-        if($user == null || $user->role != 'admin') {
-            return redirect()->route('index');
-        }
-        return $next($request);
+{
+    if (!Auth::check()) {
+        return redirect('/login');
     }
+    
+    $user = Auth::user();
+    if ($user->role !== 'admin' && $user->role !== 'superadmin') {
+        return redirect()->back()->with('error', 'No tienes permisos para acceder a esta sección');
+    }
+
+    return $next($request);
+}
 }

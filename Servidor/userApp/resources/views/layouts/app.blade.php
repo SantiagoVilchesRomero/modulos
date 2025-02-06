@@ -63,34 +63,26 @@
                                             <a class="dropdown-item" href="{{ route('profile.show') }}">
                                                 {{ __('Perfil') }}
                                             </a>
+
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                              document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
 
-                                            @auth
-                                                        @if(Auth::user()->role === 'admin')
-                                                            <li class="nav-item">
-                                                                <a class="nav-link" href="{{ route('users.index') }}">{{ __('Gestión de Usuarios') }}</a>
-                                                            </li>
-                                                        @endif
-                                            @endauth
-
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                            </div>
-                            </li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
                         @endguest
-                </ul>
+                    </ul>
+                </div>
             </div>
-    </div>
-    </nav>
+        </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"

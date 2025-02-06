@@ -2,67 +2,94 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <span>{{ __('Gestión de Usuarios') }}</span>
-                    <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Crear Usuario</a>
-                </div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Email</th>
-                                    <th>Rol</th>
-                                    <th>Verificado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($users as $user)
-                                <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ ucfirst($user->role) }}</td>
-                                    <td>
-                                        @if($user->email_verified_at)
-                                            <span class="text-success">Sí</span>
-                                        @else
-                                            <span class="text-danger">No</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <div class="btn-group" role="group">
-                                            <a href="{{ route('users.edit', $user) }}" class="btn btn-warning btn-sm">Editar</a>
-                                            @if(auth()->user()->id !== $user->id && $user->id !== 1)
-                                                <form action="{{ route('users.destroy', $user) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
-                                                </form>
-                                            @endif
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    @if(Auth::user()->role === 'superadmin')
+        <div class="mb-3">
+            <a href="{{ route('users.create') }}" class="btn btn-success">Crear Usuario</a>
         </div>
-    </div>
+    @endif
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->role }}</td>
+                    <td>
+                        @if(Auth::user()->role === 'superadmin' && Auth::id() === $user->id)
+                            <button type="button" class="btn btn-sm btn-primary" disabled
+                                title="No puedes editarte a ti mismo como superadmin">
+                                Editar
+                            </button>
+                        @else
+                            <a href="{{ route('users.edit', $user) }}" class="btn btn-sm btn-primary">
+                                Editar
+                            </a>
+                        @endif
+                        @if($user->role === 'superadmin' || $user->id === 1)
+                            <button type="button" class="btn btn-sm btn-danger" disabled
+                                title="No se puede eliminar al superadmin">
+                                Eliminar
+                            </button>
+                        @else
+                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal{{ $user->id }}">
+                                Eliminar
+                            </button>
+                            @if(Auth::user()->role === 'superadmin')
+                                @if(!$user->email_verified_at)
+                                    <form action="{{ route('users.verify-email', $user) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-success">
+                                            Verificar Email
+                                        </button>
+                                    </form>
+                                @else
+                                    <span class="badge bg-success">Verificado</span>
+                                @endif
+                            @endif
+
+                            <!-- Modal Confirmación -->
+                            <div class="modal fade" id="deleteModal{{ $user->id }}" tabindex="-1"
+                                aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Confirmar eliminación</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ¿Estás seguro de que quieres eliminar al usuario
+                                            <strong>{{ $user->name }}</strong>?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                            <form action="{{ route('users.destroy', $user) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">
+                                                    Eliminar
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 @endsection

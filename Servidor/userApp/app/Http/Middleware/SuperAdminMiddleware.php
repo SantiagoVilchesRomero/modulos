@@ -16,11 +16,9 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth::user();
-        $user = $request->user();
-        if($user == null || $user->role != 'admin') {
-            return redirect()->route('index');
-        }
+        if (!Auth::check() || Auth::id() !== 1) {
+        return redirect('/home');
+    }
         return $next($request);
     }
 }
