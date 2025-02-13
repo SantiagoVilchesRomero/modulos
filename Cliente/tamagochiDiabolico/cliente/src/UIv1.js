@@ -1,4 +1,6 @@
 import { UI_BUILDER } from "./Ui.js";
+import { ELEMENTS } from "./entities/Board.js";
+import { Player } from "./entities/Player.js";
 
 export const UIv1 = UI_BUILDER.init();
 
@@ -17,15 +19,27 @@ UIv1.drawBoard = (board) => {
             const tile = document.createElement("div");
             tile.classList.add("tile");
             base.appendChild(tile);
+            if(element === ELEMENTS.bush) {
+                tile.style.backgroundColor = 'green';
+                tile.textContent = '🌳';
+            }
             anime({
                 targets: tile,
-                opacity: [0, 1],
-                duration: (Math.random() * 8000) + 1000,
-                easing: 'easeInOutQuad'
+                opacity: 1,
             });
         }));
     }
 }
 
-UIv1.drawBoard();
-
+UIv1.drawPlayers = (players, boardSize) => {
+    const base = document.getElementById(UIv1.uiElements.board);
+    players.forEach(player => {
+        const index = player.x * boardSize + player.y;
+        const tile = base.children[index];
+        if (tile) {
+            tile.textContent = '🚶';
+            tile.style.fontSize = '30px';
+            tile.classList.add("player");
+        }
+    });
+};

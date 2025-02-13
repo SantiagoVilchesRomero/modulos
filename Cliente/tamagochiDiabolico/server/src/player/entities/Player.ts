@@ -14,6 +14,7 @@ export enum PlayerStates {
 
 export interface Player {
     id: Socket;
+    identifier: String;
     x: Number;
     y: Number;
     state: PlayerStates;

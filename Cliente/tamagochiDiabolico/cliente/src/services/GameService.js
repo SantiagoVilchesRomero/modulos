@@ -19,6 +19,7 @@ export class GameService {
     };
 
     constructor(ui){
+        console.log(this);
         this.#state = this.#states.WAITING;
         this.#board = new Board();
         this.#queue = new Queue();
@@ -55,7 +56,9 @@ export class GameService {
     };
 
     async do_newPlayer (payload) {
-        console.log("ha llegado un jugador nuevo");
+        this.#players = payload;  
+        const boardSize = this.#board.map.length;  
+        this.#ui.drawPlayers(this.#players, boardSize);
     };
 
     async do_newBoard(payload) {

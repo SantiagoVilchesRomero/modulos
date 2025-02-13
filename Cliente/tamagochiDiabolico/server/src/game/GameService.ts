@@ -5,6 +5,7 @@ import { RoomService } from "../room/RoomService";
 import { Game, GameStates, Messages } from "./entities/Game";
 import { BoardBuilder } from "./BoardBuilder";
 import { ServerService } from "../server/ServerService"
+import { RoomConfig } from "../room/entities/Room";
 export class GameService {
     private games: Game[];
 
@@ -24,6 +25,7 @@ export class GameService {
     public buildPlayer(socket: Socket): Player {
         return {
             id: socket,
+            identifier: socket.id,
             x: 0,
             y: 0,
             state: PlayerStates.Idle,
@@ -32,32 +34,85 @@ export class GameService {
         }
     }
 
+    // public getPlayersDataWithoutId(room: Room): Omit<Player, 'id'>[] {
+    //     return room.players.map(({ id, ...rest }) => rest);
+    // }
+
     public addPlayer(player: Player): boolean {
         const room: Room = RoomService.getInstance().addPlayer(player);
-        //ServerService.getInstance().sendMessage(room.name,ServerService.messages.out.new_player,"new player");
-        ServerService.getInstance().sendMessage(room.name, Messages.NEW_PLAYER, "new player");
-        const genRanHex = (size: Number) => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
-        if (room.players.length == 1) {
+        const boardSize = 8; //BoardBuilder.size no me funciona, preguntar
+        const players = room.players;
+        console.log(players);
+        const cornerPositions = [
+            { x: 0, y: 0 },
+            { x: 0, y: boardSize - 1 },
+            { x: boardSize - 1, y: 0 },
+            { x: boardSize - 1, y: boardSize - 1 }
+        ];
+        const index = players.findIndex(p => p.identifier === player.identifier);
+        console.log(index + " soy el index");
+        if (index < cornerPositions.length) {
+            player.x = cornerPositions[index].x;
+            player.y = cornerPositions[index].y;
+        }
+    
+        const serializePlayers = (players: Player[]) => {
+            return players.map(({ identifier, x, y, state, direction, visibility }) => ({
+                identifier,
+                x,
+                y,
+                state,
+                direction,
+                visibility
+            }));
+        };
+    
+        if (!room.game) {
+            const genRanHex = (size: Number) =>
+                [...Array(size)]
+                    .map(() => Math.floor(Math.random() * 16).toString(16))
+                    .join('');
             const game: Game = {
                 id: "game" + genRanHex(128),
                 state: GameStates.WAITING,
                 room: room,
                 board: new BoardBuilder().getBoard()
-            }
+            };
             room.game = game;
             this.games.push(game);
+            
+            player.id.emit("message", {
+                type: Messages.BOARD,
+                content: room.game.board
+            });
+        } else {
+            
+            player.id.emit("message", {
+                type: Messages.BOARD,
+                content: room.game.board
+            });
         }
-
-        if (room.occupied) {
-            if (room.game) {
-                room.game.state = GameStates.PLAYING;
-                if (ServerService.getInstance().isActive()) {
-                    ServerService.getInstance().sendMessage(room.name, Messages.BOARD, room.game.board);
-                }
-            }
+    
+        
+        ServerService.getInstance().sendMessage(
+            room.name,
+            Messages.NEW_PLAYER,
+            serializePlayers(players)
+        );
+    
+        
+        if (room.players.length === RoomConfig.maxRoomPlayers) {
+            room.game.state = GameStates.PLAYING;
+            if (ServerService.getInstance().isActive()) {
+                ServerService.getInstance().sendMessage(
+                    room.name,
+                    Messages.BOARD,
+                    room.game.board
+                );
+            } // Creo que aqui al meter el 4 jugador se manda un tablero y se sobre escribe el tablero
             return true;
         }
-
         return false;
     }
+
 }

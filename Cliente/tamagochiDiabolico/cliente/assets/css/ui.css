@@ -12,3 +12,10 @@
     justify-content: center;
     border: 1px dotted #000000;
 }
+
+.bush {
+    background-image: url(../images/bush.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

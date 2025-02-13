@@ -8,15 +8,14 @@ export const ConnectionHandler = {
     controller: null,
     init: (url, controller, onConnectedCallBack, onDisconnectedCallBack) => {
         ConnectionHandler.controller = controller;
-        let { socket } = ConnectionHandler; 
+        let { socket } = ConnectionHandler;
         socket = io(url);
         socket.onAny((message, payload) => {
             console.log("Esta llegando: ");
             console.log(payload);
             console.log(payload.type);
             console.log(payload.content);
-
-          });
+        });
 
         socket.on("connect", (data) => {
             socket.on("connectionStatus", (data) => {
