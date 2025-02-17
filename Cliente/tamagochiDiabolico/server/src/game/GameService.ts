@@ -8,8 +8,8 @@ import { ServerService } from "../server/ServerService"
 import { RoomConfig } from "../room/entities/Room";
 export class GameService {
     private games: Game[];
-
     private static instance: GameService;
+
     private constructor() {
         this.games = [];
     };
@@ -37,10 +37,10 @@ export class GameService {
     // public getPlayersDataWithoutId(room: Room): Omit<Player, 'id'>[] {
     //     return room.players.map(({ id, ...rest }) => rest);
     // }
-
+    
     public addPlayer(player: Player): boolean {
         const room: Room = RoomService.getInstance().addPlayer(player);
-        const boardSize = 8; //BoardBuilder.size no me funciona, preguntar
+        const boardSize = new BoardBuilder().size; //BoardBuilder.size no me funciona, preguntar
         const players = room.players;
         console.log(players);
         const cornerPositions = [
@@ -100,16 +100,17 @@ export class GameService {
             serializePlayers(players)
         );
     
-        
-        if (room.players.length === RoomConfig.maxRoomPlayers) {
+
+        if (room.players.length === RoomConfig.maxRoomPlayers) { 
             room.game.state = GameStates.PLAYING;
-            if (ServerService.getInstance().isActive()) {
-                ServerService.getInstance().sendMessage(
-                    room.name,
-                    Messages.BOARD,
-                    room.game.board
-                );
-            } // Creo que aqui al meter el 4 jugador se manda un tablero y se sobre escribe el tablero
+            console.log("Juego iniciado");
+            // if (ServerService.getInstance().isActive()) {
+            //     ServerService.getInstance().sendMessage(
+            //         room.name,
+            //         Messages.BOARD,
+            //         room.game.board
+            //     );
+            // } // Creo que aqui al meter el 4 jugador se manda un tablero y se sobre escribe el tablero
             return true;
         }
         return false;
