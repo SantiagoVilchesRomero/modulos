@@ -29,7 +29,7 @@ export class GameService {
             x: 0,
             y: 0,
             state: PlayerStates.Idle,
-            direction: Directions.Up,
+            direction: Directions.Left,
             visibility: true
         }
     }

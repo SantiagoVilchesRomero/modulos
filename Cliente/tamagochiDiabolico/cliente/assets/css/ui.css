@@ -19,3 +19,18 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+
+#board-container {
+    display: flex;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#controls button {
+    margin-bottom: 10px;
+}

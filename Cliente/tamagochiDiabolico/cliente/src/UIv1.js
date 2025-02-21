@@ -7,6 +7,19 @@ export const UIv1 = UI_BUILDER.init();
 UIv1.initUI = () => {
     const base = document.getElementById(UIv1.uiElements.board);
     base.classList.add("board");
+
+    document.getElementById("moveBtn").addEventListener("click", () => {
+        console.log("Acción: Mover");
+        // Llamada a la función de movimiento
+    });
+    document.getElementById("rotateBtn").addEventListener("click", () => {
+        console.log("Acción: Rotar");
+        // Llamada a la función de rotación
+    });
+    document.getElementById("shootBtn").addEventListener("click", () => {
+        console.log("Acción: Disparar");
+        // Llamada a la función de disparo
+    });
 }
 
 UIv1.drawBoard = (board) => {
@@ -43,3 +56,4 @@ UIv1.drawPlayers = (players, boardSize) => {
         }
     });
 };
+
