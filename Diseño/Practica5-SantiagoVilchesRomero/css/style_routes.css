@@ -1,0 +1,803 @@
+/* ---------- HEADER STYLES --------- */
+header {
+    height: 46.875rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+}
+
+.headerContent {
+    width: clamp(21.875rem, 15.605rem + 28.662vw, 50rem);
+    padding-block: 2.5rem;
+    background-color: var(--secondary-color);
+    padding-left: 6.5%;
+    border-top-right-radius: 1px;
+    padding-bottom: 4.7rem;
+    transform: translateY(2.2rem);
+    z-index: 2;
+}
+
+.headerContent h1,
+.headerContent h2 {
+    color: var(--primary-color);
+}
+
+.headerContent h2:first-child {
+    margin-bottom: 1.8rem;
+}
+
+.headerContent h2:first-child {
+    margin-bottom: 1.8rem;
+}
+
+.headerContent .subtitle h2 {
+    padding-inline: clamp(0.313rem, 0.092rem + 0.704vw, 0.938rem);
+}
+
+.headerContent .subtitle .line {
+    width: clamp(2rem, 0.944rem + 3.38vw, 5rem);
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.headerContent .subtitle {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+/* ----------- TRAVEL IDEAS -----------*/
+.ideas {
+    width: 87%;
+    margin-inline: auto;
+
+    margin-bottom: 14.375rem;
+}
+
+.ideasTitle {
+    text-align: center;
+    margin-bottom: 6.25rem;
+}
+
+.ideasTitle h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+    line-height: 3.7rem;
+}
+
+.ideasTitle .sectionLine {
+    margin-inline: auto;
+}
+
+.plan {
+    margin-bottom: 9.375rem;
+}
+
+/* Plan content */
+.planContent {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    margin-bottom: 6.25rem;
+}
+
+.planContentImages {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 2.5%;
+}
+
+.planContentText {
+    flex: 1;
+    padding-left: 70px;
+}
+
+.plan2 .planContentText {
+    padding-left: 0px;
+    padding-right: 70px;
+}
+
+.planContentText h4 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: var(--jose-regular);
+    font-size: var(--size-fourth-heading);
+    margin-bottom: 1.125rem;
+}
+
+.planContentText .sectionLine {
+    margin-bottom: 1.125rem;
+    height: 1px;
+}
+
+.planContentText h6 {
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-regular);
+    font-size: var(--size-text);
+    margin-bottom: 2.188rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.planContentText p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    line-height: var(--line-height);
+    width: 90%;
+}
+
+.planContentText>div>p {
+    margin-bottom: 1rem;
+}
+
+.planContentText>div {
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* TIMELINE BUTTONS */
+.dayActive {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color);
+    border-color: var(--primary-color) !important;
+}
+
+.dayHidden {
+    display: none;
+}
+
+
+/* Photos */
+.planContentImages .image {
+    flex: 1;
+    height: 25rem;
+    overflow: hidden;
+}
+
+.planContentImages .image:hover>div {
+    transform: scale(1.03);
+}
+
+.planContentImages .image>div {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Ponemos las fotos de cada ruta */
+/* Ruta 1 */
+.plan1 .planContent .planContentImages .image:first-child>div {
+    background-image: url(../imgs/ruta1Ft1.jpg);
+}
+
+.plan1 .planContent .planContentImages .image:nth-child(2)>div {
+    background-image: url(../imgs/ruta1Ft2.jpg);
+}
+
+.plan1 .planContent .planContentImages .image:last-child>div {
+    background-image: url(../imgs/ruta1Ft3.jpg);
+}
+
+/* Ruta 2 */
+.plan2 .planContent .planContentImages .image:first-child>div {
+    background-image: url(../imgs/ruta2Ft1.jpg);
+}
+
+.plan2 .planContent .planContentImages .image:nth-child(2)>div {
+    background-image: url(../imgs/ruta2Ft2.jpg);
+}
+
+.plan2 .planContent .planContentImages .image:last-child>div {
+    background-image: url(../imgs/ruta2Ft3.jpg);
+}
+
+/* Ruta 3 */
+.plan3 .planContent .planContentImages .image:first-child>div {
+    background-image: url(../imgs/ruta3Ft1.jpg);
+}
+
+.plan3 .planContent .planContentImages .image:nth-child(2)>div {
+    background-image: url(../imgs/ruta3Ft2.jpg);
+}
+
+.plan3 .planContent .planContentImages .image:last-child>div {
+    background-image: url(../imgs/ruta3Ft3.jpg);
+}
+
+.plan1 .planContent .planContentImages .image:nth-child(2),
+.plan3 .planContent .planContentImages .image:nth-child(2) {
+    margin-top: 2.5rem;
+}
+
+.plan1 .planContent .planContentImages .image:last-child,
+.plan3 .planContent .planContentImages .image:last-child {
+    margin-top: 5rem;
+}
+
+.plan2 .planContent .planContentImages .image:first-child {
+    margin-top: 5rem;
+}
+
+.plan2 .planContent .planContentImages .image:nth-child(2) {
+    margin-top: 2.5rem;
+}
+
+.plan3 {
+    margin-bottom: 0;
+}
+
+/* Timeline */
+.planTimeLine {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    position: relative;
+}
+
+.planTimeLine .line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    top: clamp(1.563rem, 1.042rem + 1.736vw, 3.125rem);
+}
+
+.planTimeLine .node {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+.planTimeLine .node .circle {
+    background-color: var(--secondary-color);
+    width: clamp(3.125rem, 2.083rem + 3.472vw, 6.25rem);
+    aspect-ratio: 1 / 1;
+    outline: none;
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 50%;
+    font-size: var(--size-subt-hero);
+    font-family: Montserrat, sans-serif;
+    font-weight: var(--mont-semibold);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 1.25rem;
+}
+
+.planTimeLine .node .circle:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.planTimeLine .node p {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-fourth-heading);
+    max-width: 290px;
+}
+
+.nodeDay {
+    display: none;
+}
+
+/* ---------- ESSENTIAL DESTINATIONS ----------- */
+.destinations {
+    width: 87%;
+    margin-inline: auto;
+
+    margin-bottom: 14.375rem;
+}
+
+.destinationsTitle {
+    margin-bottom: 6.25rem;
+}
+
+.destinationsTitle h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+    line-height: 3.7rem;
+}
+
+.destinationsTitle .sectionLine {
+    margin-bottom: 0;
+}
+
+.destinationsGallery {
+    width: 100%;
+    aspect-ratio: 167 / 106;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    gap: 10px;
+}
+
+.destinationsGallery .column {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.destinationsGallery .column .image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.destinationsGallery .column .image::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.destinationsGallery .column .image:hover::after {
+    content: "";
+    opacity: 1;
+}
+
+.destinationsGallery .column .image::before {
+    content: "";
+    color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-fourth-heading);
+    z-index: 99;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.destinationsGallery .column .image:hover::before {
+    content: "";
+    opacity: 1;
+}
+
+.destinationsGallery .column:first-child .image:first-child:hover::before {
+    content: "Þingvellir National Park";
+}
+
+.destinationsGallery .column:first-child .image:last-child:hover::before {
+    content: "Gullfoss";
+}
+
+.destinationsGallery .column:nth-child(2) .image:hover::before {
+    content: "Jökulsárlón Glacier Lagoon";
+}
+
+.destinationsGallery .column:last-child .image:first-child:hover::before {
+    content: "Seljalandsfoss y Skógafoss";
+}
+
+.destinationsGallery .column:last-child .image:last-child:hover::before {
+    content: "Reynisfjara Black Sand Beach";
+}
+
+.destinationsGallery .column:first-child,
+.destinationsGallery .column:last-child {
+    row-gap: 10px;
+}
+
+.destinationsGallery .column:first-child .image:first-child {
+    flex: 3;
+    width: 100%;
+    background-image: url(../imgs/essential1.jpg);
+}
+
+.destinationsGallery .column:first-child .image:last-child {
+    flex: 5;
+    width: 100%;
+    background-image: url(../imgs/essential2.jpg);
+}
+
+.destinationsGallery .column:nth-child(2) .image {
+    flex: 1;
+    width: 100%;
+    background-image: url(../imgs/essential3.jpg);
+}
+
+.destinationsGallery .column:last-child .image:first-child {
+    flex: 5;
+    width: 100%;
+    background-image: url(../imgs/essential4.jpg);
+}
+
+.destinationsGallery .column:last-child .image:last-child {
+    flex: 3;
+    width: 100%;
+    background-image: url(../imgs/essential5.jpg);
+}
+
+/* ----------- ACTIVITIES --------- */
+.activities {
+    width: 87%;
+    margin-inline: auto;
+    text-align: right;
+
+    margin-bottom: 9.375rem;
+}
+
+.activitiesTitle h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+    line-height: 3.7rem;
+}
+
+.activitiesTitle .sectionLine {
+    margin-bottom: 6.25rem;
+    margin-left: auto;
+}
+
+.activitiesCards {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: clamp(0.625rem, -1.667rem + 7.639vw, 7.5rem);
+}
+
+.activitie h4 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-fourth-heading);
+    font-weight: var(--jose-regular);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.activitie {
+    flex: 1;
+}
+
+.activitie .activitieImage {
+    width: 100%;
+    aspect-ratio: 9 / 10;
+    border-radius: 1px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 3.75rem;
+    position: relative;
+}
+
+.activitie .activitieImage::before {
+    content: "";
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    aspect-ratio: 16 / 9;
+    background-color: rgba(181, 181, 181, 0.6);
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+.activitie:hover .activitieImage::before {
+    bottom: 0;
+}
+
+.activitie:first-child .activitieImage {
+    background-image: url(../imgs/activitie1.jpg);
+}
+
+.activitie:nth-child(2) .activitieImage {
+    background-image: url(../imgs/activitie2.jpg);
+}
+
+.activitie:last-child .activitieImage {
+    background-image: url(../imgs/activitie3.jpg);
+}
+
+/* -------- MEDIA QUERIES -------------- */
+@media screen and (max-width: 1450px) {
+    .planContentText p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .planContentImages .image:nth-child(2) {
+        display: none;
+    }
+
+    .planContentImages {
+        flex: 8;
+    }
+
+    .planContentText {
+        flex: 10;
+    }
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 1050px) {
+    .planContentImages .image:first-child {
+        display: none;
+    }
+
+    .planContentImages .image {
+        height: 35rem;
+        margin: 0 !important;
+    }
+
+    .planContentImages {
+        flex: 7;
+    }
+
+    .planContentText {
+        flex: 10;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .activitie {
+        flex: 1 0 48%;
+        max-width: 48%;
+    }
+
+    .activitiesCards {
+        gap: 0;
+    }
+
+    .activitie:last-child {
+        margin-inline: auto;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .planContentImages {
+        flex: 1 0 100%;
+        margin-bottom: 100px;
+    }
+
+    .planContentImages .image {
+        display: inline-block !important;
+        height: auto;
+        aspect-ratio: 3 / 5;
+    }
+
+    .planContentText {
+        order: 1;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .planContent {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .planTimeLine .node p:not(.nodeDay) {
+        display: none;
+    }
+
+    .nodeDay {
+        display: inline-block;
+    }
+
+    .ideas {
+        margin-bottom: 150px;
+    }
+
+    .destinationsGallery .column:nth-child(2) {
+        display: none;
+    }
+
+    .destinationsGallery {
+        aspect-ratio: 5/5.5;
+    }
+
+    .destinations {
+        margin-bottom: 200px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .planContentImages {
+        gap: 0;
+        width: 100%;
+    }
+
+    .planContentImages .image {
+        margin: 0;
+        aspect-ratio: 3 / 6;
+    }
+
+    .ideas {
+        width: 100%;
+    }
+
+    .planContent {
+        justify-content: center;
+    }
+
+    .planContentText {
+        max-width: 87%;
+    }
+
+    .planTimeLine .line {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .headerContent {
+        margin-bottom: 10rem;
+        background: transparent;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .headerContent h1,
+    .headerContent h2 {
+        color: var(--secondary-color);
+    }
+
+    .headerContent .subtitle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .headerContent .subtitle .line {
+        background-color: var(--secondary-color);
+    }
+
+    .headerContent h2:first-child {
+        margin-bottom: 1rem;
+    }
+
+    .headerContent h1 {
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.472);
+    }
+
+    .headerContent h2 {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.472);
+    }
+
+    .parallax-mirror {
+        display: none;
+    }
+
+    header {
+        background-image: url(../img/routes/hero_routes.jpg);
+        background-attachment: scroll;
+    }
+
+    .planTimeLine .line {
+        display: none;
+    }
+
+    .planTimeLine {
+        width: 70%;
+        justify-content: space-between;
+        margin-inline: auto;
+    }
+
+    .nodeDay {
+        display: none;
+    }
+
+    .destinationsGallery {
+        flex-flow: column nowrap;
+        aspect-ratio: auto;
+    }
+
+    .destinationsGallery .column {
+        display: flex !important;
+        width: 100%;
+    }
+
+    .destinationsGallery .column:first-child,
+    .destinationsGallery .column:last-child {
+        flex: 2;
+    }
+
+    .destinationsGallery .column .image {
+        flex: 1 !important;
+        aspect-ratio: 5 / 4;
+    }
+
+    .destinations {
+        margin-bottom: 150px;
+    }
+
+    .activitie {
+        flex: 1 0 100%;
+        max-width: none;
+    }
+
+    .activitie:not(.activitie:last-child) {
+        margin-bottom: 50px;
+    }
+
+    .activitie:last-child {
+        margin-top: 0;
+    }
+
+    .activitiesCards {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    .activities {
+        margin-bottom: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .activitiesCards {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .planTimeLine {
+        width: 90%;
+    }
+}
+
+/* Fix height strechedt hero */
+@media screen and (max-height: 600px) {
+    header {
+        height: 600px;
+        background-attachment: scroll;
+        background-image: url(../img/routes/hero_routes.jpg);
+    }
+
+    .mirror-parallax {
+        display: none;
+    }
+}

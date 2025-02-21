@@ -1,0 +1,49 @@
+/* ---------- HEADER STYLES --------- */
+header {
+    height: 46.875rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+}
+
+.headerContent {
+    width: clamp(21.875rem, 15.605rem + 28.662vw, 50rem);
+    padding-block: 2.5rem;
+    background-color: var(--secondary-color);
+    padding-left: 6.5%;
+    border-top-right-radius: 1px;
+    padding-bottom: 4.7rem;
+    transform: translateY(2.2rem);
+    z-index: 2;
+}
+
+.headerContent h1,
+.headerContent h2 {
+    color: var(--primary-color);
+}
+
+.headerContent h2:first-child {
+    margin-bottom: 1.8rem;
+}
+
+.headerContent h2:first-child {
+    margin-bottom: 1.8rem;
+}
+
+.headerContent .subtitle h2 {
+    padding-inline: clamp(0.313rem, 0.092rem + 0.704vw, 0.938rem);
+}
+
+.headerContent .subtitle .line {
+    width: clamp(2rem, 0.944rem + 3.38vw, 5rem);
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.headerContent .subtitle {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+}

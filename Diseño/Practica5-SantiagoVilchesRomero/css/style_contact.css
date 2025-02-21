@@ -296,6 +296,86 @@ button {
     background-image: url(../imgs/fb.svg);
 }
 
+/* --------- WAYS TRAVEL ------- */
+/* --- PLANE --- */
+.waysTravel {
+    width: 100%;
+}
+
+.planeContainer {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-image: url(../imgs/plane.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 35rem;
+}
+
+.planeText {
+    background-color: var(--secondary-color);
+    width: 57%;
+    padding: 5rem 7.813rem;
+    margin-left: auto;
+    text-align: right;
+    transform: translateY(-50%);
+}
+
+.planeText h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+}
+
+.planeText p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    line-height: var(--line-height);
+    margin-bottom: 3.125rem;
+}
+
+.planeText .sectionLine {
+    margin-left: auto;
+}
+
+/* --- BOAT --- */
+.boatContainer {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-image: url(../imgs/port.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.boatText {
+    background-color: var(--secondary-color);
+    width: 57%;
+    padding: 5rem 7.813rem;
+    margin-right: auto;
+    text-align: left;
+    transform: translateY(-50%);
+}
+
+.boatText h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: var(--size-subt-hero);
+    font-weight: var(--jose-light);
+}
+
+.boatText p {
+    font-family: Montserrat, sans-serif;
+    font-size: var(--size-text);
+    font-weight: var(--mont-extralight);
+    line-height: var(--line-height);
+    margin-bottom: 3.125rem;
+}
+
+.boatText .sectionLine {
+    margin-right: auto;
+}
+
 
 /* -------- MEDIA QUERIES -------------- */
 @media screen and (max-width: 1750px) {
@@ -349,7 +429,7 @@ button {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url(../img/contact/map.svg);
+        background-image: url(../imgs/map.jpg);
     }
 }
 
@@ -451,7 +531,7 @@ button {
     }
 
     header {
-        background-image: url(../img/contact/hero_contact.jpg);
+        background-image: url(../imgs/hero_contact.jpg);
         background-attachment: scroll;
         margin-bottom: 150px;
     }
@@ -489,10 +569,288 @@ button {
     header {
         height: 600px;
         background-attachment: scroll;
-        background-image: url(../img/contact/hero_contact.jpg);
+        background-image: url(../imgs/hero_contact.jpg);
     }
 
     .mirror-parallax {
         display: none;
+    }
+}
+
+/* -------- MEDIA QUERIES -------------- */
+@media screen and (max-width: 1750px) {
+
+    .planeText,
+    .boatText {
+        width: 70%;
+    }
+
+    .planeContainer,
+    .boatContainer {
+        aspect-ratio: 16/10;
+    }
+
+    .transportText {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+
+    .planeText,
+    .boatText {
+        width: 80%;
+    }
+
+    .planeText {
+        padding-left: 4rem;
+    }
+
+    .boatText {
+        padding-right: 3rem;
+    }
+
+    .planeContainer,
+    .boatContainer {
+        aspect-ratio: 16/12;
+    }
+
+    .maps {
+        column-gap: 0;
+    }
+
+    .mapImage {
+        aspect-ratio: 4 / 3;
+    }
+
+    .transportText {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    .planeText,
+    .boatText {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .planeText,
+    .boatText {
+        background: none;
+        margin: 0;
+        padding: 0;
+        transform: none;
+        width: 80%;
+        margin-inline: auto;
+        margin-bottom: 100px;
+    }
+
+    .planeContainer,
+    .boatContainer {
+        background: none;
+        aspect-ratio: auto;
+        margin-bottom: 200px;
+    }
+
+    .planeImage,
+    .boatImage {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .planeImage {
+        background-image: url(../imgs/plane.jpg);
+    }
+
+    .boatImage {
+        background-image: url(../imgs/port.jpg);
+    }
+
+    header {
+        margin-bottom: 200px;
+    }
+
+    .mapImage {
+        flex: 1 0 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .hotelsCards {
+        gap: 0;
+    }
+
+    .hotel {
+        flex: 1 0 47%;
+        max-width: 47%;
+    }
+
+    .hotel:last-child {
+        margin-inline: auto;
+        margin-top: 100px;
+    }
+
+    .maps {
+        margin-bottom: 200px;
+    }
+
+    .hotels {
+        margin-bottom: 200px;
+    }
+
+    .banner {
+        aspect-ratio: 16 / 7;
+        gap: 3rem;
+        margin-bottom: 200px;
+    }
+
+    .transportText p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .planeText,
+    .boatText {
+        width: 87%;
+    }
+
+    .planeImage,
+    .boatImage {
+        aspect-ratio: 4 / 3;
+    }
+
+    .mapImage {
+        aspect-ratio: 4/3;
+    }
+
+    .hotel {
+        flex: 1 0 100%;
+        max-width: none;
+    }
+
+    .hotel:last-child {
+        margin-top: 0;
+    }
+
+    .hotel:not(.hotel:last-child) {
+        margin-bottom: 100px;
+    }
+
+    .banner {
+        aspect-ratio: 4/3;
+    }
+
+    .banner h2,
+    .banner h5 {
+        width: 87%;
+    }
+
+    .transportImage {
+        aspect-ratio: 4/3;
+    }
+
+    .transportText {
+        width: 87%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .headerContent {
+        margin-bottom: 10rem;
+        background: transparent;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .headerContent h1,
+    .headerContent h2 {
+        color: var(--secondary-color);
+    }
+
+    .headerContent .subtitle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .headerContent .subtitle .line {
+        background-color: var(--secondary-color);
+    }
+
+    .headerContent h2:first-child {
+        margin-bottom: 1rem;
+    }
+
+    .headerContent h1 {
+        margin-bottom: 1rem;
+    }
+
+    .parallax-mirror {
+        display: none;
+    }
+
+    header {
+        background-image: url(../imgs/hero_contact.jpg);
+        background-attachment: scroll;
+        margin-bottom: 150px;
+    }
+
+    .planeContainer,
+    .boatContainer {
+        margin-bottom: 150px;
+    }
+
+    .planeText p,
+    .boatText p {
+        text-align: justify;
+    }
+
+    .planeImage,
+    .boatImage {
+        aspect-ratio: 3 / 4;
+    }
+
+    .planeImage {
+        background-position: 20%;
+    }
+
+    .mapImage {
+        aspect-ratio: 3 / 3.3;
+    }
+
+    .maps {
+        margin-bottom: 150px;
+    }
+
+    .hotels {
+        margin-bottom: 150px;
+    }
+
+    .banner {
+        aspect-ratio: 3 / 4;
+    }
+
+    .banner h2 {
+        line-height: 3rem;
+    }
+
+    .banner {
+        margin-bottom: 150px;
+    }
+
+    .transportImage {
+        aspect-ratio: 3/4;
+    }
+
+    .transportText p {
+        text-align: justify;
     }
 }
