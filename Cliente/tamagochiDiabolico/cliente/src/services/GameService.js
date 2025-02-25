@@ -15,7 +15,7 @@ export class GameService {
 
     #actionsList = {
         "NEW_PLAYER": this.do_newPlayer.bind(this),
-        "BOARD": this.do_newBoard.bind(this)
+        "BOARD": this.do_newBoard.bind(this),
     };
 
     constructor(ui) {
@@ -65,5 +65,7 @@ export class GameService {
         this.#board.build(payload);
         this.#ui.drawBoard(this.#board.map);
     }
+
+    
 
 }
