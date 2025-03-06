@@ -63,6 +63,13 @@ export class GameService {
 
     async do_newPlayer(payload) {
         this.#players = payload;
+        // Actualizar el jugador actual con los datos recibidos
+        if (this.currentPlayer) {
+            const updatedCurrentPlayer = payload.find(p => p.identifier === this.currentPlayer.identifier);
+            if (updatedCurrentPlayer) {
+                this.currentPlayer = updatedCurrentPlayer;
+            }
+        }
         const boardSize = this.#board.map.length;
         this.#ui.drawPlayers(this.#players, boardSize);
     };
@@ -75,7 +82,7 @@ export class GameService {
     async do_singlePlayer(payload) {
         console.log("Single Player");
         console.log(payload);
-        // this.currentPlayer = payload;
+        this.currentPlayer = payload;
     }
 
 }

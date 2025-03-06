@@ -13,6 +13,7 @@ export class GameController {
     constructor(url, ui) {
         ui.initUI();
         this.#gameService = new GameService(ui);
+        ui.setGameService(this.#gameService);
         ConnectionHandler.init(url, this, () => {
             this.#state = this.#states.RIGHT;
         }, () => {
