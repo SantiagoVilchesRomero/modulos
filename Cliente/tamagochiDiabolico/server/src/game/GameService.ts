@@ -42,6 +42,7 @@ export class GameService {
         const room: Room = RoomService.getInstance().addPlayer(player);
         const boardSize = new BoardBuilder().size; //BoardBuilder.size no me funciona, preguntar
         const players = room.players;
+        const singlePlayer = player;
         console.log(players);
         const cornerPositions = [
             { x: 0, y: 0 },
@@ -65,6 +66,18 @@ export class GameService {
                 direction,
                 visibility
             }));
+        };
+
+        const serializeSinglePlayer = (singlePlayer: any) => {
+            const { identifier, x, y, state, direction, visibility } = singlePlayer;
+            return {
+                identifier,
+                x,
+                y,
+                state,
+                direction,
+                visibility
+            };
         };
     
         if (!room.game) {
@@ -93,13 +106,17 @@ export class GameService {
             });
         }
     
-        
         ServerService.getInstance().sendMessage(
             room.name,
             Messages.NEW_PLAYER,
             serializePlayers(players)
         );
-    
+
+        ServerService.getInstance().sendMessage(
+            room.name,
+            Messages.SINGLE_PLAYER,
+            serializeSinglePlayer(singlePlayer)
+        );
 
         if (room.players.length === RoomConfig.maxRoomPlayers) { 
             room.game.state = GameStates.PLAYING;

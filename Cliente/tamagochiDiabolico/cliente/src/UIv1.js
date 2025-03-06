@@ -1,24 +1,28 @@
 import { UI_BUILDER } from "./Ui.js";
 import { ELEMENTS } from "./entities/Board.js";
 import { Player } from "./entities/Player.js";
+import { ConnectionHandler } from "./services/ConnectionHandler.js";
 
 export const UIv1 = UI_BUILDER.init();
-
+let currentPlayer;
 UIv1.initUI = () => {
     const base = document.getElementById(UIv1.uiElements.board);
     base.classList.add("board");
-
     document.getElementById("moveBtn").addEventListener("click", () => {
         console.log("Acción: Mover");
-        // Llamada a la función de movimiento
+        console.log(ConnectionHandler.socket);
+        currentPlayer = ConnectionHandler.socket.id;
+        console.log(player.direction);
+        ConnectionHandler.socket.emit("message", { type: "MOVE", content: {
+            id: currentPlayer,     
+        } });
+        console.log("Se ha movido el jugador y soy: " + currentPlayer);
     });
     document.getElementById("rotateBtn").addEventListener("click", () => {
         console.log("Acción: Rotar");
-        // Llamada a la función de rotación
     });
     document.getElementById("shootBtn").addEventListener("click", () => {
         console.log("Acción: Disparar");
-        // Llamada a la función de disparo
     });
 }
 

@@ -12,10 +12,12 @@ export class GameService {
     #queue = null;
     #state = null;
     #parallel = null;
+    currentPlayer = null;
 
     #actionsList = {
         "NEW_PLAYER": this.do_newPlayer.bind(this),
         "BOARD": this.do_newBoard.bind(this),
+        "SINGLE_PLAYER": this.do_singlePlayer.bind(this),
     };
 
     constructor(ui) {
@@ -26,6 +28,10 @@ export class GameService {
         this.#parallel = null;
         this.checkScheduler();
         this.#ui = ui;
+    }
+
+    setPlayer(player) {
+        this.currentPlayer = player;
     }
 
     checkScheduler() {
@@ -66,6 +72,10 @@ export class GameService {
         this.#ui.drawBoard(this.#board.map);
     }
 
-    
+    async do_singlePlayer(payload) {
+        console.log("Single Player");
+        console.log(payload);
+        // this.currentPlayer = payload;
+    }
 
 }
