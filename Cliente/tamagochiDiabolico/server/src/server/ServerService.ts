@@ -33,6 +33,10 @@ export class ServerService {
         {
             type: "ROTATE",
             do: (data: Message) => GameService.getInstance().handlePlayerRotation(data.content)
+        },
+        {
+            type: "SHOOT",
+            do: (data: Message) => GameService.getInstance().handlePlayerShoot(data.content)
         }
     ];
 

@@ -18,6 +18,9 @@ export class GameService {
         "NEW_PLAYER": this.do_newPlayer.bind(this),
         "BOARD": this.do_newBoard.bind(this),
         "SINGLE_PLAYER": this.do_singlePlayer.bind(this),
+        "SHOT_TRAJECTORY": this.do_shotTrajectory.bind(this),
+        "SHOT_IMPACT": this.do_shotImpact.bind(this),
+        "GAME_OVER": this.do_gameOver.bind(this)
     };
 
     constructor(ui) {
@@ -72,6 +75,11 @@ export class GameService {
         }
         const boardSize = this.#board.map.length;
         this.#ui.drawPlayers(this.#players, boardSize);
+
+        // Actualizar el estado de los botones cuando hay cambios en los jugadores
+        if (typeof this.#ui.updateButtonStates === 'function') {
+            this.#ui.updateButtonStates();
+        }
     };
 
     async do_newBoard(payload) {
@@ -83,6 +91,35 @@ export class GameService {
         console.log("Single Player");
         console.log(payload);
         this.currentPlayer = payload;
+    }
+
+    // Implementar métodos para manejar la trayectoria y el impacto
+    async do_shotTrajectory(payload) {
+        console.log("Shot trajectory received:", payload);
+        this.#ui.drawShotTrajectory(payload.start, payload.current, payload.direction, payload.final);
+    }
+
+    async do_shotImpact(payload) {
+        console.log("Shot impact received:", payload);
+        const { targetId } = payload;
+        // Si el jugador impactado soy yo, mostrar mensaje
+        if (this.currentPlayer && targetId === this.currentPlayer.identifier) {
+            this.#ui.showMessage("¡Has sido eliminado!");
+        }
+    }
+
+    // Implementa el nuevo método:
+    async do_gameOver(payload) {
+        console.log("Game over received:", payload);
+        const { winnerId, winnerName } = payload;
+
+        // Si yo soy el ganador
+        if (this.currentPlayer && winnerId === this.currentPlayer.identifier) {
+            this.#ui.showMessage("¡HAS GANADO LA PARTIDA! 🏆");
+        } else {
+            // Si otro jugador ganó
+            this.#ui.showMessage(`${winnerName} ha ganado la partida.`);
+        }
     }
 
 }

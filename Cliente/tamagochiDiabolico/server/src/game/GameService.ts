@@ -139,6 +139,10 @@ export class GameService {
         const player = playerRoom.players.find(p => p.identifier === data.id);
         if (!player) return;
 
+        // Verificar si el jugador está muerto
+        if (player.state === PlayerStates.Dead) {
+            return; // No permitir movimiento si está muerto
+        }
         // 2. Actualizar la dirección del jugador
         player.direction = data.direction;
 
@@ -181,7 +185,7 @@ export class GameService {
     private calculateNewPosition(player: Player): { x: number, y: number } {
         const x = Number(player.x);
         const y = Number(player.y);
-    
+
         switch (player.direction) {
             case Directions.Up:
                 return { x: x - 1, y };
@@ -201,14 +205,16 @@ export class GameService {
         if (x < 0 || y < 0 || x >= game.board.size || y >= game.board.size) {
             return false;
         }
-    
-        // 2. Ya no rechazamos el movimiento si hay un arbusto
-        // Sólo comprobamos si hay otro jugador (incluso invisible)
-        const isOccupiedByPlayer = game.room.players.some(
-            p => Number(p.x) === x && Number(p.y) === y
+
+        // 2. Comprobar si hay algún jugador VIVO en esta posición
+        const isOccupiedByLivingPlayer = game.room.players.some(
+            p => Number(p.x) === x &&
+                Number(p.y) === y &&
+                p.state !== PlayerStates.Dead // Solo nos importan los jugadores vivos
         );
-        if (isOccupiedByPlayer) return false;
-    
+
+        if (isOccupiedByLivingPlayer) return false;
+
         return true;
     }
 
@@ -227,13 +233,18 @@ export class GameService {
         // 1. Encontrar la sala y el jugador
         const playerRoom = this.findPlayerRoom(data.id);
         if (!playerRoom) return;
-    
+
         const player = playerRoom.players.find(p => p.identifier === data.id);
         if (!player) return;
-    
+
+        // Verificar si el jugador está muerto
+        if (player.state === PlayerStates.Dead) {
+            return; // No permitir rotación si está muerto
+        }
+
         // 2. Actualizar SOLO la dirección del jugador, NO la visibilidad
         player.direction = data.newDirection;
-        
+
         // 3. Notificar a todos los jugadores de la sala sobre la rotación
         const serializedPlayers = this.serializePlayers(playerRoom.players);
         ServerService.getInstance().sendMessage(
@@ -241,6 +252,161 @@ export class GameService {
             Messages.NEW_PLAYER,
             serializedPlayers
         );
+    }
+
+    public handlePlayerShoot(data: { id: string, direction: Directions }): void {
+        // 1. Encontrar la sala y el jugador que dispara
+        const playerRoom = this.findPlayerRoom(data.id);
+        if (!playerRoom) return;
+
+        const shooter = playerRoom.players.find(p => p.identifier === data.id);
+        if (!shooter) return;
+
+        // Verificar si el jugador está muerto
+        if (shooter.state === PlayerStates.Dead) {
+            return; // No permitir disparar si está muerto
+        }
+
+
+        // Guardamos la posición inicial del disparo para que no cambie si el jugador se mueve
+        const shotOrigin = {
+            x: Number(shooter.x),
+            y: Number(shooter.y)
+        };
+
+        // 2. Iniciar el proceso de disparo gradual con coordenadas fijas
+        this.processShotStep(playerRoom, shooter, data.direction, 0, shotOrigin);
+    }
+
+    private processShotStep(
+        room: Room,
+        shooter: Player,
+        direction: Directions,
+        step: number,
+        shotOrigin: { x: number, y: number }
+    ): void {
+        const boardSize = room.game!.board.size;
+
+        // Iniciamos desde el origen fijo del disparo, no de la posición actual del jugador
+        let x = shotOrigin.x;
+        let y = shotOrigin.y;
+
+        // Avanzamos el disparo según los pasos
+        for (let i = 0; i <= step; i++) {
+            if (i > 0) { // No modificar la posición inicial
+                switch (direction) {
+                    case Directions.Up: x--; break;
+                    case Directions.Down: x++; break;
+                    case Directions.Left: y--; break;
+                    case Directions.Right: y++; break;
+                }
+            }
+        }
+
+        // Verificar si el disparo está fuera de los límites
+        if (x < 0 || x >= boardSize || y < 0 || y >= boardSize) {
+            // El disparo ha salido del tablero - AÑADIMOS UN MENSAJE FINAL PARA LIMPIAR LA VISUALIZACIÓN
+            ServerService.getInstance().sendMessage(
+                room.name,
+                Messages.SHOT_TRAJECTORY,
+                {
+                    start: { x: shotOrigin.x, y: shotOrigin.y },
+                    current: {
+                        // Enviamos la última posición válida antes del límite
+                        x: Math.max(0, Math.min(x, boardSize - 1)),
+                        y: Math.max(0, Math.min(y, boardSize - 1))
+                    },
+                    direction,
+                    final: true // Indicamos que es la última posición
+                }
+            );
+            return;
+        }
+
+        // Verificar si hay un arbusto
+        const isBush = room.game!.board.elements.some(
+            element => Number(element.x) === x && Number(element.y) === y
+        );
+
+        if (isBush) {
+            // El disparo impacta el arbusto
+            ServerService.getInstance().sendMessage(
+                room.name,
+                Messages.SHOT_TRAJECTORY,
+                {
+                    start: { x: shotOrigin.x, y: shotOrigin.y },
+                    current: { x, y },
+                    direction,
+                    final: true
+                }
+            );
+            return;
+        }
+
+        // Verificar si hay un jugador visible en esta posición
+        const hitPlayer = room.players.find(
+            p => Number(p.x) === x &&
+                Number(p.y) === y &&
+                p.identifier !== shooter.identifier &&
+                p.visibility === true
+        );
+
+        if (hitPlayer) {
+            // Ha impactado a un jugador
+            hitPlayer.state = PlayerStates.Dead;
+            hitPlayer.visibility = false;
+
+            ServerService.getInstance().sendMessage(
+                room.name,
+                Messages.SHOT_IMPACT,
+                {
+                    shooterId: shooter.identifier,
+                    targetId: hitPlayer.identifier,
+                    position: { x, y }
+                }
+            );
+
+            const serializedPlayers = this.serializePlayers(room.players);
+            ServerService.getInstance().sendMessage(
+                room.name,
+                Messages.NEW_PLAYER,
+                serializedPlayers
+            );
+
+            // Comprobar si hay un ganador (solo queda un jugador vivo)
+            const alivePlayers = room.players.filter(p => p.state !== PlayerStates.Dead);
+            if (alivePlayers.length === 1) {
+                // El último jugador vivo es el ganador
+                const winner = alivePlayers[0];
+                ServerService.getInstance().sendMessage(
+                    room.name,
+                    Messages.GAME_OVER,
+                    {
+                        winnerId: winner.identifier,
+                        winnerName: `Jugador ${room.players.findIndex(p => p.identifier === winner.identifier) + 1}`
+                    }
+                );
+            }
+
+            return;
+        }
+
+        // Enviar actualización de la posición del disparo
+        ServerService.getInstance().sendMessage(
+            room.name,
+            Messages.SHOT_TRAJECTORY,
+            {
+                start: { x: shotOrigin.x, y: shotOrigin.y },
+                current: { x, y },
+                direction,
+                final: false
+            }
+        );
+
+        // Seguir con el siguiente paso después de un retraso
+        setTimeout(() => {
+            this.processShotStep(room, shooter, direction, step + 1, shotOrigin);
+        }, 300); // Ajusta este valor para controlar la velocidad del disparo
     }
 
 }
